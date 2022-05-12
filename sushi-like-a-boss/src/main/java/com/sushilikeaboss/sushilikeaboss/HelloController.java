@@ -9,6 +9,6 @@ public class HelloController {
 
     @FXML
     protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to our Sushi Store!");
+        welcomeText.setText("Wohoo it works :) Welcome to our Sushi Store!");
     }
 }

@@ -28,5 +28,5 @@
          </ImageView>
       </children>
    </AnchorPane>
-    <Button onAction="#onHelloButtonClick" text="Hello!" />
+    <Button onAction="#onHelloButtonClick" text="Does it work?" />
 </VBox>

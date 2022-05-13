@@ -2,15 +2,45 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.sushilikeaboss.HelloController">
+<AnchorPane prefHeight="501.0" prefWidth="748.0" style="-fx-background-color: #424242;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sushilikeaboss.HelloController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
+   <AnchorPane layoutX="-46.0" layoutY="-6.0" prefHeight="123.0" prefWidth="837.0" style="-fx-background-color: #dcedc7;" AnchorPane.leftAnchor="-66.0" AnchorPane.rightAnchor="-23.0">
+      <children>
+         <Text layoutX="163.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="What do you feel like having today?" AnchorPane.leftAnchor="162.40606689453125" AnchorPane.rightAnchor="50.59393310546875">
+            <font>
+               <Font name="Raleway Bold" size="34.0" />
+            </font>
+         </Text>
+      </children>
+   </AnchorPane>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+    <Label fx:id="welcomeText" />
+    <ImageView fitHeight="264.0" fitWidth="341.0" focusTraversable="true" layoutX="409.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="75.0">
+        <image>
+            <Image url="@square_mixed_sushi.jpg" />
+        </image>
+    </ImageView>
+   <ImageView fitHeight="264.0" fitWidth="341.0" focusTraversable="true" layoutX="76.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@22-sushi-menu.jpg" />
+      </image>
+   </ImageView>
+   <Text fill="#aabb97" layoutX="434.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Custom Plate">
+      <font>
+         <Font name="Raleway Light" size="27.0" />
+      </font>
+   </Text>
+   <Text fill="#aabb97" layoutX="172.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Menu">
+      <font>
+         <Font name="Raleway Light" size="27.0" />
+      </font>
+   </Text>
+</AnchorPane>

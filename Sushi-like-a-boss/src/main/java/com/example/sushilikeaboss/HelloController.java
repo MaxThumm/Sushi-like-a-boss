@@ -18,5 +18,13 @@ public class HelloController {
 
     }
 
+    @FXML
+    private void addSakeNigiri() {
+        int quantity = 1;
+        HelloApplication.addSakeNigiri(quantity);
+        String text = quantity + " Sake Nigiri added to your shopping cart";
+        welcomeText.setText(text);
+    }
+
 
 }

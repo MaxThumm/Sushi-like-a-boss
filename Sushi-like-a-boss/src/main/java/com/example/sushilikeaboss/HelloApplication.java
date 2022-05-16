@@ -6,8 +6,30 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.LinkedList;
 
 public class HelloApplication extends Application {
+    private static LinkedList<Order> orders;
+
+    public static void newOrder() {
+        Order newOrder = new Order(orders.size());
+        orders.add(0, newOrder);
+    }
+
+    public static String placeOrder() {
+        orders.get(0).setOrdered(true);
+        String confirmation = "Order placed. Your order ID is " + orders.get(0).getId() + ". It consists of " + orders.get(0).outputContent() + ". The total is " + orders.get(0).getTotal() + ".";
+        return confirmation;
+    }
+
+    public static void addSakeNigiri(int quantity) {
+        orders.get(0).addItem(new SakeNigiri(quantity));
+    }
+
+    public static void addNigiriSet(int quantity) {
+        orders.get(0).addItem(new NigiriSet(quantity));
+    }
+
     private static Stage primaryStage; // **Declare static Stage**
 
     private void setPrimaryStage(Stage stage) {
@@ -31,6 +53,11 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+        orders = new LinkedList<Order>();
+        newOrder();
+
         launch();
+
+
     }
 }

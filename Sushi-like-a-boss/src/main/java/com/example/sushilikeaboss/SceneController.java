@@ -32,4 +32,13 @@ public class SceneController {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void switchtoScene3(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ordering-window.fxml"));
+        root = fxmlLoader.load();
+        scene = new Scene(root);
+        stage = HelloApplication.getPrimaryStage();
+        stage.setScene(scene);
+        stage.show();
+    }
 }

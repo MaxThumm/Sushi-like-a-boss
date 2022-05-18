@@ -3,10 +3,17 @@ package com.example.sushilikeaboss;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 public class HelloController {
     @FXML
     private Label welcomeText;
+
+    @FXML
+    private TextField removeSakeNigiriQ;
+
+    @FXML
+    private TextField addSakeNigiriQ;
 
     @FXML
     protected void onHelloButtonClick() {
@@ -20,7 +27,7 @@ public class HelloController {
 
     @FXML
     private void addSakeNigiri() {
-        int quantity = 1;
+        int quantity = Integer.parseInt(addSakeNigiriQ.getText());
         HelloApplication.addSakeNigiri(quantity);
         String text = quantity + " Sake Nigiri added to your shopping cart";
         welcomeText.setText(text);

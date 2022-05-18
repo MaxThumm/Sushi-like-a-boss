@@ -34,7 +34,7 @@
          <Image url="@22-sushi-menu.jpg" />
       </image>
    </ImageView>
-   <Button layoutX="84.0" layoutY="438.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="248.0" style="-fx-background-color: #fffffb;" text="Menu" textFill="#6d6d6d">
+   <Button layoutX="84.0" layoutY="438.0" mnemonicParsing="false" onAction="#switchtoScene3" prefHeight="52.0" prefWidth="248.0" style="-fx-background-color: #fffffb;" text="Menu" textFill="#6d6d6d">
       <font>
          <Font name="Raleway Bold" size="28.0" />
       </font>

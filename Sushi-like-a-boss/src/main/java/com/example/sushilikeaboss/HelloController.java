@@ -27,7 +27,13 @@ public class HelloController {
 
     @FXML
     private void addSakeNigiri() {
-        int quantity = Integer.parseInt(addSakeNigiriQ.getText());
+        int quantity;
+        try {
+            quantity = Integer.parseInt(addSakeNigiriQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantity = 1;
+        }
         HelloApplication.addSakeNigiri(quantity);
         String text = quantity + " Sake Nigiri added to your shopping cart";
         welcomeText.setText(text);

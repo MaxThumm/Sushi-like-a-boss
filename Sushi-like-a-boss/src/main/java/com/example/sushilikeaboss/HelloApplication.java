@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class HelloApplication extends Application {
-    private static LinkedList<Order> orders;
+     public static LinkedList<Order> orders;
 
     public static void newOrder() {
         Order newOrder = new Order(orders.size());

@@ -3,7 +3,12 @@ package com.example.sushilikeaboss;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HelloController {
     @FXML
@@ -35,9 +40,28 @@ public class HelloController {
             quantity = 1;
         }
         HelloApplication.addSakeNigiri(quantity);
+        reloadOrders();
         String text = quantity + " Sake Nigiri added to your shopping cart";
         welcomeText.setText(text);
     }
+
+    @FXML
+    private ListView<String> aktelleBestellungListView;
+
+    private void reloadOrders() {
+        Order currentOrder = HelloApplication.orders.get(0);
+        ArrayList<Sushi> sushisInOrder = currentOrder.getItems();
+        ArrayList<String> ordersAsString = new ArrayList<>();
+
+        for (Sushi sushi : sushisInOrder) {
+            ordersAsString.add(sushi.getName() + " " + sushi.getQuantity());
+        }
+
+        aktelleBestellungListView.getItems().clear();
+        aktelleBestellungListView.getItems().addAll(ordersAsString);
+    }
+
+
 
 
 }

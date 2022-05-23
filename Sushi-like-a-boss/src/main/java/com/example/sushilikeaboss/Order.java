@@ -15,6 +15,10 @@ public class Order {
         isOrdered = false;
     }
 
+    //Methode gibt die items einer Order aus
+    public ArrayList<Sushi> getItems (){
+        return items;
+    }
     public void addItem(Sushi item){
         boolean isInItems = false;
         for (Sushi s:items) {

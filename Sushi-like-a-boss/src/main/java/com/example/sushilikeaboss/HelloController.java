@@ -48,15 +48,21 @@ public class HelloController {
     @FXML
     private ListView<String> aktelleBestellungListView;
 
+
+    /**
+     * Method shows current shopping basket
+     */
     private void reloadOrders() {
+        //gets the current order and saves it as new variable
         Order currentOrder = HelloApplication.orders.get(0);
+        //Gets items from the current order and saves them into arraylist
         ArrayList<Sushi> sushisInOrder = currentOrder.getItems();
         ArrayList<String> ordersAsString = new ArrayList<>();
 
+        //converts all Sushis in listto String
         for (Sushi sushi : sushisInOrder) {
             ordersAsString.add(sushi.getName() + " " + sushi.getQuantity());
         }
-
         aktelleBestellungListView.getItems().clear();
         aktelleBestellungListView.getItems().addAll(ordersAsString);
     }

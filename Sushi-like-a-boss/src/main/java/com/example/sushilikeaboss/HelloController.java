@@ -61,7 +61,7 @@ public class HelloController {
 
         //converts all Sushis in listto String
         for (Sushi sushi : sushisInOrder) {
-            ordersAsString.add(sushi.getName() + " " + sushi.getQuantity());
+            ordersAsString.add(sushi.getName() + " " + sushi.getQuantity() + " pieces");
         }
         aktelleBestellungListView.getItems().clear();
         aktelleBestellungListView.getItems().addAll(ordersAsString);

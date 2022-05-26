@@ -15,7 +15,10 @@ public class Order {
         isOrdered = false;
     }
 
-    //Methode gibt die items einer Order aus
+    /*
+    Getter for item list of order
+    @return Item list of the order
+     */
     public ArrayList<Sushi> getItems (){
         return items;
     }
@@ -33,6 +36,9 @@ public class Order {
         updateTotal();
     }
 
+    /*
+    Updating total price of the current order.
+     */
     public void updateTotal() {
         double newTotal = 0;
         for (Sushi s:items) {
@@ -40,6 +46,9 @@ public class Order {
         }
     }
 
+    /*
+    @return String containing all items in the items list. Can be used for order confirmation or status bar.
+     */
     public String outputContent() {
         String output = items.get(0).getQuantity() + " " + items.get(0).getName();
         for (int i = 1; i < items.size(); i++) {

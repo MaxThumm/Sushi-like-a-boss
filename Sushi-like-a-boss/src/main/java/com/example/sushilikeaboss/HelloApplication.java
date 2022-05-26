@@ -9,23 +9,39 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class HelloApplication extends Application {
-     public static LinkedList<Order> orders;
+    //List of all orders placed and in progress. Fist one is most recent one.
+    public static LinkedList<Order> orders;
 
+    /*
+    Starting new order. New order gets added to first spot in order list.
+     */
     public static void newOrder() {
         Order newOrder = new Order(orders.size());
         orders.add(0, newOrder);
     }
 
+    /*
+    Finish and place order.
+    @return Order confirmation is returned as String.
+     */
     public static String placeOrder() {
         orders.get(0).setOrdered(true);
         String confirmation = "Order placed. Your order ID is " + orders.get(0).getId() + ". It consists of " + orders.get(0).outputContent() + ". The total is " + orders.get(0).getTotal() + ".";
         return confirmation;
     }
 
+    /*
+    Submitted number of Sake Nigiri get added to item list (shopping cart) within the order.
+    @param Desired quantity to add to shopping cart
+     */
     public static void addSakeNigiri(int quantity) {
         orders.get(0).addItem(new SakeNigiri(quantity));
     }
 
+    /*
+    Submitted number of Nigiri Sets get added to item list (shopping cart) within the order.
+    @param Desired quantity to add to shopping cart
+     */
     public static void addNigiriSet(int quantity) {
         orders.get(0).addItem(new NigiriSet(quantity));
     }
@@ -53,8 +69,9 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+        //new order list initiated when program is started
         orders = new LinkedList<Order>();
-        newOrder();
+        newOrder(); //to be linked with button "Place new order"
 
         launch();
 

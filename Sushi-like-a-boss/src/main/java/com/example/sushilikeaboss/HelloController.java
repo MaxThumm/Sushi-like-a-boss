@@ -14,9 +14,11 @@ public class HelloController {
     @FXML
     private Label welcomeText;
 
+    //Input field for quantity of Sake Nigiri to be removed from order
     @FXML
     private TextField removeSakeNigiriQ;
 
+    //Input field for quantity of Sake Nigiri to be added to order
     @FXML
     private TextField addSakeNigiriQ;
 
@@ -30,6 +32,9 @@ public class HelloController {
 
     }
 
+    /*
+    Adding number of Sake Nigiri from input field to order
+     */
     @FXML
     private void addSakeNigiri() {
         int quantity;

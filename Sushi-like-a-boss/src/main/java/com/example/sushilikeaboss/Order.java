@@ -35,6 +35,24 @@ public class Order {
         }
         updateTotal();
     }
+    public void removeItem(Sushi item){
+        Sushi itemToRemove = null;
+        for (Sushi s: items){
+            if (s.getClass() == item.getClass()) {
+                int newQuantity = s.getQuantity() - item.getQuantity();
+                if (newQuantity > 0) {
+                    s.setQuantity(newQuantity);
+                } else {
+                    itemToRemove = s;
+                }
+            }
+        }
+        if (itemToRemove != null) {
+            items.remove(itemToRemove);
+        }
+    }
+
+
 
     /*
     Updating total price of the current order.

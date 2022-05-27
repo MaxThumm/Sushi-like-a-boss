@@ -56,6 +56,35 @@ public class HelloApplication extends Application {
         return HelloApplication.primaryStage;
     }
 
+
+    /*
+    Submitted number of Sake Nigiri remove from item list (shopping cart) within the order.
+    @param Desired quantity to remove from the shopping cart
+     */
+    public static void removeSakeNigiri(int quantity) {
+        orders.get(0).removeItem(new SakeNigiri(quantity));
+    }
+
+    /**
+    /*
+    Submitted number of Nigiri Sets get added to item list (shopping cart) within the order.
+    @param Desired quantity to add to shopping cart
+
+    public static void addNigiriSet(int quantity) {
+        orders.get(0).addItem(new NigiriSet(quantity));
+    }
+
+    private static Stage primaryStage; // **Declare static Stage**
+
+    private void setPrimaryStage(Stage stage) {
+        HelloApplication.primaryStage = stage;
+    }
+
+    static public Stage getPrimaryStage() {
+        return HelloApplication.primaryStage;
+    }
+    */
+
     @Override
     public void start(Stage stage) throws IOException {
         setPrimaryStage(stage);

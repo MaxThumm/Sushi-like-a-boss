@@ -49,7 +49,7 @@
                                        <Font name="Raleway Regular" size="12.0" />
                                     </font>
                                  </Button>
-                                 <Button layoutX="206.0" layoutY="125.0" onAction="#onHelloButtonClick" style="-fx-background-color: #fffffb;" text="Remove">
+                                 <Button layoutX="206.0" layoutY="125.0" onAction="#removeSakeNigiri" style="-fx-background-color: #fffffb;" text="Remove">
                                     <font>
                                        <Font name="Raleway Regular" size="12.0" />
                                     </font>

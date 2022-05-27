@@ -50,6 +50,25 @@ public class HelloController {
         welcomeText.setText(text);
     }
 
+    /*
+Removing number of Sake Nigiri from input field from order
+ */
+    @FXML
+    private void removeSakeNigiri() {
+        int quantityRemove;
+        try {
+            quantityRemove = Integer.parseInt(removeSakeNigiriQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantityRemove = 1;
+        }
+        HelloApplication.removeSakeNigiri(quantityRemove);
+        reloadOrders();
+        String text = quantityRemove + " Sake Nigiri removed from your shopping cart";
+        welcomeText.setText(text);
+    }
+
+
     @FXML
     private ListView<String> aktelleBestellungListView;
 
@@ -64,7 +83,8 @@ public class HelloController {
         ArrayList<Sushi> sushisInOrder = currentOrder.getItems();
         ArrayList<String> ordersAsString = new ArrayList<>();
 
-        //converts all Sushis in listto String
+
+        //converts all Sushis in list to String
         for (Sushi sushi : sushisInOrder) {
             ordersAsString.add(sushi.getName() + " " + sushi.getQuantity() + " pieces");
         }

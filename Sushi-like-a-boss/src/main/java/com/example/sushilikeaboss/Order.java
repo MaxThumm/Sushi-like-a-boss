@@ -35,6 +35,11 @@ public class Order {
         }
         updateTotal();
     }
+
+    /**
+     * Removes sushi items from order
+     * @param item is sushi that should be removed
+     */
     public void removeItem(Sushi item){
         Sushi itemToRemove = null;
         for (Sushi s: items){

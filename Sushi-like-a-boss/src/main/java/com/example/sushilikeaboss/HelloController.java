@@ -74,7 +74,7 @@ Removing number of Sake Nigiri from input field from order
 
 
     /**
-     * Method shows current shopping basket
+     * Method contains current shopping basket
      */
     private void reloadOrders() {
         //gets the current order and saves it as new variable
@@ -82,8 +82,6 @@ Removing number of Sake Nigiri from input field from order
         //Gets items from the current order and saves them into arraylist
         ArrayList<Sushi> sushisInOrder = currentOrder.getItems();
         ArrayList<String> ordersAsString = new ArrayList<>();
-
-
         //converts all Sushis in list to String
         for (Sushi sushi : sushisInOrder) {
             ordersAsString.add(sushi.getName() + " " + sushi.getQuantity() + " pieces");

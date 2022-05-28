@@ -38,9 +38,9 @@ public class HelloApplication extends Application {
         orders.get(0).addItem(new SakeNigiri(quantity));
     }
 
-    /*
+    /**
     Submitted number of Nigiri Sets get added to item list (shopping cart) within the order.
-    @param Desired quantity to add to shopping cart
+    @param quantity desired quantity to add to shopping cart
      */
     public static void addNigiriSet(int quantity) {
         orders.get(0).addItem(new NigiriSet(quantity));
@@ -57,9 +57,9 @@ public class HelloApplication extends Application {
     }
 
 
-    /*
+    /**
     Submitted number of Sake Nigiri remove from item list (shopping cart) within the order.
-    @param Desired quantity to remove from the shopping cart
+    @param quantity desired quantity to remove from the shopping cart
      */
     public static void removeSakeNigiri(int quantity) {
         orders.get(0).removeItem(new SakeNigiri(quantity));
@@ -68,7 +68,7 @@ public class HelloApplication extends Application {
     /**
     /*
     Submitted number of Nigiri Sets get added to item list (shopping cart) within the order.
-    @param Desired quantity to add to shopping cart
+    @param quantity desired quantitiy to add to shopping cart
 
     public static void addNigiriSet(int quantity) {
         orders.get(0).addItem(new NigiriSet(quantity));

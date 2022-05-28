@@ -65,6 +65,12 @@ public class HelloApplication extends Application {
         orders.get(0).removeItem(new SakeNigiri(quantity));
     }
 
+
+    public static void updateTotal(int quantity) {
+        orders.get(0).updateTotal();
+    }
+
+
     /**
     /*
     Submitted number of Nigiri Sets get added to item list (shopping cart) within the order.

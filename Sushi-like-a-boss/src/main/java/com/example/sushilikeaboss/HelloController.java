@@ -14,6 +14,9 @@ public class HelloController {
     @FXML
     private Label welcomeText;
 
+    @FXML
+    private Label totalCostsBasketText;
+
     //Input field for quantity of Sake Nigiri to be removed from order
     @FXML
     private TextField removeSakeNigiriQ;
@@ -45,9 +48,14 @@ public class HelloController {
             quantity = 1;
         }
         HelloApplication.addSakeNigiri(quantity);
+        //Ads the newly ordered amount to the shopping cart list
         reloadOrders();
+        //Changes the text to the new amount
         String text = quantity + " Sake Nigiri added to your shopping cart";
-        welcomeText.setText(text);
+        //Updates the total costs of shopping basket
+        HelloApplication.updateTotal(quantity);
+        //Changes the text to the new price
+     //   totalCostsBasketText.setText("CHF" + orders.get(0).total);
     }
 
     /*

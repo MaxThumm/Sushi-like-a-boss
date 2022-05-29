@@ -37,7 +37,7 @@
                   <children>
                      <ScrollPane hvalue="0.4" prefHeight="314.0" prefWidth="398.0">
                        <content>
-                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="406.0" prefWidth="398.0">
+                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="406.0" prefWidth="398.0" style="-fx-background-color: #dcedc7; -fx-border-color: #424242;">
                               <children>
                                   <ImageView fitHeight="148.0" fitWidth="148.0" focusTraversable="true" layoutX="33.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
                                       <image>

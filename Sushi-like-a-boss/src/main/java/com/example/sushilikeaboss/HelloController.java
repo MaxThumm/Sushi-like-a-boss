@@ -52,10 +52,8 @@ public class HelloController {
         reloadOrders();
         //Changes the text to the new amount
         String text = quantity + " Sake Nigiri added to your shopping cart";
-        //Updates the total costs of shopping basket
-        HelloApplication.updateTotal(quantity);
         //Changes the text to the new price
-     //   totalCostsBasketText.setText("CHF" + orders.get(0).total);
+        totalCostsBasketText.setText("CHF " + HelloApplication.orders.get(0).getTotal());
     }
 
     /*
@@ -74,6 +72,8 @@ Removing number of Sake Nigiri from input field from order
         reloadOrders();
         String text = quantityRemove + " Sake Nigiri removed from your shopping cart";
         welcomeText.setText(text);
+        //Changes the text to the new price
+        totalCostsBasketText.setText("CHF " + HelloApplication.orders.get(0).getTotal());
     }
 
 

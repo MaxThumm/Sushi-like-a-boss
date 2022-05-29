@@ -66,11 +66,6 @@ public class HelloApplication extends Application {
     }
 
 
-    public static void updateTotal(int quantity) {
-        orders.get(0).updateTotal();
-    }
-
-
     /**
     /*
     Submitted number of Nigiri Sets get added to item list (shopping cart) within the order.

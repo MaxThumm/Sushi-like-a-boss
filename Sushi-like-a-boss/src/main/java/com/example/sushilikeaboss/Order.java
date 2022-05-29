@@ -55,6 +55,7 @@ public class Order {
         if (itemToRemove != null) {
             items.remove(itemToRemove);
         }
+        updateTotal();
     }
 
 
@@ -62,11 +63,12 @@ public class Order {
     /*
     Updating total price of the current order.
      */
-    public void updateTotal() {
+    private void updateTotal() {
         double newTotal = 0;
         for (Sushi s:items) {
             newTotal = newTotal + (s.getPrice() * s.getQuantity());
         }
+        total = newTotal;
     }
 
     /*

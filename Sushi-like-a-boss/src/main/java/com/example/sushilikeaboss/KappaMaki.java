@@ -2,7 +2,7 @@ package com.example.sushilikeaboss;
 
 public class KappaMaki extends Sushi {
 
-    protected KappaMaki(String name, int quantity, double price) {
+    protected KappaMaki(int quantity) {
         super("Kappa Maki", quantity, 2.5);
     }
 }

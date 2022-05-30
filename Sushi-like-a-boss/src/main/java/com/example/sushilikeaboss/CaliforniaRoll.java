@@ -1,7 +1,7 @@
 package com.example.sushilikeaboss;
 
 public class CaliforniaRoll extends Sushi {
-    protected CaliforniaRoll(String name, int quantity, double price) {
+    protected CaliforniaRoll(int quantity) {
         super("California Roll", quantity, 3);
     }
 }

@@ -1,8 +1,6 @@
 package com.example.sushilikeaboss;
 
-import java.util.ArrayList;
-
-public class NigiriSet extends Set {
+public class NigiriSet extends SushiSet {
     protected NigiriSet(int quantity) {
         //defining name and price of set
         super("Nigiri Set", quantity,18.0);

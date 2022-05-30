@@ -30,21 +30,14 @@ public class HelloApplication extends Application {
         return confirmation;
     }
 
-    /*
-    Submitted number of Sake Nigiri get added to item list (shopping cart) within the order.
-    @param Desired quantity to add to shopping cart
+    /**
+     * Method adds Sushis to the Order
+     * @param sushi is sushi subclass that should be added
      */
-    public static void addSakeNigiri(int quantity) {
-        orders.get(0).addItem(new SakeNigiri(quantity));
+    public static void addSushi(Sushi sushi) {
+        orders.get(0).addItem(sushi);
     }
 
-    /**
-    Submitted number of Nigiri Sets get added to item list (shopping cart) within the order.
-    @param quantity desired quantity to add to shopping cart
-     */
-    public static void addNigiriSet(int quantity) {
-        orders.get(0).addItem(new NigiriSet(quantity));
-    }
 
     private static Stage primaryStage; // **Declare static Stage**
 
@@ -58,33 +51,35 @@ public class HelloApplication extends Application {
 
 
     /**
-    Submitted number of Sake Nigiri remove from item list (shopping cart) within the order.
-    @param quantity desired quantity to remove from the shopping cart
+     * Submitted number of Sake Nigiri remove from item list (shopping cart) within the order.
+     *
+     * @param quantity desired quantity to remove from the shopping cart
      */
-    public static void removeSakeNigiri(int quantity) {
-        orders.get(0).removeItem(new SakeNigiri(quantity));
+    public static void removeSushi (Sushi sushi) {
+        orders.get(0).removeItem(sushi);
     }
 
 
     /**
-    /*
-    Submitted number of Nigiri Sets get added to item list (shopping cart) within the order.
-    @param quantity desired quantitiy to add to shopping cart
-
-    public static void addNigiriSet(int quantity) {
-        orders.get(0).addItem(new NigiriSet(quantity));
-    }
-
-    private static Stage primaryStage; // **Declare static Stage**
-
-    private void setPrimaryStage(Stage stage) {
-        HelloApplication.primaryStage = stage;
-    }
-
-    static public Stage getPrimaryStage() {
-        return HelloApplication.primaryStage;
-    }
-    */
+     * /*
+     * Submitted number of Nigiri Sets get added to item list (shopping cart) within the order.
+     *
+     * @param quantity desired quantitiy to add to shopping cart
+     *                 <p>
+     *                 public static void addNigiriSet(int quantity) {
+     *                 orders.get(0).addItem(new NigiriSet(quantity));
+     *                 }
+     *                 <p>
+     *                 private static Stage primaryStage; // **Declare static Stage**
+     *                 <p>
+     *                 private void setPrimaryStage(Stage stage) {
+     *                 HelloApplication.primaryStage = stage;
+     *                 }
+     *                 <p>
+     *                 static public Stage getPrimaryStage() {
+     *                 return HelloApplication.primaryStage;
+     *                 }
+     */
 
     @Override
     public void start(Stage stage) throws IOException {

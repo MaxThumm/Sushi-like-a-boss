@@ -47,7 +47,7 @@ public class HelloController {
         catch (NumberFormatException e) {
             quantity = 1;
         }
-        HelloApplication.addSakeNigiri(quantity);
+        HelloApplication.addSushi(new SakeNigiri(quantity));
         //Ads the newly ordered amount to the shopping cart list
         reloadOrders();
         //Changes the text to the new amount
@@ -68,7 +68,7 @@ Removing number of Sake Nigiri from input field from order
         catch (NumberFormatException e) {
             quantityRemove = 1;
         }
-        HelloApplication.removeSakeNigiri(quantityRemove);
+        HelloApplication.removeSushi(new SakeNigiri (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " Sake Nigiri removed from your shopping cart";
         welcomeText.setText(text);

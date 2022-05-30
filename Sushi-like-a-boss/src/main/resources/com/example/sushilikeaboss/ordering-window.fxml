@@ -20,12 +20,12 @@
       <content>
          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="526.0" prefWidth="1000.0" style="-fx-background-color: #424242; -fx-border-color: #424242;">
             <children>
-               <Button layoutX="282.0" layoutY="73.0" onAction="#removeSakeNigiri" style="-fx-background-color: #fffffb;" text="Remove">
+               <Button layoutX="282.0" layoutY="73.0" onAction="#removeLargeSet" style="-fx-background-color: #fffffb;" text="Remove">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
                </Button>
-               <Button layoutX="282.0" layoutY="37.0" onAction="#addSakeNigiri" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
+               <Button layoutX="282.0" layoutY="37.0" onAction="#addLargeSet" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
@@ -40,8 +40,8 @@
                      <Image url="@Mixed%20set%20small.png" />
                   </image>
                </ImageView>
-               <TextField fx:id="removeSakeNigiriQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="72.0" prefHeight="26.0" prefWidth="33.0" text="1" />
-               <TextField fx:id="addSakeNigiriQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="37.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <TextField fx:id="removeLargeSetQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="72.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <TextField fx:id="addLargeSetQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="37.0" prefHeight="26.0" prefWidth="33.0" text="1" />
                <ImageView fitHeight="148.0" fitWidth="148.0" focusTraversable="true" layoutX="14.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@Veggie%20set.png" />
@@ -52,18 +52,18 @@
                      <Image url="@Nigiri%20&amp;%20Maki%20set.png" />
                   </image>
                </ImageView>
-               <Button layoutX="282.0" layoutY="212.0" onAction="#removeEbiNigiri" style="-fx-background-color: #fffffb;" text="Remove">
+               <Button layoutX="282.0" layoutY="212.0" onAction="#removeSmallSet" style="-fx-background-color: #fffffb;" text="Remove">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
                </Button>
-               <Button layoutX="282.0" layoutY="176.0" onAction="#addEbiNigiri" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
+               <Button layoutX="282.0" layoutY="176.0" onAction="#addSmallSet" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
                </Button>
-               <TextField fx:id="removeEbiNigiriQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="211.0" prefHeight="26.0" prefWidth="33.0" text="1" />
-               <TextField fx:id="addEbiNigiriQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="176.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <TextField fx:id="addSmallSetQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="211.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <TextField fx:id="removeSmallSetQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="176.0" prefHeight="26.0" prefWidth="33.0" text="1" />
                <Button layoutX="282.0" layoutY="360.0" onAction="#removeSakeNigiri" style="-fx-background-color: #fffffb;" text="Remove">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />

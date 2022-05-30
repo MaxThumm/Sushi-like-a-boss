@@ -33,6 +33,15 @@ public class HelloController {
     @FXML
     private TextField removeInariNigiriQ;
 
+    //Input field for quantity of small sets to be removed from order
+    @FXML
+    private TextField removeSmallSetQ;
+
+    //Input field for quantity of large sets to be removed from order
+    @FXML
+    private TextField removeLargeSetQ;
+
+
 
     //Input field for quantity of Sake Nigiri to be added to order
     @FXML
@@ -49,6 +58,15 @@ public class HelloController {
     //Input field for quantity of Sake Inari to be added to order
     @FXML
     private TextField addInariNigiriQ;
+
+    //Input field for quantity of small sets to be added to order
+    @FXML
+    private TextField addSmallSetQ;
+
+    //Input field for quantity of large sets to be added to order
+    @FXML
+    private TextField addLargeSetQ;
+
 
     @FXML
     protected void onHelloButtonClick() {
@@ -157,6 +175,54 @@ public class HelloController {
     }
 
     /**
+     * Adding number of small sets from input field to order
+     */
+    @FXML
+    private void addSmallSet() {
+        int quantity;
+        try {
+            quantity = Integer.parseInt(addSmallSetQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantity = 1;
+        }
+        HelloApplication.addSushi(new SmallSet(quantity));
+        //Ads the newly ordered amount to the shopping cart list
+        reloadOrders();
+        //Changes the text to the new amount
+        String text = quantity + " Small set added to your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
+
+    /**
+     * Adding number of large sets from input field to order
+     */
+    @FXML
+    private void addLargeSet() {
+        int quantity;
+        try {
+            quantity = Integer.parseInt(addLargeSetQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantity = 1;
+        }
+        HelloApplication.addSushi(new LargeSet(quantity));
+        //Ads the newly ordered amount to the shopping cart list
+        reloadOrders();
+        //Changes the text to the new amount
+        String text = quantity + " large set added to your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
+
+    /**
     Removing number of Sake Nigiri from input field from order
     */
     @FXML
@@ -228,6 +294,44 @@ public class HelloController {
         HelloApplication.removeSushi(new InariNigri (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " Inari Nigiri removed from your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
+
+    @FXML
+    private void removeSmallSet() {
+        int quantityRemove;
+        try {
+            quantityRemove = Integer.parseInt(removeSmallSetQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantityRemove = 1;
+        }
+        HelloApplication.removeSushi(new SmallSet (quantityRemove));
+        reloadOrders();
+        String text = quantityRemove + " small set removed from your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
+
+    @FXML
+    private void removeLargeSet() {
+        int quantityRemove;
+        try {
+            quantityRemove = Integer.parseInt(removeLargeSetQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantityRemove = 1;
+        }
+        HelloApplication.removeSushi(new LargeSet (quantityRemove));
+        reloadOrders();
+        String text = quantityRemove + " large set removed from your shopping cart";
         welcomeText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;

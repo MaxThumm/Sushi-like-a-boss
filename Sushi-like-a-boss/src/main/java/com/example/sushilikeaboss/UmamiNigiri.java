@@ -1,7 +1,7 @@
 package com.example.sushilikeaboss;
 
 public class UmamiNigiri extends Sushi {
-    protected UmamiNigiri(String name, int quantity, double price) {
+    protected UmamiNigiri(int quantity) {
         super("Umami Nigiri", quantity, 2.7);
     }
 }

@@ -29,7 +29,7 @@
          <Image url="@einzelnes-sushi-1.jpg" />
       </image>
     </ImageView>
-   <ImageView fitHeight="264.0" fitWidth="341.0" focusTraversable="true" layoutX="76.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
+   <ImageView fitHeight="264.0" fitWidth="341.0" focusTraversable="true" layoutX="76.0" layoutY="154.0" onMouseClicked="#switchtoScene3" onMouseEntered="#switchtoScene3" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@22-sushi-menu.jpg" />
       </image>

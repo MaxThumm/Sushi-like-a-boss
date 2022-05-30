@@ -21,9 +21,34 @@ public class HelloController {
     @FXML
     private TextField removeSakeNigiriQ;
 
+    //Input field for quantity of Ebi Nigiri to be removed from order
+    @FXML
+    private TextField removeEbiNigiriQ;
+
+    //Input field for quantity of Umami Nigiri to be removed from order
+    @FXML
+    private TextField removeUmamiNigiriQ;
+
+    //Input field for quantity of Inari Nigiri to be removed from order
+    @FXML
+    private TextField removeInariNigiriQ;
+
+
     //Input field for quantity of Sake Nigiri to be added to order
     @FXML
     private TextField addSakeNigiriQ;
+
+    //Input field for quantity of Umami Nigiri to be added to order
+    @FXML
+    private TextField addUmamiNigiriQ;
+
+    //Input field for Ebi Nigiri that should be added to order
+    @FXML
+    private TextField addEbiNigiriQ;
+
+    //Input field for quantity of Sake Inari to be added to order
+    @FXML
+    private TextField addInariNigiriQ;
 
     @FXML
     protected void onHelloButtonClick() {
@@ -35,8 +60,8 @@ public class HelloController {
 
     }
 
-    /*
-    Adding number of Sake Nigiri from input field to order
+    /**
+     * Adding number of Sake Nigiri from input field to order
      */
     @FXML
     private void addSakeNigiri() {
@@ -52,13 +77,88 @@ public class HelloController {
         reloadOrders();
         //Changes the text to the new amount
         String text = quantity + " Sake Nigiri added to your shopping cart";
-        //Changes the text to the new price
-        totalCostsBasketText.setText("CHF " + HelloApplication.orders.get(0).getTotal());
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
     }
 
-    /*
-Removing number of Sake Nigiri from input field from order
- */
+    /**
+     * Adding number of Ebi Nigiri from input field to order
+     */
+    @FXML
+    private void addEbiNigiri() {
+        int quantity;
+        try {
+            quantity = Integer.parseInt(addEbiNigiriQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantity = 1;
+        }
+        HelloApplication.addSushi(new EbiNigiri(quantity));
+        //Ads the newly ordered amount to the shopping cart list
+        reloadOrders();
+        //Changes the text to the new amount
+        String text = quantity + " Ebi Nigiri added to your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
+
+    /**
+     * Adding number of Umami Nigiri from input field to order
+     */
+    @FXML
+    private void addUmamiNigiri() {
+        int quantity;
+        try {
+            quantity = Integer.parseInt(addUmamiNigiriQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantity = 1;
+        }
+        HelloApplication.addSushi(new UmamiNigiri(quantity));
+        //Ads the newly ordered amount to the shopping cart list
+        reloadOrders();
+        //Changes the text to the new amount
+        String text = quantity + " Umami Nigiri added to your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
+
+    /**
+     * Adding number of Umami Nigiri from input field to order
+     */
+    @FXML
+    private void addInariNigiri() {
+        int quantity;
+        try {
+            quantity = Integer.parseInt(addInariNigiriQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantity = 1;
+        }
+        HelloApplication.addSushi(new InariNigri(quantity));
+        //Ads the newly ordered amount to the shopping cart list
+        reloadOrders();
+        //Changes the text to the new amount
+        String text = quantity + " Inari Nigiri added to your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
+
+    /**
+    Removing number of Sake Nigiri from input field from order
+    */
     @FXML
     private void removeSakeNigiri() {
         int quantityRemove;
@@ -72,10 +172,68 @@ Removing number of Sake Nigiri from input field from order
         reloadOrders();
         String text = quantityRemove + " Sake Nigiri removed from your shopping cart";
         welcomeText.setText(text);
-        //Changes the text to the new price
-        totalCostsBasketText.setText("CHF " + HelloApplication.orders.get(0).getTotal());
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
     }
 
+    @FXML
+    private void removeEbiNigiri() {
+        int quantityRemove;
+        try {
+            quantityRemove = Integer.parseInt(removeEbiNigiriQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantityRemove = 1;
+        }
+        HelloApplication.removeSushi(new EbiNigiri (quantityRemove));
+        reloadOrders();
+        String text = quantityRemove + " Ebi Nigiri removed from your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
+
+    @FXML
+    private void removeUmamiNigiri() {
+        int quantityRemove;
+        try {
+            quantityRemove = Integer.parseInt(removeUmamiNigiriQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantityRemove = 1;
+        }
+        HelloApplication.removeSushi(new UmamiNigiri (quantityRemove));
+        reloadOrders();
+        String text = quantityRemove + " Umami Nigiri removed from your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
+
+    @FXML
+    private void removeInariNigiri() {
+        int quantityRemove;
+        try {
+            quantityRemove = Integer.parseInt(removeInariNigiriQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantityRemove = 1;
+        }
+        HelloApplication.removeSushi(new InariNigri (quantityRemove));
+        reloadOrders();
+        String text = quantityRemove + " Inari Nigiri removed from your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
 
     @FXML
     private ListView<String> aktelleBestellungListView;

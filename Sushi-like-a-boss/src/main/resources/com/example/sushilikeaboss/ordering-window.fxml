@@ -5,8 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -18,6 +16,82 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
+   <ScrollPane hbarPolicy="NEVER" layoutX="40.0" layoutY="160.0" prefHeight="405.0" prefWidth="1000.0" style="-fx-background-color: #424242;">
+      <content>
+         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="526.0" prefWidth="1000.0" style="-fx-background-color: #424242; -fx-border-color: #424242;">
+            <children>
+               <Button layoutX="282.0" layoutY="73.0" onAction="#removeSakeNigiri" style="-fx-background-color: #fffffb;" text="Remove">
+                  <font>
+                     <Font name="Raleway Regular" size="12.0" />
+                  </font>
+               </Button>
+               <Button layoutX="282.0" layoutY="37.0" onAction="#addSakeNigiri" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
+                  <font>
+                     <Font name="Raleway Regular" size="12.0" />
+                  </font>
+               </Button>
+               <ImageView fitHeight="148.0" fitWidth="162.0" focusTraversable="true" layoutX="7.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@Mixed%20set%20large.png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="148.0" fitWidth="148.0" focusTraversable="true" layoutX="14.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@Mixed%20set%20small.png" />
+                  </image>
+               </ImageView>
+               <TextField fx:id="removeSakeNigiriQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="72.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <TextField fx:id="addSakeNigiriQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="37.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <ImageView fitHeight="148.0" fitWidth="148.0" focusTraversable="true" layoutX="14.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@Veggie%20set.png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="148.0" fitWidth="148.0" focusTraversable="true" layoutX="14.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@Nigiri%20&amp;%20Maki%20set.png" />
+                  </image>
+               </ImageView>
+               <Button layoutX="282.0" layoutY="212.0" onAction="#removeEbiNigiri" style="-fx-background-color: #fffffb;" text="Remove">
+                  <font>
+                     <Font name="Raleway Regular" size="12.0" />
+                  </font>
+               </Button>
+               <Button layoutX="282.0" layoutY="176.0" onAction="#addEbiNigiri" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
+                  <font>
+                     <Font name="Raleway Regular" size="12.0" />
+                  </font>
+               </Button>
+               <TextField fx:id="removeEbiNigiriQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="211.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <TextField fx:id="addEbiNigiriQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="176.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <Button layoutX="282.0" layoutY="360.0" onAction="#removeSakeNigiri" style="-fx-background-color: #fffffb;" text="Remove">
+                  <font>
+                     <Font name="Raleway Regular" size="12.0" />
+                  </font>
+               </Button>
+               <Button layoutX="282.0" layoutY="324.0" onAction="#addUmamiNigiri" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
+                  <font>
+                     <Font name="Raleway Regular" size="12.0" />
+                  </font>
+               </Button>
+               <TextField fx:id="removeUmamiNigiriQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="359.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <TextField fx:id="addUmamiNigiriQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="324.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <Button layoutX="282.0" layoutY="477.0" onAction="#removeSakeNigiri" style="-fx-background-color: #fffffb;" text="Remove">
+                  <font>
+                     <Font name="Raleway Regular" size="12.0" />
+                  </font>
+               </Button>
+               <Button layoutX="282.0" layoutY="441.0" onAction="#addSakeNigiri" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
+                  <font>
+                     <Font name="Raleway Regular" size="12.0" />
+                  </font>
+               </Button>
+               <TextField fx:id="removeSakeNigiriQ12" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="476.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <TextField fx:id="addSakeNigiriQ12" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="441.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+            </children>
+         </AnchorPane>
+      </content>
+   </ScrollPane>
    <AnchorPane layoutX="-46.0" layoutY="-6.0" prefHeight="123.0" prefWidth="837.0" style="-fx-background-color: #dcedc7;" AnchorPane.leftAnchor="-66.0" AnchorPane.rightAnchor="-23.0">
       <children>
          <Text layoutX="240.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Choose your Sushis" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="240.01797485351562">
@@ -29,114 +103,6 @@
    </AnchorPane>
 
     <Label fx:id="welcomeText" />
-   <TabPane layoutY="117.0" prefHeight="345.0" prefWidth="398.0" tabClosingPolicy="UNAVAILABLE">
-     <tabs>
-       <Tab text="Nigiri">
-         <content>
-           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="552.0">
-                  <children>
-                     <ScrollPane hvalue="0.4" prefHeight="314.0" prefWidth="398.0">
-                       <content>
-                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="406.0" prefWidth="398.0" style="-fx-background-color: #dcedc7; -fx-border-color: #424242;">
-                              <children>
-                                  <ImageView fitHeight="148.0" fitWidth="148.0" focusTraversable="true" layoutX="33.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
-                                      <image>
-                                          <Image url="@quadrat-einzelnes-nigrijpg.jpg" />
-                                      </image>
-                                  </ImageView>
-                                 <Button layoutX="206.0" layoutY="77.0" onAction="#addSakeNigiri" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
-                                    <font>
-                                       <Font name="Raleway Regular" size="12.0" />
-                                    </font>
-                                 </Button>
-                                 <Button layoutX="206.0" layoutY="125.0" onAction="#removeSakeNigiri" style="-fx-background-color: #fffffb;" text="Remove">
-                                    <font>
-                                       <Font name="Raleway Regular" size="12.0" />
-                                    </font>
-                                 </Button>
-                                 <Label layoutX="206.0" layoutY="50.0" text="Sake Nigiri">
-                                    <font>
-                                       <Font name="Raleway Bold" size="13.0" />
-                                    </font>
-                                 </Label>
-                                 <TextField fx:id="removeSakeNigiriQ" alignment="CENTER_RIGHT" layoutX="304.0" layoutY="125.0" prefHeight="26.0" prefWidth="33.0" text="1" />
-                                 <TextField fx:id="addSakeNigiriQ" alignment="CENTER_RIGHT" layoutX="304.0" layoutY="77.0" prefHeight="26.0" prefWidth="33.0" text="1" />
-                                 <ImageView fitHeight="148.0" fitWidth="148.0" focusTraversable="true" layoutX="33.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@quadrat-einzelnes-nigrijpg.jpg" />
-                                    </image>
-                                 </ImageView>
-                                 <Button layoutX="207.0" layoutY="264.0" onAction="#addSakeNigiri" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
-                                    <font>
-                                       <Font name="Raleway Regular" size="12.0" />
-                                    </font>
-                                 </Button>
-                                 <Button layoutX="206.0" layoutY="313.0" onAction="#onHelloButtonClick" style="-fx-background-color: #fffffb;" text="Remove">
-                                    <font>
-                                       <Font name="Raleway Regular" size="12.0" />
-                                    </font>
-                                 </Button>
-                                 <Label layoutX="206.0" layoutY="238.0" text="Sake Nigiri">
-                                    <font>
-                                       <Font name="System Bold" size="13.0" />
-                                    </font>
-                                 </Label>
-                                 <TextField alignment="CENTER_RIGHT" layoutX="304.0" layoutY="313.0" prefHeight="26.0" prefWidth="33.0" text="1" />
-                                 <TextField alignment="CENTER_RIGHT" layoutX="303.0" layoutY="265.0" prefHeight="26.0" prefWidth="33.0" text="1" />
-                              </children>
-                           </AnchorPane>
-                       </content>
-                     </ScrollPane>
-                  </children>
-               </AnchorPane>
-         </content>
-       </Tab>
-       <Tab text="Maki">
-         <content>
-           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                  <children>
-                     <ScrollPane prefHeight="314.0" prefWidth="400.0">
-                       <content>
-                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="313.0" prefWidth="398.0">
-                              <children>
-                                 <ImageView fitHeight="148.0" fitWidth="162.0" focusTraversable="true" layoutX="29.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@ezgif.com-gif-maker.png" />
-                                    </image>
-                                 </ImageView>
-                                 <TextField layoutX="295.0" layoutY="101.0" prefHeight="49.0" prefWidth="59.0">
-                                    <font>
-                                       <Font name="Raleway Regular" size="21.0" />
-                                    </font>
-                                 </TextField>
-                                 <Button layoutX="218.0" layoutY="99.0" onAction="#onHelloButtonClick" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
-                                    <font>
-                                       <Font name="Raleway Regular" size="12.0" />
-                                    </font>
-                                 </Button>
-                                 <Button layoutX="224.0" layoutY="129.0" onAction="#onHelloButtonClick" style="-fx-background-color: #fffffb;" text="Remove">
-                                    <font>
-                                       <Font name="Raleway Regular" size="12.0" />
-                                    </font>
-                                 </Button>
-                              </children>
-                           </AnchorPane>
-                       </content>
-                     </ScrollPane>
-                  </children>
-               </AnchorPane>
-         </content>
-       </Tab>
-         <Tab text="Sets">
-            <content>
-               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-         </Tab>
-     </tabs>
-      <opaqueInsets>
-         <Insets />
-      </opaqueInsets>
-   </TabPane>
    <ListView fx:id="aktelleBestellungListView" layoutX="640.0" layoutY="174.0" prefHeight="200.0" prefWidth="233.0" />
    <Text fill="WHITE" layoutX="640.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Warenkorb">
       <font>

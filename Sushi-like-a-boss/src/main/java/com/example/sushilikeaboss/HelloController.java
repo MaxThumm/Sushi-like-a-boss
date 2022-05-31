@@ -489,7 +489,7 @@ public class HelloController {
         stage = HelloApplication.getPrimaryStage();
         stage.setScene(scene);
         stage.show();
-
+        reloadOrders();
     }
 
     public void switchToCustom(ActionEvent event) throws IOException {

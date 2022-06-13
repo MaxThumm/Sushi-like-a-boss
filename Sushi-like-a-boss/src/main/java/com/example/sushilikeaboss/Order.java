@@ -19,14 +19,15 @@ public class Order {
     Getter for item list of order
     @return Item list of the order
      */
-    public ArrayList<Sushi> getItems (){
+    public ArrayList<Sushi> getItems() {
         return items;
     }
-    public void addItem(Sushi item){
+
+    public void addItem(Sushi item) {
         boolean isInItems = false;
-        for (Sushi s:items) {
+        for (Sushi s : items) {
             if (s.getClass() == item.getClass()) {
-                s.setQuantity(s.getQuantity()+item.getQuantity());
+                s.setQuantity(s.getQuantity() + item.getQuantity());
                 isInItems = true;
             }
         }
@@ -36,13 +37,15 @@ public class Order {
         updateTotal();
     }
 
+
     /**
      * Removes sushi items from order
+     *
      * @param item is sushi that should be removed
      */
-    public void removeItem(Sushi item){
+    public void removeItem(Sushi item) {
         Sushi itemToRemove = null;
-        for (Sushi s: items){
+        for (Sushi s : items) {
             if (s.getClass() == item.getClass()) {
                 int newQuantity = s.getQuantity() - item.getQuantity();
                 if (newQuantity > 0) {
@@ -59,13 +62,12 @@ public class Order {
     }
 
 
-
     /*
     Updating total price of the current order.
      */
     private void updateTotal() {
         double newTotal = 0;
-        for (Sushi s:items) {
+        for (Sushi s : items) {
             newTotal = newTotal + (s.getPrice() * s.getQuantity());
         }
         total = newTotal;
@@ -104,5 +106,14 @@ public class Order {
 
     public void setOrdered(boolean ordered) {
         isOrdered = ordered;
+    }
+
+    public int getQuantityOfSushi(Class<? extends Sushi> clazz) {
+        for (Sushi item : getItems()) {
+            if (clazz == item.getClass()) {
+                return item.getQuantity();
+            }
+        }
+        return 0;
     }
 }

@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -92,6 +93,7 @@ public class HelloController {
     //Input field for quantity of large sets to be added to order
     @FXML
     private TextField addLargeSetQ;
+
 
 
 
@@ -296,6 +298,59 @@ public class HelloController {
         totalCostsBasketText.setText("CHF " + decimalPrice);
     }
 
+    @FXML
+    private Button addARecircleBox;
+
+    /**
+     * Adds a recircle box to the order if there is no box in the order. Then changes the text in the button to "remove"
+     * and when klicked box is removed from the order.
+     */
+    @FXML
+    private void addRecircleBox() {
+        int quantity;
+        //könnte ich noch anpassen auf die Menge die benötigt wird
+        quantity = 1;
+        //gets the current order and saves it as new variable
+        Order currentOrder = HelloApplication.orders.get(0);
+        //gets the quantitiy of recircle boxes in the current order and saves it as new variable
+        int quantityInOrder = currentOrder.getQuantityOfSushi(Recircle.class);
+        if (quantityInOrder <= 0) {
+            HelloApplication.addSushi(new Recircle(quantity));
+            //Ads the newly ordered amount to the shopping cart list
+            reloadOrders();
+            //Changes the text to the new amount
+            String text = quantity + " Recircle Box added to your shopping cart";
+            welcomeText.setText(text);
+            // saves the price in decimal values in order to avoid long numbers after comma
+            double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal() * 100.0) / 100.0;
+            //Changes the text to the new price in decimal
+            totalCostsBasketText.setText("CHF " + decimalPrice);
+            //If Box has been put into shopping cart the text is changed to remove
+            addARecircleBox.setText("Remove");
+
+        }
+        else{
+            try {
+                quantity = Integer.parseInt(removeSakeNigiriQ.getText());
+            }
+            catch (NumberFormatException e) {
+                quantity = 1;
+            }
+            HelloApplication.removeItem(new Recircle (quantity));
+            reloadOrders();
+            String text = quantity + " Recircle Box removed from your shopping cart";
+            welcomeText.setText(text);
+            // saves the price in decimal values in order to avoid long numbers after comma
+            double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+            //Changes the text to the new price in decimal
+            totalCostsBasketText.setText("CHF " + decimalPrice);
+            addARecircleBox.setText("Add");
+
+        }
+    }
+
+
+
     /**
     Removing number of Sake Nigiri from input field from order
     */
@@ -308,7 +363,7 @@ public class HelloController {
         catch (NumberFormatException e) {
             quantityRemove = 1;
         }
-        HelloApplication.removeSushi(new SakeNigiri (quantityRemove));
+        HelloApplication.removeItem(new SakeNigiri (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " Sake Nigiri removed from your shopping cart";
         welcomeText.setText(text);
@@ -327,7 +382,7 @@ public class HelloController {
         catch (NumberFormatException e) {
             quantityRemove = 1;
         }
-        HelloApplication.removeSushi(new EbiNigiri (quantityRemove));
+        HelloApplication.removeItem(new EbiNigiri (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " Ebi Nigiri removed from your shopping cart";
         welcomeText.setText(text);
@@ -346,7 +401,7 @@ public class HelloController {
         catch (NumberFormatException e) {
             quantityRemove = 1;
         }
-        HelloApplication.removeSushi(new UmamiNigiri (quantityRemove));
+        HelloApplication.removeItem(new UmamiNigiri (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " Umami Nigiri removed from your shopping cart";
         welcomeText.setText(text);
@@ -365,7 +420,7 @@ public class HelloController {
         catch (NumberFormatException e) {
             quantityRemove = 1;
         }
-        HelloApplication.removeSushi(new InariNigri (quantityRemove));
+        HelloApplication.removeItem(new InariNigri (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " Inari Nigiri removed from your shopping cart";
         welcomeText.setText(text);
@@ -384,7 +439,7 @@ public class HelloController {
         catch (NumberFormatException e) {
             quantityRemove = 1;
         }
-        HelloApplication.removeSushi(new TamagoNigiri (quantityRemove));
+        HelloApplication.removeItem(new TamagoNigiri (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " Tamago Nigiri removed from your shopping cart";
         welcomeText.setText(text);
@@ -403,7 +458,7 @@ public class HelloController {
         catch (NumberFormatException e) {
             quantityRemove = 1;
         }
-        HelloApplication.removeSushi(new MaguroNigri (quantityRemove));
+        HelloApplication.removeItem(new MaguroNigri (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " Maguro Nigiri removed from your shopping cart";
         welcomeText.setText(text);
@@ -422,7 +477,7 @@ public class HelloController {
         catch (NumberFormatException e) {
             quantityRemove = 1;
         }
-        HelloApplication.removeSushi(new SmallSet (quantityRemove));
+        HelloApplication.removeItem(new SmallSet (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " small set removed from your shopping cart";
         welcomeText.setText(text);
@@ -441,7 +496,7 @@ public class HelloController {
         catch (NumberFormatException e) {
             quantityRemove = 1;
         }
-        HelloApplication.removeSushi(new LargeSet (quantityRemove));
+        HelloApplication.removeItem(new LargeSet (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " large set removed from your shopping cart";
         welcomeText.setText(text);

@@ -2,7 +2,7 @@ package com.example.sushilikeaboss;
 
 import java.util.ArrayList;
 
-public abstract class Recircle extends Sushi {
+public class Recircle extends Sushi {
 
 
     protected Recircle(int quantity) {

@@ -55,7 +55,7 @@ public class HelloApplication extends Application {
      *
      * @param quantity desired quantity to remove from the shopping cart
      */
-    public static void removeSushi (Sushi sushi) {
+    public static void removeItem (Sushi sushi) {
         orders.get(0).removeItem(sushi);
     }
 

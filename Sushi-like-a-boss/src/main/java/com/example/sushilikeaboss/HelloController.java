@@ -330,12 +330,6 @@ public class HelloController {
 
         }
         else{
-            try {
-                quantity = Integer.parseInt(removeSakeNigiriQ.getText());
-            }
-            catch (NumberFormatException e) {
-                quantity = 1;
-            }
             HelloApplication.removeItem(new Recircle (quantity));
             reloadOrders();
             String text = quantity + " Recircle Box removed from your shopping cart";
@@ -344,7 +338,52 @@ public class HelloController {
             double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
             //Changes the text to the new price in decimal
             totalCostsBasketText.setText("CHF " + decimalPrice);
-            addARecircleBox.setText("Add");
+            addARecircleBox.setText("Select");
+
+        }
+    }
+
+    @FXML
+    private Button oneWayBox;
+
+    /**
+     * Adds a recircle box to the order if there is no box in the order. Then changes the text in the button to "remove"
+     * and when klicked box is removed from the order.
+     */
+    @FXML
+    private void addOneWayBox() {
+        int quantity;
+        //könnte ich noch anpassen auf die Menge die benötigt wird
+        quantity = 1;
+        //gets the current order and saves it as new variable
+        Order currentOrder = HelloApplication.orders.get(0);
+        //gets the quantitiy of recircle boxes in the current order and saves it as new variable
+        int quantityInOrder = currentOrder.getQuantityOfSushi(OneWayBox.class);
+        if (quantityInOrder <= 0) {
+            HelloApplication.addSushi(new OneWayBox(quantity));
+            //Ads the newly ordered amount to the shopping cart list
+            reloadOrders();
+            //Changes the text to the new amount
+            String text = quantity + " Oneway Box added to your shopping cart";
+            welcomeText.setText(text);
+            // saves the price in decimal values in order to avoid long numbers after comma
+            double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal() * 100.0) / 100.0;
+            //Changes the text to the new price in decimal
+            totalCostsBasketText.setText("CHF " + decimalPrice);
+            //If Box has been put into shopping cart the text is changed to remove
+            oneWayBox.setText("Remove");
+
+        }
+        else{
+            HelloApplication.removeItem(new OneWayBox (quantity));
+            reloadOrders();
+            String text = quantity + " Oneway Box removed from your shopping cart";
+            welcomeText.setText(text);
+            // saves the price in decimal values in order to avoid long numbers after comma
+            double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+            //Changes the text to the new price in decimal
+            totalCostsBasketText.setText("CHF " + decimalPrice);
+            oneWayBox.setText("Select");
 
         }
     }

@@ -125,7 +125,7 @@
                      <Font name="Raleway SemiBold" size="24.0" />
                   </font>
                </Text>
-               <Button layoutX="288.0" layoutY="207.0" onAction="#addSakeNigiri" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: #fffffb;" text="Select">
+               <Button fx:id="oneWayBox" layoutX="288.0" layoutY="207.0" onAction="#addOneWayBox" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: #fffffb;" text="Select">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>

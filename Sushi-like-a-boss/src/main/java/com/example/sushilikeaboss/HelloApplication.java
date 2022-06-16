@@ -38,6 +38,16 @@ public class HelloApplication extends Application {
         orders.get(0).addItem(sushi);
     }
 
+    public static void addShippingInformation(String firstName, String name, int zipCode, String city, String street, String number, String email) {
+        orders.get(0).setFistName(firstName);
+        orders.get(0).setName(name);
+        orders.get(0).setZipCode(zipCode);
+        orders.get(0).setCity(city);
+        orders.get(0).setStreet(street);
+        orders.get(0).setHouseNo(number);
+        orders.get(0).setEmail(email);
+    }
+
 
     private static Stage primaryStage; // **Declare static Stage**
 

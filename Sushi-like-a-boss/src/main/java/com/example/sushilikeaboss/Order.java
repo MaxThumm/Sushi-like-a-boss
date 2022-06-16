@@ -7,6 +7,14 @@ public class Order {
     private ArrayList<Sushi> items;
     private double total;
     private boolean isOrdered;
+    private String shippingMethod;
+    private String fistName;
+    private String name;
+    private int zipCode;
+    private String city;
+    private String street;
+    private String houseNo;
+    private String email;
 
     public Order(int id) {
         this.id = id;
@@ -98,6 +106,70 @@ public class Order {
 
     public void setTotal(double total) {
         this.total = total;
+    }
+
+    public String getShippingMethod() {
+        return shippingMethod;
+    }
+
+    public void setShippingMethod(String shippingMethod) {
+        this.shippingMethod = shippingMethod;
+    }
+
+    public String getFistName() {
+        return fistName;
+    }
+
+    public void setFistName(String fistName) {
+        this.fistName = fistName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(int zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getHouseNo() {
+        return houseNo;
+    }
+
+    public void setHouseNo(String houseNo) {
+        this.houseNo = houseNo;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public boolean isOrdered() {

@@ -1,5 +1,7 @@
 package com.example.sushilikeaboss;
 
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.BooleanBinding;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -93,6 +95,37 @@ public class HelloController {
     //Input field for quantity of large sets to be added to order
     @FXML
     private TextField addLargeSetQ;
+
+    @FXML
+    private ListView<String> aktelleBestellungListView;
+
+    @FXML
+    public Button shippingButton;
+
+    @FXML
+    private TextField firstNameTextField;
+
+    @FXML
+    private TextField nameTextField;
+
+    @FXML
+    private TextField zipTextField;
+
+    @FXML
+    private TextField cityTextField;
+
+    @FXML
+    private TextField streetTextField;
+
+    @FXML
+    private TextField numberTextField;
+
+    @FXML
+    private TextField emailTextField;
+
+
+
+
 
 
 
@@ -546,7 +579,35 @@ public class HelloController {
     }
 
     @FXML
-    private ListView<String> aktelleBestellungListView;
+    private void onShippingButtonClick() {
+        String firstName = firstNameTextField.getText();
+        String name = nameTextField.getText();
+        int zipCode;
+        try {
+            zipCode = Integer.parseInt(zipTextField.getText());
+        }
+        catch (NumberFormatException e) {
+            zipCode = -1;
+        }
+        String city = cityTextField.getText();
+        String street = streetTextField.getText();
+        String houseNo = numberTextField.getText();
+        String email = emailTextField.getText();
+
+        HelloApplication.addShippingInformation(firstName, name, zipCode, city, street, houseNo, email);
+
+        //Changes the text to the new amount
+        String text = "Shipping information saved!";
+        welcomeText.setText(text);
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
 
 
     /**
@@ -594,6 +655,26 @@ public class HelloController {
         stage.setScene(scene);
         stage.show();
 
+    }
+
+    public void switchToCheckout2(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Checkout-2.fxml"));
+        root = fxmlLoader.load();
+        scene = new Scene(root);
+        stage = HelloApplication.getPrimaryStage();
+        stage.setScene(scene);
+        stage.show();
+        reloadOrders();
+    }
+
+    public void switchToCheckout3(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Checkout-3.fxml"));
+        root = fxmlLoader.load();
+        scene = new Scene(root);
+        stage = HelloApplication.getPrimaryStage();
+        stage.setScene(scene);
+        stage.show();
+        reloadOrders();
     }
 
 

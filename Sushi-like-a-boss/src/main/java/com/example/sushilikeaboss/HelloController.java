@@ -123,6 +123,9 @@ public class HelloController {
     @FXML
     private TextField emailTextField;
 
+    @FXML
+    private Button expressShippingButton;
+
 
 
 
@@ -133,6 +136,7 @@ public class HelloController {
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Wohoo it works :) Welcome to our Sushi Store!");
+
     }
 
     @FXML
@@ -676,6 +680,35 @@ public class HelloController {
         stage.show();
         reloadOrders();
     }
+
+    /**
+     * Method hands over DeliveryType "Express" to instance of order when express button is klicked.
+     */
+    @FXML
+    protected void expressShippingButtonKlick() {
+        Order currentOrder = HelloApplication.orders.get(0);
+        currentOrder.setDeliveryType(DeliveryType.EXPRESS);
+    }
+
+    /**
+     * Method hands over DeliveryType "Normal" to instance of order when normal button is klicked.
+     */
+    @FXML
+    protected void normalShippingButtonKlick() {
+        Order currentOrder = HelloApplication.orders.get(0);
+        currentOrder.setDeliveryType(DeliveryType.NORMAL);
+    }
+
+    /**
+     * Method hands over DeliveryType "Pickup" to instance of order when pickup button is klicked.
+     */
+    @FXML
+    protected void pickUpShippingButtonKlick() {
+        Order currentOrder = HelloApplication.orders.get(0);
+        currentOrder.setDeliveryType(DeliveryType.PICKUP);
+    }
+
+
 
 
 

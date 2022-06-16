@@ -34,17 +34,17 @@
                      <Font name="Raleway SemiBold" size="24.0" />
                   </font>
                </Text>
-               <Button layoutX="11.0" layoutY="80.0" prefHeight="47.0" prefWidth="286.0" style="-fx-background-color: #fffffb;" text="Pickup">
+               <Button layoutX="11.0" layoutY="80.0" onAction="#pickUpShippingButtonKlick" prefHeight="47.0" prefWidth="286.0" style="-fx-background-color: #fffffb;" text="Pickup">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
                </Button>
-               <Button layoutX="12.0" layoutY="177.0" prefHeight="47.0" prefWidth="285.0" style="-fx-background-color: #fffffb;" text="Normal">
+               <Button layoutX="12.0" layoutY="177.0" onAction="#normalShippingButtonKlick" prefHeight="47.0" prefWidth="285.0" style="-fx-background-color: #fffffb;" text="Normal">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
                </Button>
-               <Button layoutX="11.0" layoutY="274.0" prefHeight="47.0" prefWidth="286.0" style="-fx-background-color: #fffffb;" text="Express">
+               <Button layoutX="11.0" layoutY="274.0" onAction="#expressShippingButtonKlick" prefHeight="47.0" prefWidth="286.0" style="-fx-background-color: #fffffb;" text="Express">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>

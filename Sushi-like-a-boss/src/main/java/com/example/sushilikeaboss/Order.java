@@ -15,6 +15,7 @@ public class Order {
     private String street;
     private String houseNo;
     private String email;
+    private DeliveryType deliveryType;
 
     public Order(int id) {
         this.id = id;
@@ -43,6 +44,22 @@ public class Order {
             this.items.add(item);
         }
         updateTotal();
+    }
+
+    /**
+     * Setter for delivery type
+     * @param deliveryType hands delivery type to instance variable
+    */
+    public void setDeliveryType(DeliveryType deliveryType){
+        this.deliveryType = deliveryType;
+    }
+
+    /**
+     * Getter for delivery type
+     * @return delivery type of instance
+     */
+    public DeliveryType getDeliveryType(){
+        return deliveryType;
     }
 
 

@@ -32,12 +32,12 @@
      <content>
        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="1030.0" style="-fx-background-color: #424242; -fx-border-color: #424242;">
             <children>
-               <Button layoutX="283.0" layoutY="398.0" onAction="#removeSakeNigiri" style="-fx-background-color: #fffffb;" text="Remove">
+               <Button layoutX="283.0" layoutY="398.0" onAction="#removeSoySauce" style="-fx-background-color: #fffffb;" text="Remove">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
                </Button>
-               <Button layoutX="283.0" layoutY="362.0" onAction="#addSakeNigiri" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
+               <Button layoutX="283.0" layoutY="362.0" onAction="#addSoySauce" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
@@ -52,49 +52,49 @@
                         <Image url="@chopstick.png" />
                     </image>
                 </ImageView>
-               <TextField fx:id="removeSakeNigiriQ" alignment="CENTER_RIGHT" layoutX="357.0" layoutY="397.0" prefHeight="26.0" prefWidth="33.0" text="1" />
-               <TextField fx:id="addSakeNigiriQ" alignment="CENTER_RIGHT" layoutX="357.0" layoutY="362.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <TextField fx:id="removeSoySauceQ" alignment="CENTER_RIGHT" layoutX="357.0" layoutY="397.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <TextField fx:id="addSoySauceQ" alignment="CENTER_RIGHT" layoutX="357.0" layoutY="362.0" prefHeight="26.0" prefWidth="33.0" text="1" />
                <ImageView fitHeight="76.0" fitWidth="76.0" focusTraversable="true" layoutX="51.0" layoutY="575.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@Ginger.png" />
                   </image>
                </ImageView>
-               <Button layoutX="283.0" layoutY="506.0" onAction="#removeEbiNigiri" style="-fx-background-color: #fffffb;" text="Remove">
+               <Button layoutX="283.0" layoutY="506.0" onAction="#removeChopsticks" style="-fx-background-color: #fffffb;" text="Remove">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
                </Button>
-               <Button layoutX="283.0" layoutY="470.0" onAction="#addEbiNigiri" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
+               <Button layoutX="283.0" layoutY="470.0" onAction="#addChopsticks" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
                </Button>
-               <TextField fx:id="removeEbiNigiriQ" alignment="CENTER_RIGHT" layoutX="357.0" layoutY="505.0" prefHeight="26.0" prefWidth="33.0" text="1" />
-               <TextField fx:id="addEbiNigiriQ" alignment="CENTER_RIGHT" layoutX="357.0" layoutY="470.0" prefHeight="26.0" prefWidth="33.0" text="1" />
-               <Button layoutX="283.0" layoutY="614.0" onAction="#removeSakeNigiri" style="-fx-background-color: #fffffb;" text="Remove">
+               <TextField fx:id="removeChopsticksQ" alignment="CENTER_RIGHT" layoutX="357.0" layoutY="505.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <TextField fx:id="addChopsticksQ" alignment="CENTER_RIGHT" layoutX="357.0" layoutY="470.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <Button layoutX="283.0" layoutY="614.0" onAction="#removeGinger" style="-fx-background-color: #fffffb;" text="Remove">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
                </Button>
-               <Button layoutX="283.0" layoutY="578.0" onAction="#addUmamiNigiri" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
+               <Button layoutX="283.0" layoutY="578.0" onAction="#addGinger" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
                </Button>
-               <TextField fx:id="removeUmamiNigiriQ" alignment="CENTER_RIGHT" layoutX="357.0" layoutY="613.0" prefHeight="26.0" prefWidth="33.0" text="1" />
-               <TextField fx:id="addUmamiNigiriQ" alignment="CENTER_RIGHT" layoutX="357.0" layoutY="578.0" prefHeight="26.0" prefWidth="33.0" text="1" />
-               <Button layoutX="283.0" layoutY="722.0" onAction="#removeInariNigiri" style="-fx-background-color: #fffffb;" text="Remove">
+               <TextField fx:id="removeGingerQ" alignment="CENTER_RIGHT" layoutX="357.0" layoutY="613.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <TextField fx:id="addGingerQ" alignment="CENTER_RIGHT" layoutX="357.0" layoutY="578.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <Button layoutX="283.0" layoutY="722.0" onAction="#removeWasabi" style="-fx-background-color: #fffffb;" text="Remove">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
                </Button>
-               <Button layoutX="283.0" layoutY="686.0" onAction="#addInariNigiri" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
+               <Button layoutX="283.0" layoutY="686.0" onAction="#addWasabi" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
                </Button>
-               <TextField fx:id="removeInariNigiriQ" alignment="CENTER_RIGHT" layoutX="357.0" layoutY="721.0" prefHeight="26.0" prefWidth="33.0" text="1" />
-               <TextField fx:id="addInariNigiriQ" alignment="CENTER_RIGHT" layoutX="357.0" layoutY="686.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <TextField fx:id="removeWasabiSauceQ" alignment="CENTER_RIGHT" layoutX="357.0" layoutY="721.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <TextField fx:id="addWasabiQ" alignment="CENTER_RIGHT" layoutX="357.0" layoutY="686.0" prefHeight="26.0" prefWidth="33.0" text="1" />
                <ImageView fitHeight="96.0" fitWidth="92.0" focusTraversable="true" layoutX="43.0" layoutY="675.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@Wasabi.png" />

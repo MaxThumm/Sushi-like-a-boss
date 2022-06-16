@@ -94,9 +94,9 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         setPrimaryStage(stage);
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("start-window.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1800, 900);
-        stage.setTitle("Hello!");
+        stage.setTitle("Maximilian und Nina's Sushishop");
         stage.setScene(scene);
         stage.show();
 

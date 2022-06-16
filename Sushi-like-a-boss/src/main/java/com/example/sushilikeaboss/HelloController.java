@@ -61,6 +61,19 @@ public class HelloController {
     @FXML
     private TextField removeMaguroNigiriQ;
 
+    @FXML
+    private TextField removeChopsticksQ;
+
+    @FXML
+    private TextField removeGingerQ;
+
+    @FXML
+    private TextField removeSoySauceQ;
+
+    @FXML
+    private TextField removeWasabiSauceQ;
+
+
 
 
     //Input field for quantity of Sake Nigiri to be added to order
@@ -97,6 +110,18 @@ public class HelloController {
     private TextField addLargeSetQ;
 
     @FXML
+    private TextField addChopsticksQ;
+
+    @FXML
+    private TextField addSoySauceQ;
+
+    @FXML
+    private TextField addGingerQ;
+
+    @FXML
+    private TextField addWasabiQ;
+
+    @FXML
     private ListView<String> aktelleBestellungListView;
 
     @FXML
@@ -123,8 +148,6 @@ public class HelloController {
     @FXML
     private TextField emailTextField;
 
-    @FXML
-    private Button expressShippingButton;
 
 
 
@@ -328,6 +351,90 @@ public class HelloController {
         reloadOrders();
         //Changes the text to the new amount
         String text = quantity + " large set added to your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
+
+    @FXML
+    private void addChopsticks() {
+        int quantity;
+        try {
+            quantity = Integer.parseInt(addChopsticksQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantity = 1;
+        }
+        HelloApplication.addSushi(new Chopstick(quantity));
+        //Ads the newly ordered amount to the shopping cart list
+        reloadOrders();
+        //Changes the text to the new amount
+        String text = quantity + " chopstick added to your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
+
+    @FXML
+    private void addSoySauce() {
+        int quantity;
+        try {
+            quantity = Integer.parseInt(addSoySauceQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantity = 1;
+        }
+        HelloApplication.addSushi(new SoySauce(quantity));
+        //Ads the newly ordered amount to the shopping cart list
+        reloadOrders();
+        //Changes the text to the new amount
+        String text = quantity + " soy sauce added to your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
+
+    @FXML
+    private void addGinger() {
+        int quantity;
+        try {
+            quantity = Integer.parseInt(addGingerQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantity = 1;
+        }
+        HelloApplication.addSushi(new Ginger(quantity));
+        //Ads the newly ordered amount to the shopping cart list
+        reloadOrders();
+        //Changes the text to the new amount
+        String text = quantity + " ginger added to your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
+
+    @FXML
+    private void addWasabi() {
+        int quantity;
+        try {
+            quantity = Integer.parseInt(addWasabiQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantity = 1;
+        }
+        HelloApplication.addSushi(new Wasabi (quantity));
+        //Ads the newly ordered amount to the shopping cart list
+        reloadOrders();
+        //Changes the text to the new amount
+        String text = quantity + " wasabi added to your shopping cart";
         welcomeText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
@@ -575,6 +682,81 @@ public class HelloController {
         HelloApplication.removeItem(new LargeSet (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " large set removed from your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
+
+    @FXML
+    private void removeChopsticks() {
+        int quantityRemove;
+        try {
+            quantityRemove = Integer.parseInt(removeChopsticksQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantityRemove = 1;
+        }
+        HelloApplication.removeItem(new Chopstick (quantityRemove));
+        reloadOrders();
+        String text = quantityRemove + " chopstick set removed from your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
+
+    @FXML
+    private void removeSoySauce() {
+        int quantityRemove;
+        try {
+            quantityRemove = Integer.parseInt(removeSoySauceQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantityRemove = 1;
+        }
+        HelloApplication.removeItem(new SoySauce (quantityRemove));
+        reloadOrders();
+        String text = quantityRemove + " soy sauce set removed from your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
+    @FXML
+    private void removeGinger() {
+        int quantityRemove;
+        try {
+            quantityRemove = Integer.parseInt(removeGingerQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantityRemove = 1;
+        }
+        HelloApplication.removeItem(new Ginger (quantityRemove));
+        reloadOrders();
+        String text = quantityRemove + " ginger set removed from your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
+
+    @FXML
+    private void removeWasabi() {
+        int quantityRemove;
+        try {
+            quantityRemove = Integer.parseInt(removeWasabiSauceQ.getText());
+        }
+        catch (NumberFormatException e) {
+            quantityRemove = 1;
+        }
+        HelloApplication.removeItem(new Wasabi (quantityRemove));
+        reloadOrders();
+        String text = quantityRemove + " wasabi removed from your shopping cart";
         welcomeText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;

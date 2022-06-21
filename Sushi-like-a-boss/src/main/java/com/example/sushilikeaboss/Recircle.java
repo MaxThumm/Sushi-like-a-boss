@@ -6,7 +6,7 @@ public class Recircle extends Sushi {
 
 
     protected Recircle(int quantity) {
-        super("Depot Recircle Box", quantity, 10);
+        super("Depot Recircle Box", quantity, 10, 0);
     }
 
 }

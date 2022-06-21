@@ -6,6 +6,8 @@ public class Order {
     private int id;
     private ArrayList<Sushi> items;
     private double total;
+
+    private int totalTime;
     private boolean isOrdered;
     private String shippingMethod;
     private String fistName;
@@ -87,7 +89,7 @@ public class Order {
     }
 
 
-    /*
+    /**
     Updating total price of the current order.
      */
     private void updateTotal() {
@@ -98,7 +100,18 @@ public class Order {
         total = newTotal;
     }
 
-    /*
+    /**
+     * Updates the total time needed to prepare the order
+     */
+    private void updateTime(){
+        int newTime = 0;
+        for (Sushi s : items){
+            newTime = newTime + (s.getTime() * s.getQuantity());
+        }
+        totalTime = newTime;
+    }
+
+    /**
     @return String containing all items in the items list. Can be used for order confirmation or status bar.
      */
     public String outputContent() {
@@ -123,6 +136,14 @@ public class Order {
 
     public void setTotal(double total) {
         this.total = total;
+    }
+
+    public int getTotalTime() {
+        return totalTime;
+    }
+
+    public void setTotalTime(int totalTime) {
+        this.totalTime = totalTime;
     }
 
     public String getShippingMethod() {

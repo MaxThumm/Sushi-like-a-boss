@@ -49,7 +49,7 @@
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
                </Button>
-               <Text fill="#dcedc7" layoutX="48.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Your sushi is ready for pickup in 20 minutes." textAlignment="CENTER" wrappingWidth="212.13601684570312">
+               <Text fx:id="timeText" fill="#dcedc7" layoutX="48.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Your sushi is ready for pickup in 20 minutes." textAlignment="CENTER" wrappingWidth="212.13601684570312">
                   <font>
                      <Font name="Raleway SemiBold" size="13.0" />
                   </font>

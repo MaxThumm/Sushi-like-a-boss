@@ -148,6 +148,9 @@ public class HelloController {
     @FXML
     private TextField emailTextField;
 
+    @FXML
+    private Text timeText;
+
 
 
 
@@ -794,6 +797,19 @@ public class HelloController {
 
 
     }
+
+
+
+    /**
+     *
+     */
+    @FXML
+    private void totalTimePickup(){
+        Order currentOrder = HelloApplication.orders.get(0);
+        int timeCurrentOrder = currentOrder.getTotalTime();
+        timeText.setText("Your sushi is ready for pickup in" + String.valueOf(timeCurrentOrder) + "minutes");
+    }
+
 
 
     /**

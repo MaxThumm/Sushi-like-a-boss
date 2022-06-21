@@ -5,7 +5,7 @@ import java.util.List;
 public class SmallSet extends SushiSet {
     protected SmallSet(int quantity) {
         //defining name and price of set
-        super("Small Set", quantity,18.5);
+        super("Small Set", quantity,18.5, 110);
         //adding contents of the Nigiri Set to contents list
         content.addAll(List.of(
                 new EbiNigiri(1),

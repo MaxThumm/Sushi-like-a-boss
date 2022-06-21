@@ -4,7 +4,7 @@ public class Ginger extends Sushi {
 
 
     protected Ginger(int quantity) {
-        super("Ginger", quantity, 0.4);
+        super("Ginger", quantity, 0.4, 0);
     }
 
 }

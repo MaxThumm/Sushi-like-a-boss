@@ -4,7 +4,7 @@ public class SoySauce extends Sushi {
 
 
     protected SoySauce(int quantity) {
-        super("Soy Sauce", quantity, 0.2);
+        super("Soy Sauce", quantity, 0.2, 0);
     }
 
 }

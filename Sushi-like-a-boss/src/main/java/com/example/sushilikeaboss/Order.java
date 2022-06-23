@@ -18,12 +18,14 @@ public class Order {
     private String houseNo;
     private String email;
     private DeliveryType deliveryType;
+    private PaymentMethod paymentMethod;
 
     public Order(int id) {
         this.id = id;
         this.items = new ArrayList<>();
         this.total = 0;
         isOrdered = false;
+        paymentMethod = PaymentMethod.CASH;
     }
 
     /*
@@ -225,5 +227,13 @@ public class Order {
             }
         }
         return 0;
+    }
+
+    public PaymentMethod getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(PaymentMethod paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 }

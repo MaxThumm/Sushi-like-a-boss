@@ -3,8 +3,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -77,6 +79,18 @@
                   </font>
                </Text>
                <TextField id="emailTextField" layoutX="78.0" layoutY="241.0" prefHeight="26.0" prefWidth="271.0" promptText="example@examplemail.com" />
+               <Text fill="#dcedc7" layoutX="14.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Select payment method" wrappingWidth="470.85546875">
+                  <font>
+                     <Font name="Raleway SemiBold" size="24.0" />
+                  </font>
+               </Text>
+               <RadioButton id="cashRButton" layoutX="64.0" layoutY="412.0" mnemonicParsing="false" onAction="#setCashPayment" selected="true" text="Cash" textFill="#dcedc7">
+                  <toggleGroup>
+                     <ToggleGroup fx:id="paymentGroup" />
+                  </toggleGroup>
+               </RadioButton>
+               <RadioButton id="twintRButton" layoutX="64.0" layoutY="452.0" mnemonicParsing="false" onAction="#setTwintPayment" text="Twint" textFill="#dcedc7" toggleGroup="$paymentGroup" />
+               <RadioButton id="creditCardRButton" layoutX="65.0" layoutY="492.0" mnemonicParsing="false" onAction="#setCreditCardPayment" text="Credit Card" textFill="#dcedc7" toggleGroup="$paymentGroup" />
             </children>
          </AnchorPane>
      </content>

@@ -2,15 +2,14 @@ package com.example.sushilikeaboss;
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -151,12 +150,8 @@ public class HelloController {
     @FXML
     private Text timeText;
 
-
-
-
-
-
-
+    public HelloController() {
+    }
 
 
     @FXML
@@ -960,6 +955,31 @@ public class HelloController {
         else {
             switchToCheckout3(event);
         }
+    }
+
+
+
+
+    @FXML
+    private TableView orderTableView;
+
+    @FXML
+    private TableColumn<Sushi, Integer> quantityCol;
+
+    @FXML
+    private TableColumn<Sushi, Integer> itemCol;
+
+    @FXML
+    private TableColumn<Sushi, Integer> priceCol;
+
+
+    private void loadOrderTable() {
+        ObservableList<Sushi> orderList = FXCollections.observableArrayList(HelloApplication.orders.get(0).getItems());
+        orderTableView.setItems(orderList);
+
+        
+        ArrayList<Sushi> sushisInOrder = currentOrder.getItems();
+        ArrayList<String> ordersAsString = new ArrayList<>();
     }
 
 }

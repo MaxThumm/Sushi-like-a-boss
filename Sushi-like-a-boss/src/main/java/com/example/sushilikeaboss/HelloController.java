@@ -879,6 +879,16 @@ public class HelloController {
         reloadOrders();
     }
 
+    public void switchToCheckout4(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Checkout-4.fxml"));
+        root = fxmlLoader.load();
+        scene = new Scene(root);
+        stage = HelloApplication.getPrimaryStage();
+        stage.setScene(scene);
+        stage.show();
+        reloadOrders();
+    }
+
     /**
      * Method hands over DeliveryType "Express" to instance of order when express button is klicked.
      */
@@ -932,7 +942,24 @@ public class HelloController {
     }
 
 
+    @FXML
+    private void placeOrder() {
+        if (!firstNameTextField.getText().trim().equals("") && !nameTextField.getText().trim().equals("") && !zipTextField.getText().trim().equals("") && !cityTextField.getText().trim().equals("") && !streetTextField.getText().trim().equals("") && !numberTextField.getText().trim().equals("") && !emailTextField.getText().trim().equals("")) {
+            welcomeText.setText("Please fill out all text boxes to continue!");
+        }
+        else {
+            //next scene
+        }
+    }
 
-
+    @FXML
+    private void toCheckout(ActionEvent event) throws IOException {
+        if (HelloApplication.orders.get(0).getDeliveryType() == DeliveryType.PICKUP) {
+            switchToCheckout4(event);
+        }
+        else {
+            switchToCheckout3(event);
+        }
+    }
 
 }

@@ -48,6 +48,7 @@ public class Order {
             this.items.add(item);
         }
         updateTotal();
+        updateTime();
     }
 
     /**
@@ -88,6 +89,7 @@ public class Order {
             items.remove(itemToRemove);
         }
         updateTotal();
+        updateTime();
     }
 
 

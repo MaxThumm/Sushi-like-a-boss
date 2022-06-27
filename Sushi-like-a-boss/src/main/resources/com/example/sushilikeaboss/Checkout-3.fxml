@@ -90,7 +90,7 @@
                   </toggleGroup>
                </RadioButton>
                <RadioButton id="twintRButton" layoutX="64.0" layoutY="452.0" mnemonicParsing="false" onAction="#setTwintPayment" text="Twint" textFill="#dcedc7" toggleGroup="$paymentGroup" />
-               <RadioButton id="creditCardRButton" layoutX="65.0" layoutY="492.0" mnemonicParsing="false" onAction="#setCreditCardPayment" text="Credit Card" textFill="#dcedc7" toggleGroup="$paymentGroup" />
+               <RadioButton id="creditCardRButton" layoutX="64.0" layoutY="492.0" mnemonicParsing="false" onAction="#setCreditCardPayment" text="Credit Card" textFill="#dcedc7" toggleGroup="$paymentGroup" />
             </children>
          </AnchorPane>
      </content>

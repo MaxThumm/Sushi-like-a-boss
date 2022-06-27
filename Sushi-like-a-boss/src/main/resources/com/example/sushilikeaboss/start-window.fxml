@@ -29,7 +29,7 @@
          <Font name="Raleway Bold" size="28.0" />
       </font>
    </Button>
-   <ImageView fitHeight="264.0" fitWidth="341.0" focusTraversable="true" layoutX="182.0" layoutY="127.0" onMouseClicked="#switchtoScene3" onMouseEntered="#switchtoScene3" pickOnBounds="true" preserveRatio="true">
+   <ImageView fitHeight="264.0" fitWidth="341.0" focusTraversable="true" layoutX="182.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@Sushi_Bosses.jpeg" />
       </image>

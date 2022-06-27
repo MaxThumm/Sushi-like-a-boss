@@ -412,6 +412,7 @@ public class HelloController {
         totalTimePickup();
         totalTimeExpress();
         totalTimeShipping();
+        updateTotalCostsBasketText();
     }
 
     @FXML
@@ -686,6 +687,11 @@ public class HelloController {
     public void switchToCustom(ActionEvent event) throws IOException {
         showFxml("custom-window.fxml");
     }
+
+    public void switchToMenus(ActionEvent event) throws IOException {
+        showFxml("ordering-window.fxml");
+    }
+
 
     public void switchToCheckout2(ActionEvent event) throws IOException {
         showFxml("Checkout-2.fxml");

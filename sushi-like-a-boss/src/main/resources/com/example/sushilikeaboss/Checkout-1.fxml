@@ -12,20 +12,6 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane depthTest="DISABLE" prefHeight="791.0" prefWidth="1041.0" style="-fx-background-color: #424242;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sushilikeaboss.HelloController">
-   <AnchorPane layoutX="-202.0" layoutY="-44.0" prefHeight="123.0" prefWidth="1217.0" style="-fx-background-color: #dcedc7;" AnchorPane.leftAnchor="-202.0" AnchorPane.rightAnchor="196.0" AnchorPane.topAnchor="-44.0">
-      <children>
-         <Text layoutX="262.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Checkout" AnchorPane.leftAnchor="262.0" AnchorPane.rightAnchor="0.0">
-            <font>
-               <Font name="Raleway Bold" size="34.0" />
-            </font>
-         </Text>
-         <Button layoutX="59.0" layoutY="53.0" onAction="#switchToCustom" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Back">
-            <font>
-               <Font name="Raleway Regular" size="12.0" />
-            </font>
-         </Button>
-      </children>
-   </AnchorPane>
 
                       <Label fx:id="welcomeText" />
    <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="118.0" prefHeight="621.0" prefWidth="1027.0" style="-fx-background-color: #424242;">
@@ -130,6 +116,21 @@
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
                </Button>
+               <Button layoutX="620.0" layoutY="421.0" onAction="#switchToCustom" prefHeight="25.0" prefWidth="132.0" style="-fx-background-color: #fffffb;" text="Add more Sushi">
+                  <font>
+                     <Font name="Raleway Regular" size="12.0" />
+                  </font>
+               </Button>
+               <Button layoutX="620.0" layoutY="470.0" onAction="#switchToMenus" prefHeight="25.0" prefWidth="132.0" style="-fx-background-color: #fffffb;" text="Add more Menus">
+                  <font>
+                     <Font name="Raleway Regular" size="12.0" />
+                  </font>
+               </Button>
+               <Text fill="#dcedc7" layoutX="620.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Do you need more?">
+                  <font>
+                     <Font name="Raleway SemiBold" size="24.0" />
+                  </font>
+               </Text>
             </children>
          </AnchorPane>
      </content>
@@ -156,4 +157,13 @@
          <Font name="Raleway Regular" size="12.0" />
       </font>
    </Button>
+   <AnchorPane layoutY="-1.0" prefHeight="128.0" prefWidth="1059.0" style="-fx-background-color: #dcedc7;">
+      <children>
+         <Text layoutX="240.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Choose your Sushis" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="240.01797485351562">
+            <font>
+               <Font name="Raleway Bold" size="34.0" />
+            </font>
+         </Text>
+      </children>
+   </AnchorPane>
 </AnchorPane>

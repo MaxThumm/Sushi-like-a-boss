@@ -32,7 +32,7 @@ public class SceneController {
         stage.show();
     }
 
-    public void switchtoScene3(MouseEvent event) throws IOException {
+    public void switchtoScene3(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ordering-window.fxml"));
         root = fxmlLoader.load();
         scene = new Scene(root);
@@ -41,7 +41,7 @@ public class SceneController {
         stage.show();
     }
 
-    public void switchtoScene4(MouseEvent event) throws IOException {
+    public void switchtoScene4(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("checkout-1.fxml"));
         root = fxmlLoader.load();
         scene = new Scene(root);
@@ -50,7 +50,7 @@ public class SceneController {
         stage.show();
     }
 
-    public void switchtoScene5(MouseEvent event) throws IOException {
+    public void switchtoScene5(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("checkout-2.fxml"));
         root = fxmlLoader.load();
         scene = new Scene(root);
@@ -59,7 +59,7 @@ public class SceneController {
         stage.show();
     }
 
-    public void switchtoScene6(MouseEvent event) throws IOException {
+    public void switchtoScene6(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("checkout-3.fxml"));
         root = fxmlLoader.load();
         scene = new Scene(root);
@@ -68,7 +68,7 @@ public class SceneController {
         stage.show();
     }
 
-    public void switchtoScene7(MouseEvent event) throws IOException {
+    public void switchtoScene7(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("checkout-4.fxml"));
         root = fxmlLoader.load();
         scene = new Scene(root);

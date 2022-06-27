@@ -49,4 +49,31 @@ public class SceneController {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void switchtoScene5(MouseEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("checkout-2.fxml"));
+        root = fxmlLoader.load();
+        scene = new Scene(root);
+        stage = HelloApplication.getPrimaryStage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchtoScene6(MouseEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("checkout-3.fxml"));
+        root = fxmlLoader.load();
+        scene = new Scene(root);
+        stage = HelloApplication.getPrimaryStage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchtoScene7(MouseEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("checkout-4.fxml"));
+        root = fxmlLoader.load();
+        scene = new Scene(root);
+        stage = HelloApplication.getPrimaryStage();
+        stage.setScene(scene);
+        stage.show();
+    }
 }

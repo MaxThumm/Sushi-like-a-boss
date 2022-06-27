@@ -40,4 +40,13 @@ public class SceneController {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void switchtoScene4(MouseEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("checkout-1.fxml"));
+        root = fxmlLoader.load();
+        scene = new Scene(root);
+        stage = HelloApplication.getPrimaryStage();
+        stage.setScene(scene);
+        stage.show();
+    }
 }

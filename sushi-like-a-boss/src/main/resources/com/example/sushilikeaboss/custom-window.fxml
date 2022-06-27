@@ -139,7 +139,7 @@
      </content>
    </ScrollPane>
    <ListView fx:id="aktelleBestellungListView" layoutX="633.0" layoutY="187.0" prefHeight="200.0" prefWidth="233.0" />
-   <Button layoutX="633.0" layoutY="426.0" onAction="#switchToCheckout1" prefHeight="47.0" prefWidth="233.0" style="-fx-background-color: #fffffb;" text="Order">
+   <Button layoutX="633.0" layoutY="426.0" onAction="#proceedToOrder" prefHeight="47.0" prefWidth="233.0" style="-fx-background-color: #fffffb;" text="Order">
       <font>
          <Font name="Raleway Regular" size="12.0" />
       </font>

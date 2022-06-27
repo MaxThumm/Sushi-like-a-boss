@@ -805,4 +805,14 @@ public class HelloController {
         ArrayList<String> ordersAsString = new ArrayList<>();
     }
 
+    @FXML
+    private void proceedToOrder(ActionEvent event) throws IOException {
+        if (HelloApplication.orders.get(0).getItems().isEmpty()) {
+            welcomeText.setText("Shopping cart empty. Please add items to place an order.");
+        }
+        else {
+            switchToCheckout1(event);
+        }
+    }
+
 }

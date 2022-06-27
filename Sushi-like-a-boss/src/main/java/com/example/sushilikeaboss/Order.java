@@ -26,6 +26,7 @@ public class Order {
         this.total = 0;
         isOrdered = false;
         paymentMethod = PaymentMethod.CASH;
+        deliveryType = DeliveryType.PICKUP;
     }
 
     /*

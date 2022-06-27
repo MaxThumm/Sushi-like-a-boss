@@ -705,6 +705,10 @@ public class HelloController {
         showFxml("Checkout-4.fxml");
     }
 
+    public void switchToOrderCofirmation(ActionEvent event) throws IOException {
+        showFxml("Order-confirmation.fxml");
+    }
+
     private void showFxml(String fxmlFileName) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlFileName));
         root = fxmlLoader.load();
@@ -768,12 +772,12 @@ public class HelloController {
 
 
     @FXML
-    private void placeOrder() {
+    private void placeOrder(ActionEvent event) throws IOException {
         if (!firstNameTextField.getText().trim().equals("") && !nameTextField.getText().trim().equals("") && !zipTextField.getText().trim().equals("") && !cityTextField.getText().trim().equals("") && !streetTextField.getText().trim().equals("") && !numberTextField.getText().trim().equals("") && !emailTextField.getText().trim().equals("")) {
             welcomeText.setText("Please fill out all text boxes to continue!");
         }
         else {
-            //next scene
+            switchToOrderCofirmation(event);
         }
     }
 
@@ -818,6 +822,19 @@ public class HelloController {
         }
         else {
             switchToCheckout1(event);
+        }
+    }
+
+    @FXML
+    private ToggleGroup packagingGroup;
+
+    @FXML
+    private void toCheckout2(ActionEvent event) throws IOException {
+        if (packagingGroup.getSelectedToggle() == null) {
+            welcomeText.setText("No packaging selected. Please select a packaging to proceed!");
+        }
+        else {
+            switchToCheckout2(event);
         }
     }
 

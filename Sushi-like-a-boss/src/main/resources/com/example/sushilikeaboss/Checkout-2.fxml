@@ -3,7 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -34,36 +36,28 @@
                      <Font name="Raleway SemiBold" size="24.0" />
                   </font>
                </Text>
-               <Button layoutX="11.0" layoutY="80.0" onAction="#pickUpShippingButtonKlick" prefHeight="47.0" prefWidth="286.0" style="-fx-background-color: #fffffb;" text="Pickup">
+               <Text fx:id="timeText" fill="#dcedc7" layoutX="220.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Your sushi is ready for pickup in 20 minutes." wrappingWidth="274.1360168457031">
                   <font>
-                     <Font name="Raleway Regular" size="12.0" />
+                     <Font name="System Italic" size="13.0" />
                   </font>
-               </Button>
-               <Button layoutX="12.0" layoutY="177.0" onAction="#normalShippingButtonKlick" prefHeight="47.0" prefWidth="285.0" style="-fx-background-color: #fffffb;" text="Normal">
+               </Text>
+               <Text fx:id="timeTextShipping" fill="#dcedc7" layoutX="220.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Your sushi will arrive in 30 minutes" wrappingWidth="232.9999999999999">
                   <font>
-                     <Font name="Raleway Regular" size="12.0" />
+                     <Font name="System Italic" size="13.0" />
                   </font>
-               </Button>
-               <Button layoutX="11.0" layoutY="274.0" onAction="#expressShippingButtonKlick" prefHeight="47.0" prefWidth="286.0" style="-fx-background-color: #fffffb;" text="Express">
-                  <font>
-                     <Font name="Raleway Regular" size="12.0" />
-                  </font>
-               </Button>
-               <Text fx:id="timeText" fill="#dcedc7" layoutX="48.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Your sushi is ready for pickup in 20 minutes." textAlignment="CENTER" wrappingWidth="212.13601684570312">
+               </Text>
+               <Text fx:id="timeTextExpress" fill="#dcedc7" layoutX="220.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Your sushi will arrive in 20 minutes." textAlignment="CENTER" wrappingWidth="191.13601684570312">
                   <font>
                      <Font name="Raleway SemiBold" size="13.0" />
                   </font>
                </Text>
-               <Text fx:id="timeTextShipping" fill="#dcedc7" layoutX="66.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Your sushi will arrive in 30 minutes" textAlignment="CENTER" wrappingWidth="182.13601684570312">
-                  <font>
-                     <Font name="Raleway SemiBold" size="13.0" />
-                  </font>
-               </Text>
-               <Text fx:id="timeTextExpress" fill="#dcedc7" layoutX="62.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Your sushi will arrive in 20 minutes." textAlignment="CENTER" wrappingWidth="191.13601684570312">
-                  <font>
-                     <Font name="Raleway SemiBold" size="13.0" />
-                  </font>
-               </Text>
+               <RadioButton layoutX="64.0" layoutY="85.0" mnemonicParsing="false" onAction="#pickUpShippingButtonKlick" selected="true" text="Pickup" textFill="#dcedc7">
+                  <toggleGroup>
+                     <ToggleGroup fx:id="deliveryGroup" />
+                  </toggleGroup>
+               </RadioButton>
+               <RadioButton layoutX="64.0" layoutY="155.0" mnemonicParsing="false" onAction="#normalShippingButtonKlick" text="Standard delivery" textFill="#dcedc7" toggleGroup="$deliveryGroup" />
+               <RadioButton layoutX="64.0" layoutY="225.0" mnemonicParsing="false" onAction="#expressShippingButtonKlick" text="Express delivery" textFill="#dcedc7" toggleGroup="$deliveryGroup" />
             </children>
          </AnchorPane>
      </content>

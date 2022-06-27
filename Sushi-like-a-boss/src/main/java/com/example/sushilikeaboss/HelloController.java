@@ -147,10 +147,15 @@ public class HelloController {
     @FXML
     private Text timeText;
 
+    @FXML
+    private Text timeTextExpress;
+
+    @FXML
+    private Text timeTextShipping;
+
 
     public HelloController() {
     }
-
 
 
     @FXML
@@ -162,6 +167,18 @@ public class HelloController {
     @FXML
     private void goToCustomPage(ActionEvent event){
 
+    }
+
+    /**
+     * parses amount of ordered sushi
+     */
+    private int parseIntOrZero(TextField addEbiNigiriQ) {
+        try {
+            return Integer.parseInt(addEbiNigiriQ.getText());
+        }
+        catch (NumberFormatException e) {
+            return 0;
+        }
     }
 
     /**
@@ -192,15 +209,6 @@ public class HelloController {
         String text = quantity + " Ebi Nigiri added to your shopping cart";
         welcomeText.setText(text);
         updateTotalCostsBasketText();
-    }
-
-    private int parseIntOrZero(TextField addEbiNigiriQ) {
-        try {
-           return Integer.parseInt(addEbiNigiriQ.getText());
-        }
-        catch (NumberFormatException e) {
-            return 0;
-        }
     }
 
     /**
@@ -401,7 +409,8 @@ public class HelloController {
     public void initialize() {
         reloadOrders();
         totalTimePickup();
-
+        totalTimeExpress();
+        totalTimeShipping();
     }
 
     @FXML
@@ -609,17 +618,43 @@ public class HelloController {
 
 
     /**
-     *
+     * Calculates time needed to prepare sushi and updates text for sushi pickup accordingly
      */
     private void totalTimePickup(){
+        // because the method is evoked whenever a scene is initialized, null case implemented
         if (timeText == null) {
             return;
         }
         Order currentOrder = HelloApplication.orders.get(0);
         int timeCurrentOrder = currentOrder.getTotalTime()/60;
-        timeText.setText("Your sushi is ready for pickup in " + String.valueOf(timeCurrentOrder) + " minutes");
+        timeText.setText("Your sushi is ready for pickup in " + timeCurrentOrder + " minutes");
     }
 
+    /**
+     * Calculates time needed to prepare sushi and updates text for express delivery accordingly
+     */
+    private void totalTimeExpress(){
+        if (timeTextExpress == null) {
+            return;
+        }
+        Order currentOrder = HelloApplication.orders.get(0);
+        // 5 minutes added to the order time for express deliery
+        int timeCurrentOrder = currentOrder.getTotalTime()/60 + 5;
+        timeTextExpress.setText("Your sushi delivered to you in " + timeCurrentOrder + " minutes");
+    }
+
+    /**
+     * Calculates time needed to prepare sushi and updates text for normal delivery accordingly
+     */
+    private void totalTimeShipping(){
+        if (timeTextShipping == null) {
+            return;
+        }
+        Order currentOrder = HelloApplication.orders.get(0);
+        // 20 minutes added to the order time for delivery
+        int timeCurrentOrder = currentOrder.getTotalTime()/60 + 15;
+        timeTextShipping.setText("Your sushi delivered to you in " + timeCurrentOrder + " minutes");
+    }
 
 
     /**

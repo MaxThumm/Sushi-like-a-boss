@@ -54,12 +54,12 @@
                      <Font name="Raleway SemiBold" size="13.0" />
                   </font>
                </Text>
-               <Text fill="#dcedc7" layoutX="66.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Your sushi will arrive in 30 minutes" textAlignment="CENTER" wrappingWidth="182.13601684570312">
+               <Text fx:id="timeTextShipping" fill="#dcedc7" layoutX="66.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Your sushi will arrive in 30 minutes" textAlignment="CENTER" wrappingWidth="182.13601684570312">
                   <font>
                      <Font name="Raleway SemiBold" size="13.0" />
                   </font>
                </Text>
-               <Text fill="#dcedc7" layoutX="62.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Your sushi will arrive in 20 minutes." textAlignment="CENTER" wrappingWidth="191.13601684570312">
+               <Text fx:id="timeTextExpress" fill="#dcedc7" layoutX="62.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Your sushi will arrive in 20 minutes." textAlignment="CENTER" wrappingWidth="191.13601684570312">
                   <font>
                      <Font name="Raleway SemiBold" size="13.0" />
                   </font>

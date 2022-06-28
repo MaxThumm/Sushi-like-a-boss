@@ -42,19 +42,19 @@
                      <Font name="Raleway SemiBold" size="13.0" />
                   </font>
                </Text>
-               <TextField id="firstNameTextField" fx:id="firstNameTextField" layoutX="78.0" layoutY="67.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter first name" />
+               <TextField fx:id="firstNameTextField" layoutX="78.0" layoutY="67.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter first name" />
                <Text fill="#dcedc7" layoutX="291.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Name" wrappingWidth="59.0">
                   <font>
                      <Font name="Raleway SemiBold" size="13.0" />
                   </font>
                </Text>
-               <TextField id="nameTextField" fx:id="nameTextField" layoutX="351.0" layoutY="67.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter surname" />
+               <TextField  fx:id="nameTextField" layoutX="351.0" layoutY="67.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter surname" />
                <Text fill="#dcedc7" layoutX="14.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Email" wrappingWidth="65.00000000000011">
                   <font>
                      <Font name="Raleway SemiBold" size="13.0" />
                   </font>
                </Text>
-               <TextField id="emailTextField" fx:id="emailTextField" layoutX="78.0" layoutY="130.0" prefHeight="26.0" prefWidth="271.0" promptText="example@examplemail.com" />
+               <TextField fx:id="emailTextField" layoutX="78.0" layoutY="130.0" prefHeight="26.0" prefWidth="271.0" promptText="example@examplemail.com" />
                <Text fill="#dcedc7" layoutX="14.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Select payment method" wrappingWidth="470.85546875">
                   <font>
                      <Font name="Raleway SemiBold" size="24.0" />

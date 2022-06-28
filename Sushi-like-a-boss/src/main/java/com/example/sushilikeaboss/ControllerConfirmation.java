@@ -1,6 +1,7 @@
-
 package com.example.sushilikeaboss;
 
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,16 +10,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import javax.security.auth.callback.Callback;
 import java.io.IOException;
 import java.util.ArrayList;
-
-/**
- * Controller for oder-confirmation.fxml
- */
 
 public class ControllerConfirmation {
     private Stage stage;
@@ -676,8 +675,8 @@ public class ControllerConfirmation {
 
 
     /**
-    Removing number of Sake Nigiri from input field from order
-    */
+     Removing number of Sake Nigiri from input field from order
+     */
     @FXML
     private void removeSakeNigiri() {
         int quantityRemove = parseIntOrZero(removeSakeNigiriQ);
@@ -1169,8 +1168,5 @@ public class ControllerConfirmation {
         updateTotalCostsBasketText();
         loadOrderTable();
     }
-
-
-
 
 }

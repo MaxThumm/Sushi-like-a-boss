@@ -108,7 +108,7 @@
                      <Font name="Raleway SemiBold" size="24.0" />
                   </font>
                </Text>
-               <RadioButton layoutX="64.0" layoutY="97.0" mnemonicParsing="false" onAction="#addRecircleBox" text="Recircle box" textFill="#dcedc7">
+               <RadioButton layoutX="64.0" layoutY="97.0" mnemonicParsing="false" onAction="#addRecircleBox" selected="true" text="Recircle box" textFill="#dcedc7">
                   <toggleGroup>
                      <ToggleGroup fx:id="packagingGroup" />
                   </toggleGroup>

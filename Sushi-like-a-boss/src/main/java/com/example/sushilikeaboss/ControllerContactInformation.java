@@ -200,6 +200,7 @@ public class ControllerContactInformation {
         stage.show();
     }
 
+    @FXML
     private void placeOrder1(ActionEvent event) throws IOException {
         if (!firstNameTextField.getText().trim().equals("") && !nameTextField.getText().trim().equals("") && !zipTextField.getText().trim().equals("") && !cityTextField.getText().trim().equals("") && !streetTextField.getText().trim().equals("") && !numberTextField.getText().trim().equals("") && !emailTextField.getText().trim().equals("")) {
             welcomeText.setText("Please fill out all text boxes to continue!");

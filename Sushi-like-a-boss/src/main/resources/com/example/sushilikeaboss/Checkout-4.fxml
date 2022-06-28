@@ -88,7 +88,7 @@
       </font>
    </Text>
    <AnchorPane layoutX="-4.0" layoutY="738.0" prefHeight="67.0" prefWidth="1051.0" style="-fx-background-color: #dcedc7;" />
-   <Button fx:id="shippingButton" layoutX="634.0" layoutY="424.0" onAction="#placeOrder" prefHeight="47.0" prefWidth="233.0" style="-fx-background-color: #fffffb;" text="Place order">
+   <Button fx:id="shippingButton" layoutX="634.0" layoutY="424.0" onAction="#placeOrder2" prefHeight="47.0" prefWidth="233.0" style="-fx-background-color: #fffffb;" text="Place order">
       <font>
          <Font name="Raleway Regular" size="12.0" />
       </font>

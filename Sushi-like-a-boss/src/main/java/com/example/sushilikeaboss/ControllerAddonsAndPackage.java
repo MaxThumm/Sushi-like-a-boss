@@ -25,61 +25,39 @@ public class ControllerAddonsAndPackage {
 
     @FXML
     private Label welcomeText;
-
     @FXML
     private Label totalCostsBasketText;
-
-    //Input field for quantity of Sake Nigiri to be removed from order
-
     @FXML
     private TextField removeChopsticksQ;
-
     @FXML
     private TextField removeGingerQ;
-
     @FXML
     private TextField removeSoySauceQ;
-
     @FXML
     private TextField removeWasabiSauceQ;
-
-
     @FXML
     private TextField addChopsticksQ;
-
     @FXML
     private TextField addSoySauceQ;
-
     @FXML
     private TextField addGingerQ;
-
     @FXML
     private TextField addWasabiQ;
-
     @FXML
     private ListView<String> aktelleBestellungListView;
-
     @FXML
     public Button shippingButton;
-
     @FXML
     private Label soySaucePrice;
-
     @FXML
     private Label chostickPrice;
-
     @FXML
     private Label wasabiPrice;
-
     @FXML
     private Label gingerPrice;
 
-
     public ControllerAddonsAndPackage() {
     }
-
-
-
     @FXML
     private void goToCustomPage(ActionEvent event){
 
@@ -96,8 +74,6 @@ public class ControllerAddonsAndPackage {
             return 0;
         }
     }
-
-
 
     private void updateTotalCostsBasketText() {
         // saves the price in decimal values in order to avoid long numbers after comma
@@ -190,8 +166,6 @@ public class ControllerAddonsAndPackage {
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
-
-
     @FXML
     private Button addARecircleBox;
 
@@ -281,9 +255,6 @@ public class ControllerAddonsAndPackage {
         }
     }
 
-
-
-
     @FXML
     private void removeChopsticks() {
         int quantityRemove = parseIntOrZero(removeChopsticksQ);
@@ -347,10 +318,6 @@ public class ControllerAddonsAndPackage {
     }
 
 
-    public void switchToCheckout1(ActionEvent event) throws IOException {
-        showFxml("Checkout-1.fxml");
-    }
-
     public void switchToCustom(ActionEvent event) throws IOException {
         showFxml("custom-window.fxml");
     }
@@ -364,17 +331,6 @@ public class ControllerAddonsAndPackage {
         showFxml("Checkout-2.fxml");
     }
 
-    public void switchToCheckout3(ActionEvent event) throws IOException {
-        showFxml("Checkout-3.fxml");
-    }
-
-    public void switchToCheckout4(ActionEvent event) throws IOException {
-        showFxml("Checkout-4.fxml");
-    }
-
-    public void switchToOrderCofirmation(ActionEvent event) throws IOException {
-        showFxml("Order-confirmation.fxml");
-    }
 
     private void showFxml(String fxmlFileName) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlFileName));
@@ -383,28 +339,6 @@ public class ControllerAddonsAndPackage {
         stage = HelloApplication.getPrimaryStage();
         stage.setScene(scene);
         stage.show();
-    }
-
-    @FXML
-    private void toCheckout(ActionEvent event) throws IOException {
-        if (HelloApplication.orders.get(0).getDeliveryType() == DeliveryType.PICKUP) {
-            switchToCheckout4(event);
-        }
-        else {
-            switchToCheckout3(event);
-        }
-    }
-
-
-
-    @FXML
-    private void proceedToOrder(ActionEvent event) throws IOException {
-        if (HelloApplication.orders.get(0).getItems().isEmpty()) {
-            welcomeText.setText("Shopping cart empty. Please add items to place an order.");
-        }
-        else {
-            switchToCheckout1(event);
-        }
     }
 
     @FXML

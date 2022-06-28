@@ -189,6 +189,7 @@ public class ControllerContactInformation {
 
     public void switchToOrderCofirmation(ActionEvent event) throws IOException {
         showFxml("Order-confirmation.fxml");
+        loadOrderConfirmation();
     }
 
     private void showFxml(String fxmlFileName) throws IOException {
@@ -303,6 +304,63 @@ public class ControllerContactInformation {
         HelloApplication.orders.get(0).setPaymentMethod(PaymentMethod.CREDITCARD);
     }
 
+
+
+    @FXML
+    private Label nameText;
+
+    @FXML
+    private Label emailText;
+
+    @FXML
+    private Label adressText;
+
+    @FXML
+    private Label deliveryMethodText;
+
+    @FXML
+    private Label paymentMethodText;
+
+    private void loadOrderConfirmation() {
+        Order currentOrder = HelloApplication.orders.get(0);
+        nameText.setText(currentOrder.getFirstName() + " " + currentOrder.getName());
+        emailText.setText(currentOrder.getEmail());
+        if (currentOrder.getZipCode() == -1 && currentOrder.getCity().equals("") && currentOrder.getStreet().equals("") && currentOrder.getHouseNo().equals("")) {
+            adressText.setText("");
+        }
+        else {
+            adressText.setText(currentOrder.getStreet() + " " + currentOrder.getHouseNo() + ", " + currentOrder.getZipCode() + ", " + currentOrder.getCity());
+        }
+
+        if (currentOrder.getDeliveryType().equals(DeliveryType.NORMAL)) {
+            deliveryMethodText.setText("Standard delivery - Your order will arrive in approx. 30 min.");
+        }
+        else if (currentOrder.getDeliveryType().equals(DeliveryType.EXPRESS)) {
+            deliveryMethodText.setText("Express delivery - Your order will arrive in approx. 20 min.");
+        }
+        else {
+            deliveryMethodText.setText("Pickup - Your order is ready to pickup in approx. 30 min.");
+        }
+
+        if (currentOrder.getPaymentMethod().equals(PaymentMethod.CREDITCARD)) {
+            paymentMethodText.setText("Credit card");
+        }
+        else if (currentOrder.getPaymentMethod().equals(PaymentMethod.TWINT)) {
+            paymentMethodText.setText("Twint");
+        }
+        else {
+            paymentMethodText.setText("Cash");
+        }
+        updateTotalCostsBasketText();
+        loadOrderTable();
+    }
+
+    private void updateTotalCostsBasketText() {
+        // saves the price in decimal values in order to avoid long numbers after comma
+        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
+        //Changes the text to the new price in decimal
+        totalCostsBasketText.setText("CHF " + decimalPrice);
+    }
 
 
 

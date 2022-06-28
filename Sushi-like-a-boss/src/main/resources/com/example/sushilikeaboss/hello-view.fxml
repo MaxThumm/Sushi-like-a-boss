@@ -24,9 +24,9 @@
    </AnchorPane>
 
     <Label fx:id="welcomeText" />
-    <ImageView fitHeight="264.0" fitWidth="341.0" focusTraversable="true" layoutX="409.0" layoutY="154.0" onMouseClicked="#switchtoScene2" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="281.0" fitWidth="271.0" focusTraversable="true" layoutX="406.0" layoutY="152.0" onMouseClicked="#switchtoScene2" pickOnBounds="true" preserveRatio="true">
       <image>
-         <Image url="@einzelnes-sushi-1.jpg" />
+         <Image url="@quadrat-einzelnes-nigrijpg.jpg" />
       </image>
     </ImageView>
    <ImageView fitHeight="264.0" fitWidth="341.0" focusTraversable="true" layoutX="76.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">

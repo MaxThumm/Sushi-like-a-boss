@@ -7,4 +7,6 @@ public class Ginger extends Sushi {
         super("Ginger", quantity, 0.4, 0);
     }
 
+
+
 }

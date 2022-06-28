@@ -50,6 +50,12 @@ public class HelloController {
     private TextField removeLargeSetQ;
 
     //Input field for quantity of Tamago Nigiri to be removed from order
+
+    @FXML
+    private TextField removeVegiSetQ;
+
+    @FXML
+    private TextField removeNigriMakiSetQ;
     @FXML
     private TextField removeTamagoNigiriQ;
 
@@ -106,6 +112,12 @@ public class HelloController {
     private TextField addLargeSetQ;
 
     @FXML
+    private TextField addVegiSetQ;
+
+    @FXML
+    private TextField addNigriMakiSetQ;
+
+    @FXML
     private TextField addChopsticksQ;
 
     @FXML
@@ -152,6 +164,18 @@ public class HelloController {
 
     @FXML
     private Text timeTextShipping;
+
+    @FXML
+    private Label soySaucePrice;
+
+    @FXML
+    private Label chostickPrice;
+
+    @FXML
+    private Label wasabiPrice;
+
+    @FXML
+    private Label gingerPrice;
 
 
     public HelloController() {
@@ -233,6 +257,20 @@ public class HelloController {
         totalCostsBasketText.setText("CHF " + decimalPrice);
     }
 
+
+    private void gingerText() {
+        if (gingerPrice == null) {
+            return;
+        }
+        int quantity = parseIntOrZero(addGingerQ);
+        double decimalPrice = Math.round(Sushi.getPrice() * quantity * 100.0) / 100.0;
+        gingerPrice.setText(decimalPrice + " CHF");
+    }
+
+
+
+
+
     /**
      * Adding number of Umami Nigiri from input field to order
      */
@@ -307,6 +345,32 @@ public class HelloController {
         reloadOrders();
         //Changes the text to the new amount
         String text = quantity + " large set added to your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        updateTotalCostsBasketText();
+    }
+
+    @FXML
+    private void addNigiriMakiSet() {
+        int quantity = parseIntOrZero(addNigriMakiSetQ);
+        HelloApplication.addSushi(new NigriMakiSet(quantity));
+        //Ads the newly ordered amount to the shopping cart list
+        reloadOrders();
+        //Changes the text to the new amount
+        String text = quantity + " Nigri and Maki set added to your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        updateTotalCostsBasketText();
+    }
+
+    @FXML
+    private void addVegiSetSet() {
+        int quantity = parseIntOrZero(addVegiSetQ);
+        HelloApplication.addSushi(new VegiSet(quantity));
+        //Ads the newly ordered amount to the shopping cart list
+        reloadOrders();
+        //Changes the text to the new amount
+        String text = quantity + " Vegi set added to your shopping cart";
         welcomeText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
@@ -413,6 +477,7 @@ public class HelloController {
         totalTimeExpress();
         totalTimeShipping();
         updateTotalCostsBasketText();
+        gingerText();
     }
 
     @FXML
@@ -550,6 +615,28 @@ public class HelloController {
     }
 
     @FXML
+    private void removeVegiSet() {
+        int quantityRemove = parseIntOrZero(removeVegiSetQ);
+        HelloApplication.removeItem(new VegiSet (quantityRemove));
+        reloadOrders();
+        String text = quantityRemove + " vegi set removed from your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        updateTotalCostsBasketText();
+    }
+
+    @FXML
+    private void removeNigriMakiSet() {
+        int quantityRemove = parseIntOrZero(removeNigriMakiSetQ);
+        HelloApplication.removeItem(new NigriMakiSet (quantityRemove));
+        reloadOrders();
+        String text = quantityRemove + " Nigiri and Maki set removed from your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        updateTotalCostsBasketText();
+    }
+
+    @FXML
     private void removeChopsticks() {
         int quantityRemove = parseIntOrZero(removeChopsticksQ);
         HelloApplication.removeItem(new Chopstick (quantityRemove));
@@ -670,7 +757,8 @@ public class HelloController {
         ArrayList<String> ordersAsString = new ArrayList<>();
         //converts all Sushis in list to String
         for (Sushi sushi : sushisInOrder) {
-            ordersAsString.add(sushi.getName() + " " + sushi.getQuantity() + " pieces");
+            double decimalPrice = Math.round(sushi.getPrice()* sushi.getQuantity()*100.0)/100.0;
+            ordersAsString.add(sushi.getName() + " " + sushi.getQuantity() + " pieces for CHF " + decimalPrice);
         }
         aktelleBestellungListView.getItems().clear();
         aktelleBestellungListView.getItems().addAll(ordersAsString);

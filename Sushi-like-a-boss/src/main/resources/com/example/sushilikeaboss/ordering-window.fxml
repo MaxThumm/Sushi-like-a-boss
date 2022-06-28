@@ -60,30 +60,30 @@
                </Button>
                <TextField fx:id="addSmallSetQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="211.0" prefHeight="26.0" prefWidth="33.0" text="1" />
                <TextField fx:id="removeSmallSetQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="176.0" prefHeight="26.0" prefWidth="33.0" text="1" />
-               <Button layoutX="282.0" layoutY="360.0" onAction="#removeSakeNigiri" style="-fx-background-color: #fffffb;" text="Remove">
+               <Button layoutX="282.0" layoutY="360.0" onAction="#removeVegiSet" style="-fx-background-color: #fffffb;" text="Remove">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
                </Button>
-               <Button layoutX="282.0" layoutY="324.0" onAction="#addUmamiNigiri" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
+               <Button layoutX="282.0" layoutY="324.0" onAction="#addVegiSetSet" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
                </Button>
-               <TextField fx:id="removeUmamiNigiriQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="359.0" prefHeight="26.0" prefWidth="33.0" text="1" />
-               <TextField fx:id="addUmamiNigiriQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="324.0" prefHeight="26.0" prefWidth="33.0" text="1" />
-               <Button layoutX="282.0" layoutY="477.0" onAction="#removeSakeNigiri" style="-fx-background-color: #fffffb;" text="Remove">
+               <TextField fx:id="removeVegiSetQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="359.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <TextField fx:id="addVegiSetQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="324.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <Button layoutX="282.0" layoutY="477.0" onAction="#removeNigriMakiSet" style="-fx-background-color: #fffffb;" text="Remove">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
                </Button>
-               <Button layoutX="282.0" layoutY="441.0" onAction="#addSakeNigiri" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
+               <Button layoutX="282.0" layoutY="441.0" onAction="#addNigiriMakiSet" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #fffffb;" text="Add">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>
                </Button>
-               <TextField fx:id="removeSakeNigiriQ12" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="476.0" prefHeight="26.0" prefWidth="33.0" text="1" />
-               <TextField fx:id="addSakeNigiriQ12" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="441.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <TextField fx:id="removeNigriMakiSetQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="476.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <TextField fx:id="addNigriMakiSetQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="441.0" prefHeight="26.0" prefWidth="33.0" text="1" />
             </children>
          </AnchorPane>
       </content>

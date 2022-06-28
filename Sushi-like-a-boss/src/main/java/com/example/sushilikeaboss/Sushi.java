@@ -3,7 +3,7 @@ package com.example.sushilikeaboss;
 public abstract class Sushi {
     private String name;
     private int quantity;
-    private double price;
+    private static double price;
 
     private int time;
 
@@ -22,10 +22,9 @@ public abstract class Sushi {
         return quantity;
     }
 
-    public double getPrice() {
+    public static double getPrice() {
         return price;
     }
-
 
     public int getTime() {
         return time;

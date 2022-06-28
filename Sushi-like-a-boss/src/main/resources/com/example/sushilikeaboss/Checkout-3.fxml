@@ -42,55 +42,55 @@
                      <Font name="Raleway SemiBold" size="13.0" />
                   </font>
                </Text>
-               <TextField id="firstNameTextField" layoutX="78.0" layoutY="67.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter first name" />
+               <TextField fx:id="firstNameTextField" layoutX="78.0" layoutY="67.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter first name" />
                <Text fill="#dcedc7" layoutX="291.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Name" wrappingWidth="59.0">
                   <font>
                      <Font name="Raleway SemiBold" size="13.0" />
                   </font>
                </Text>
-               <TextField id="nameTextField" layoutX="351.0" layoutY="67.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter surname" />
+               <TextField fx:id="nameTextField" layoutX="351.0" layoutY="67.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter surname" />
                <Text fill="#dcedc7" layoutX="14.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Zip code" wrappingWidth="65.00000000000011">
                   <font>
                      <Font name="Raleway SemiBold" size="13.0" />
                   </font>
                </Text>
-               <TextField id="zipTextField" layoutX="78.0" layoutY="130.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter zip/postal code" />
+               <TextField fx:id="zipTextField" layoutX="78.0" layoutY="130.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter zip/postal code" />
                <Text fill="#dcedc7" layoutX="291.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="City" wrappingWidth="59.0">
                   <font>
                      <Font name="Raleway SemiBold" size="13.0" />
                   </font>
                </Text>
-               <TextField id="cityTextField" layoutX="351.0" layoutY="131.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter city" />
+               <TextField fx:id="cityTextField" layoutX="351.0" layoutY="131.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter city" />
                <Text fill="#dcedc7" layoutX="14.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Street" wrappingWidth="65.00000000000011">
                   <font>
                      <Font name="Raleway SemiBold" size="13.0" />
                   </font>
                </Text>
-               <TextField id="streetTextField" layoutX="78.0" layoutY="174.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter street" />
+               <TextField fx:id="streetTextField" layoutX="78.0" layoutY="174.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter street" />
                <Text fill="#dcedc7" layoutX="291.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="House no." wrappingWidth="59.0">
                   <font>
                      <Font name="Raleway SemiBold" size="13.0" />
                   </font>
                </Text>
-               <TextField id="numberTextField" layoutX="351.0" layoutY="175.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter house number" />
+               <TextField fx:id="numberTextField" layoutX="351.0" layoutY="175.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter house number" />
                <Text fill="#dcedc7" layoutX="14.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Email" wrappingWidth="65.00000000000011">
                   <font>
                      <Font name="Raleway SemiBold" size="13.0" />
                   </font>
                </Text>
-               <TextField id="emailTextField" layoutX="78.0" layoutY="241.0" prefHeight="26.0" prefWidth="271.0" promptText="example@examplemail.com" />
+               <TextField fx:id="emailTextField" layoutX="78.0" layoutY="241.0" prefHeight="26.0" prefWidth="271.0" promptText="example@examplemail.com" />
                <Text fill="#dcedc7" layoutX="14.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Select payment method" wrappingWidth="470.85546875">
                   <font>
                      <Font name="Raleway SemiBold" size="24.0" />
                   </font>
                </Text>
-               <RadioButton id="cashRButton" layoutX="64.0" layoutY="412.0" mnemonicParsing="false" onAction="#setCashPayment" selected="true" text="Cash" textFill="#dcedc7">
+               <RadioButton layoutX="64.0" layoutY="412.0" mnemonicParsing="false" onAction="#setCashPayment" selected="true" text="Cash" textFill="#dcedc7">
                   <toggleGroup>
                      <ToggleGroup fx:id="paymentGroup" />
                   </toggleGroup>
                </RadioButton>
-               <RadioButton id="twintRButton" layoutX="64.0" layoutY="452.0" mnemonicParsing="false" onAction="#setTwintPayment" text="Twint" textFill="#dcedc7" toggleGroup="$paymentGroup" />
-               <RadioButton id="creditCardRButton" layoutX="64.0" layoutY="492.0" mnemonicParsing="false" onAction="#setCreditCardPayment" text="Credit Card" textFill="#dcedc7" toggleGroup="$paymentGroup" />
+               <RadioButton layoutX="64.0" layoutY="452.0" mnemonicParsing="false" onAction="#setTwintPayment" text="Twint" textFill="#dcedc7" toggleGroup="$paymentGroup" />
+               <RadioButton layoutX="64.0" layoutY="492.0" mnemonicParsing="false" onAction="#setCreditCardPayment" text="Credit Card" textFill="#dcedc7" toggleGroup="$paymentGroup" />
             </children>
          </AnchorPane>
      </content>

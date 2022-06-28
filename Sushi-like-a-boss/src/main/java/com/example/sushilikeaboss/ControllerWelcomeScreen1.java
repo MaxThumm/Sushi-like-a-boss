@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ControllerScreen1 {
+public class ControllerWelcomeScreen1 {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -28,26 +28,17 @@ public class ControllerScreen1 {
         stage.show();
     }
 
-
     /**
-     * Method changes scene to custom-window FXML
+     *Method changes scene to hello-view FXML
      * @param event evokes the method and thereby change of scene
      * @throws IOException
      */
 
-    public void switchtoScene2(ActionEvent event) throws IOException {
-        showFxml("custom-window.fxml");
+    public void switchtoScene1(ActionEvent event) throws IOException {
+        showFxml("hello-view.fxml");
     }
 
-    /**
-     * Method changes scene to ordering-window FXML
-     * @param event evokes the method and thereby change of scene
-     * @throws IOException
-     */
 
-    public void switchtoScene3(ActionEvent event) throws IOException {
-        showFxml("ordering-window.fxml");
-    }
 
 
 }

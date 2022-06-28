@@ -30,16 +30,6 @@
                      <Font name="Raleway SemiBold" size="24.0" />
                   </font>
                </Text>
-               <Text fx:id="nameText" fill="#dcedc7" layoutX="14.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Name" wrappingWidth="215.0000000000001">
-                  <font>
-                     <Font name="Raleway SemiBold" size="13.0" />
-                  </font>
-               </Text>
-               <Text fx:id="emailText" fill="#dcedc7" layoutX="14.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Email" wrappingWidth="297.0000000000001">
-                  <font>
-                     <Font name="Raleway SemiBold" size="13.0" />
-                  </font>
-               </Text>
                <Text fill="#dcedc7" layoutX="14.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Payment method" wrappingWidth="470.85546875">
                   <font>
                      <Font name="Raleway SemiBold" size="24.0" />
@@ -52,19 +42,9 @@
                      <TableColumn fx:id="priceCol" editable="false" minWidth="0.0" prefWidth="85.0" sortable="false" text="Price" />
                  </columns>
                </TableView>
-               <Text fx:id="paymentMethodText" fill="#dcedc7" layoutX="14.0" layoutY="530.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" wrappingWidth="297.0000000000001">
-                  <font>
-                     <Font name="Raleway SemiBold" size="13.0" />
-                  </font>
-               </Text>
                <Text fill="#dcedc7" layoutX="14.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Delivery" wrappingWidth="470.85546875">
                   <font>
                      <Font name="Raleway SemiBold" size="24.0" />
-                  </font>
-               </Text>
-               <Text fx:id="deliveryMethodText" fill="#dcedc7" layoutX="14.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" wrappingWidth="464.0000000000001">
-                  <font>
-                     <Font name="Raleway SemiBold" size="13.0" />
                   </font>
                </Text>
                <Text fill="#dcedc7" layoutX="513.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Your order">
@@ -72,11 +52,11 @@
                      <Font name="Raleway SemiBold" size="24.0" />
                   </font>
                </Text>
-               <Text fx:id="adressText" fill="#dcedc7" layoutX="14.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" wrappingWidth="297.0000000000001">
-                  <font>
-                     <Font name="Raleway SemiBold" size="13.0" />
-                  </font>
-               </Text>
+               <Label fx:id="nameText" layoutX="14.0" layoutY="85.0" prefHeight="17.0" prefWidth="351.0" text="Name" textFill="#dcedc7" />
+               <Label fx:id="emailText" layoutX="14.0" layoutY="135.0" prefHeight="17.0" prefWidth="351.0" text="Email" textFill="#dcedc7" />
+               <Label fx:id="adressText" layoutX="14.0" layoutY="185.0" prefHeight="17.0" prefWidth="410.0" textFill="#dcedc7" />
+               <Label fx:id="paymentMethodText" layoutX="14.0" layoutY="530.0" prefHeight="17.0" prefWidth="410.0" textFill="#dcedc7" />
+               <Label fx:id="deliveryMethodText" layoutX="14.0" layoutY="397.0" prefHeight="17.0" prefWidth="410.0" textFill="#dcedc7" />
             </children>
          </AnchorPane>
      </content>

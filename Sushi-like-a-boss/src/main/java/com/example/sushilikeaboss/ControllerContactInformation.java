@@ -98,13 +98,7 @@ public class ControllerContactInformation {
 
 
 
-
-
-
-
-
-    @FXML
-    private void onShippingButtonClick() {
+    private void saveShippingInformation1() {
         String firstName = firstNameTextField.getText();
         String name = nameTextField.getText();
         int zipCode = parseIntOrZero(zipTextField);
@@ -115,16 +109,32 @@ public class ControllerContactInformation {
 
         HelloApplication.addShippingInformation(firstName, name, zipCode, city, street, houseNo, email);
 
-        //Changes the text to the new amount
         String text = "Shipping information saved!";
         welcomeText.setText(text);
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
 
+    }
+
+    private void saveShippingInformation2() {
+        String firstName = firstNameTextField.getText();
+        String name = nameTextField.getText();
+        String email = emailTextField.getText();
+
+        HelloApplication.addShippingInformation(firstName, name, -1, "", "", "", email);
+
+        String text = "Shipping information saved!";
+        welcomeText.setText(text);
+
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
@@ -190,12 +200,23 @@ public class ControllerContactInformation {
         stage.show();
     }
 
-    @FXML
-    private void placeOrder(ActionEvent event) throws IOException {
+    private void placeOrder1(ActionEvent event) throws IOException {
         if (!firstNameTextField.getText().trim().equals("") && !nameTextField.getText().trim().equals("") && !zipTextField.getText().trim().equals("") && !cityTextField.getText().trim().equals("") && !streetTextField.getText().trim().equals("") && !numberTextField.getText().trim().equals("") && !emailTextField.getText().trim().equals("")) {
             welcomeText.setText("Please fill out all text boxes to continue!");
         }
         else {
+            saveShippingInformation1();
+            switchToOrderCofirmation(event);
+        }
+    }
+
+    @FXML
+    private void placeOrder2(ActionEvent event) throws IOException {
+        if (!firstNameTextField.getText().trim().equals("") && !nameTextField.getText().trim().equals("") && !emailTextField.getText().trim().equals("")) {
+            welcomeText.setText("Please fill out all text boxes to continue!");
+        }
+        else {
+            saveShippingInformation2();
             switchToOrderCofirmation(event);
         }
     }

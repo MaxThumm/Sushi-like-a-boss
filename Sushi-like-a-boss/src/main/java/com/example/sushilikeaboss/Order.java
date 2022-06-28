@@ -154,6 +154,7 @@ public class Order {
     }
 
     public int getTotalTime() {
+        updateTime();
         return totalTime;
     }
 

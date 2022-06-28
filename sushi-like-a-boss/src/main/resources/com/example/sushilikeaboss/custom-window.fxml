@@ -27,7 +27,7 @@
       </children>
    </AnchorPane>
 
-                      <Label fx:id="welcomeText" />
+                      <Label fx:id="informationText" />
    <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="118.0" prefHeight="621.0" prefWidth="1027.0" style="-fx-background-color: #424242;">
      <content>
        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="1030.0" style="-fx-background-color: #424242; -fx-border-color: #424242;">

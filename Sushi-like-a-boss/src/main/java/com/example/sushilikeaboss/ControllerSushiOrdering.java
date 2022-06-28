@@ -1,14 +1,11 @@
 package com.example.sushilikeaboss;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,7 +21,7 @@ public class ControllerSushiOrdering {
     private Parent root;
 
     @FXML
-    private Label welcomeText;
+    private Label informationText;
 
     @FXML
     private Label totalCostsBasketText;
@@ -33,27 +30,20 @@ public class ControllerSushiOrdering {
     @FXML
     private TextField removeSakeNigiriQ;
 
-    //Input field for quantity of Ebi Nigiri to be removed from order
     @FXML
     private TextField removeEbiNigiriQ;
 
-    //Input field for quantity of Umami Nigiri to be removed from order
     @FXML
     private TextField removeUmamiNigiriQ;
 
-    //Input field for quantity of Inari Nigiri to be removed from order
     @FXML
     private TextField removeInariNigiriQ;
 
-    //Input field for quantity of small sets to be removed from order
     @FXML
     private TextField removeSmallSetQ;
 
-    //Input field for quantity of large sets to be removed from order
     @FXML
     private TextField removeLargeSetQ;
-
-    //Input field for quantity of Tamago Nigiri to be removed from order
 
     @FXML
     private TextField removeVegiSetQ;
@@ -66,10 +56,6 @@ public class ControllerSushiOrdering {
     //Input field for quantity of Maguro Nigiri to be removed from order
     @FXML
     private TextField removeMaguroNigiriQ;
-
-
-
-
 
     //Input field for quantity of Sake Nigiri to be added to order
     @FXML
@@ -125,7 +111,7 @@ public class ControllerSushiOrdering {
 
     @FXML
     protected void onHelloButtonClick() {
-        welcomeText.setText("Wohoo it works :) Welcome to our Sushi Store!");
+        informationText.setText("Wohoo it works :) Welcome to our Sushi Store!");
 
     }
 
@@ -157,7 +143,7 @@ public class ControllerSushiOrdering {
         reloadOrders();
         //Changes the text to the new amount
         String text = quantity + " Sake Nigiri added to your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         updateTotalCostsBasketText();
     }
 
@@ -172,7 +158,7 @@ public class ControllerSushiOrdering {
         reloadOrders();
         //Changes the text to the new amount
         String text = quantity + " Ebi Nigiri added to your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         updateTotalCostsBasketText();
     }
 
@@ -187,7 +173,7 @@ public class ControllerSushiOrdering {
         reloadOrders();
         //Changes the text to the new amount
         String text = quantity + " Umami Nigiri added to your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         updateTotalCostsBasketText();
     }
 
@@ -326,7 +312,7 @@ public class ControllerSushiOrdering {
         reloadOrders();
         //Changes the text to the new amount
         String text = quantity + " Inari Nigiri added to your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
@@ -342,7 +328,7 @@ public class ControllerSushiOrdering {
         reloadOrders();
         //Changes the text to the new amount
         String text = quantity + " Tamago Nigiri added to your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
@@ -357,7 +343,7 @@ public class ControllerSushiOrdering {
         reloadOrders();
         //Changes the text to the new amount
         String text = quantity + " Maguro Nigiri added to your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
@@ -373,7 +359,7 @@ public class ControllerSushiOrdering {
         reloadOrders();
         //Changes the text to the new amount
         String text = quantity + " Small set added to your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
@@ -389,7 +375,7 @@ public class ControllerSushiOrdering {
         reloadOrders();
         //Changes the text to the new amount
         String text = quantity + " large set added to your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
@@ -402,7 +388,7 @@ public class ControllerSushiOrdering {
         reloadOrders();
         //Changes the text to the new amount
         String text = quantity + " Nigri and Maki set added to your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
@@ -415,7 +401,7 @@ public class ControllerSushiOrdering {
         reloadOrders();
         //Changes the text to the new amount
         String text = quantity + " Vegi set added to your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
@@ -449,7 +435,7 @@ public class ControllerSushiOrdering {
         HelloApplication.removeItem(new SakeNigiri (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " Sake Nigiri removed from your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
@@ -460,7 +446,7 @@ public class ControllerSushiOrdering {
         HelloApplication.removeItem(new EbiNigiri (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " Ebi Nigiri removed from your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
@@ -471,7 +457,7 @@ public class ControllerSushiOrdering {
         HelloApplication.removeItem(new UmamiNigiri (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " Umami Nigiri removed from your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
@@ -482,7 +468,7 @@ public class ControllerSushiOrdering {
         HelloApplication.removeItem(new InariNigri (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " Inari Nigiri removed from your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
@@ -493,7 +479,7 @@ public class ControllerSushiOrdering {
         HelloApplication.removeItem(new TamagoNigiri (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " Tamago Nigiri removed from your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
@@ -504,7 +490,7 @@ public class ControllerSushiOrdering {
         HelloApplication.removeItem(new MaguroNigri (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " Maguro Nigiri removed from your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
@@ -515,7 +501,7 @@ public class ControllerSushiOrdering {
         HelloApplication.removeItem(new SmallSet (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " small set removed from your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
@@ -526,7 +512,7 @@ public class ControllerSushiOrdering {
         HelloApplication.removeItem(new LargeSet (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " large set removed from your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
@@ -537,7 +523,7 @@ public class ControllerSushiOrdering {
         HelloApplication.removeItem(new VegiSet (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " vegi set removed from your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
@@ -548,7 +534,7 @@ public class ControllerSushiOrdering {
         HelloApplication.removeItem(new NigriMakiSet (quantityRemove));
         reloadOrders();
         String text = quantityRemove + " Nigiri and Maki set removed from your shopping cart";
-        welcomeText.setText(text);
+        informationText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
@@ -619,7 +605,7 @@ public class ControllerSushiOrdering {
     @FXML
     private void proceedToOrder(ActionEvent event) throws IOException {
         if (HelloApplication.orders.get(0).getItems().isEmpty()) {
-            welcomeText.setText("Shopping cart empty. Please add items to place an order.");
+            informationText.setText("Shopping cart empty. Please add items to place an order.");
         }
         else {
             switchToCheckout1(event);

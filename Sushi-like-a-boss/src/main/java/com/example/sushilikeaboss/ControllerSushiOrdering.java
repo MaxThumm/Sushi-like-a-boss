@@ -47,77 +47,70 @@ public class ControllerSushiOrdering {
 
     @FXML
     private TextField removeVegiSetQ;
-
     @FXML
     private TextField removeNigriMakiSetQ;
     @FXML
     private TextField removeTamagoNigiriQ;
-
-    //Input field for quantity of Maguro Nigiri to be removed from order
     @FXML
     private TextField removeMaguroNigiriQ;
 
     //Input field for quantity of Sake Nigiri to be added to order
     @FXML
     private TextField addSakeNigiriQ;
-
-    //Input field for quantity of Umami Nigiri to be added to order
     @FXML
     private TextField addUmamiNigiriQ;
-
-    //Input field for Ebi Nigiri that should be added to order
     @FXML
     private TextField addEbiNigiriQ;
-
-    //Input field for quantity of Sake Inari to be added to order
     @FXML
     private TextField addInariNigiriQ;
-
-    //Input field for quantity of Tamago Nigiri to be added to order
     @FXML
     private TextField addTamagoNigiriQ;
-
-    //Input field for quantity of large sets to be added to order
     @FXML
     private TextField addMaguroNigiriQ;
-
-
-    //Input field for quantity of small sets to be added to order
     @FXML
     private TextField addSmallSetQ;
-
-    //Input field for quantity of large sets to be added to order
     @FXML
     private TextField addLargeSetQ;
-
     @FXML
     private TextField addVegiSetQ;
-
     @FXML
     private TextField addNigriMakiSetQ;
-
     @FXML
     private ListView<String> aktelleBestellungListView;
-
     @FXML
     public Button shippingButton;
 
+    @FXML
+    private Label sakeNigiriPrice;
 
+    @FXML
+    private Label umamiNigiriPrice;
 
+    @FXML
+    private Label ebiNigiriPrice;
+
+    @FXML
+    private Label inariNigiriPrice;
+
+    @FXML
+    private Label tamagoNigiriPrice;
+
+    @FXML
+    private Label nigiriMakiSetPrice;
+
+    @FXML
+    private Label vegiSetPrice;
+
+    @FXML
+    private Label largeSetPrice;
+    @FXML
+
+    private Label maguroNigiriPrice;
+
+    @FXML
+    private Label smallSetPrice;
 
     public ControllerSushiOrdering() {
-    }
-
-
-    @FXML
-    protected void onHelloButtonClick() {
-        informationText.setText("Wohoo it works :) Welcome to our Sushi Store!");
-
-    }
-
-    @FXML
-    private void goToCustomPage(ActionEvent event){
-
     }
 
     /**
@@ -177,129 +170,15 @@ public class ControllerSushiOrdering {
         updateTotalCostsBasketText();
     }
 
+    /**
+     * Updates the costs of the shopping basket
+     */
     private void updateTotalCostsBasketText() {
         // saves the price in decimal values in order to avoid long numbers after comma
         double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
         //Changes the text to the new price in decimal
         totalCostsBasketText.setText("CHF " + decimalPrice);
     }
-
-
-
-    @FXML
-    private Label sakeNigiriPrice;
-
-    private void sakeNigiriPriceTag() {
-        if (sakeNigiriPrice == null) {
-            return;
-        }
-        double price = new SakeNigiri(1).getPrice();
-        sakeNigiriPrice.setText(price + " CHF");
-    }
-
-    @FXML
-    private Label ebiNigiriPrice;
-
-    private void ebiNigiriPriceTag() {
-        if (ebiNigiriPrice == null) {
-            return;
-        }
-        double price = new EbiNigiri(1).getPrice();
-        ebiNigiriPrice.setText(price + " CHF");
-    }
-
-    @FXML
-    private Label umamiNigiriPrice;
-
-    private void umamiNigiriPriceTag() {
-        if (umamiNigiriPrice == null) {
-            return;
-        }
-        double price = new UmamiNigiri(1).getPrice();
-        umamiNigiriPrice.setText(price + " CHF");
-    }
-
-    @FXML
-    private Label inariNigiriPrice;
-
-    private void inariPriceTag() {
-        if (inariNigiriPrice == null) {
-            return;
-        }
-        double price = new InariNigri(1).getPrice();
-        inariNigiriPrice.setText(price + " CHF");
-    }
-
-    @FXML
-    private Label tamagoNigiriPrice;
-
-    private void tamagoNigiriPriceTag() {
-        if (tamagoNigiriPrice == null) {
-            return;
-        }
-        double price = new TamagoNigiri(1).getPrice();
-        tamagoNigiriPrice.setText(price + " CHF");
-    }
-
-    @FXML
-    private Label maguroNigiriPrice;
-
-    private void maguroNigiriPriceTag() {
-        if (maguroNigiriPrice == null) {
-            return;
-        }
-        double price = new MaguroNigri(1).getPrice();
-        maguroNigiriPrice.setText(price + " CHF");
-    }
-
-    @FXML
-    private Label largeSetPrice;
-
-    private void largeSetPriceTag() {
-        if (largeSetPrice == null) {
-            return;
-        }
-        double price = new LargeSet(1).getPrice();
-        largeSetPrice.setText(price + " CHF");
-    }
-
-    @FXML
-    private Label smallSetPrice;
-
-    private void smallSetPriceTag() {
-        if (smallSetPrice == null) {
-            return;
-        }
-        double price = new SmallSet(1).getPrice();
-        smallSetPrice.setText(price + " CHF");
-    }
-
-
-
-    @FXML
-    private Label vegiSetPrice;
-
-    private void vegiSetPriceTag() {
-        if (vegiSetPrice == null) {
-            return;
-        }
-        double price = new VegiSet(1).getPrice();
-        vegiSetPrice.setText(price + " CHF");
-    }
-
-    @FXML
-    private Label nigiriMakiSetPrice;
-
-    private void nigiriMakiSetPriceTag() {
-        if (nigiriMakiSetPrice == null) {
-            return;
-        }
-        double price = new NigriMakiSet(1).getPrice();
-        nigiriMakiSetPrice.setText(price + " CHF");
-    }
-
-
-
 
     /**
      * Adding number of Umami Nigiri from input field to order
@@ -406,29 +285,9 @@ public class ControllerSushiOrdering {
         updateTotalCostsBasketText();
     }
 
-
-
-    @FXML
-    public void initialize() {
-        reloadOrders();
-        updateTotalCostsBasketText();
-        sakeNigiriPriceTag();
-        ebiNigiriPriceTag();
-        umamiNigiriPriceTag();
-        inariPriceTag();
-        maguroNigiriPriceTag();
-        tamagoNigiriPriceTag();
-        largeSetPriceTag();
-        smallSetPriceTag();
-        nigiriMakiSetPriceTag();
-        vegiSetPriceTag();
-    }
-
-
-
     /**
-    Removing number of Sake Nigiri from input field from order
-    */
+     Removing number of Sake Nigiri from input field from order
+     */
     @FXML
     private void removeSakeNigiri() {
         int quantityRemove = parseIntOrZero(removeSakeNigiriQ);
@@ -539,6 +398,138 @@ public class ControllerSushiOrdering {
         updateTotalCostsBasketText();
     }
 
+    /**
+     * Method gets the price of one Sake Nigiri and sets it to the corresponding price tag
+     */
+    private void sakeNigiriPriceTag() {
+        // exception handling because method is evoked in both menu and custom window
+        if (sakeNigiriPrice == null) {
+            return;
+        }
+        double price = new SakeNigiri(1).getPrice();
+        sakeNigiriPrice.setText(price + " CHF");
+    }
+
+    /**
+     * Method gets the price of one Ebi Nigiri and sets it to the corresponding price tag
+     */
+    private void ebiNigiriPriceTag() {
+        if (ebiNigiriPrice == null) {
+            return;
+        }
+        double price = new EbiNigiri(1).getPrice();
+        ebiNigiriPrice.setText(price + " CHF");
+    }
+
+    /**
+     * Method gets the price of one Umami Nigiri and sets it to the corresponding price tag
+     */
+    private void umamiNigiriPriceTag() {
+        if (umamiNigiriPrice == null) {
+            return;
+        }
+        double price = new UmamiNigiri(1).getPrice();
+        umamiNigiriPrice.setText(price + " CHF");
+    }
+
+    /**
+     * Method gets the price of one Inari Nigiri and sets it to the corresponding price tag
+     */
+    private void inariPriceTag() {
+        if (inariNigiriPrice == null) {
+            return;
+        }
+        double price = new InariNigri(1).getPrice();
+        inariNigiriPrice.setText(price + " CHF");
+    }
+
+    /**
+     * Method gets the price of one Tamago Nigiri and sets it to the corresponding price tag
+     */
+    private void tamagoNigiriPriceTag() {
+        if (tamagoNigiriPrice == null) {
+            return;
+        }
+        double price = new TamagoNigiri(1).getPrice();
+        tamagoNigiriPrice.setText(price + " CHF");
+    }
+
+    /**
+     * Method gets the price of one Maguro Nigiri and sets it to the corresponding price tag
+     */
+    private void maguroNigiriPriceTag() {
+        if (maguroNigiriPrice == null) {
+            return;
+        }
+        double price = new MaguroNigri(1).getPrice();
+        maguroNigiriPrice.setText(price + " CHF");
+    }
+
+
+    /**
+     * Method gets the price of one large set and sets it to the corresponding price tag
+     */
+    private void largeSetPriceTag() {
+        if (largeSetPrice == null) {
+            return;
+        }
+        double price = new LargeSet(1).getPrice();
+        largeSetPrice.setText(price + " CHF");
+    }
+
+    /**
+     * Method gets the price of one small set and sets it to the corresponding price tag
+     */
+    private void smallSetPriceTag() {
+        if (smallSetPrice == null) {
+            return;
+        }
+        double price = new SmallSet(1).getPrice();
+        smallSetPrice.setText(price + " CHF");
+    }
+
+    /**
+     * Method gets the price of one vegi set and sets it to the corresponding price tag
+     */
+    private void vegiSetPriceTag() {
+        if (vegiSetPrice == null) {
+            return;
+        }
+        double price = new VegiSet(1).getPrice();
+        vegiSetPrice.setText(price + " CHF");
+    }
+
+    /**
+     * Method gets the price of one nigiri maki set and sets it to the corresponding price tag
+     */
+
+    private void nigiriMakiSetPriceTag() {
+        if (nigiriMakiSetPrice == null) {
+            return;
+        }
+        double price = new NigriMakiSet(1).getPrice();
+        nigiriMakiSetPrice.setText(price + " CHF");
+    }
+
+    /**
+     * initialize method is evoked after change of window and does setup by evoking necessary methods
+     */
+    @FXML
+    public void initialize() {
+        reloadOrders();
+        updateTotalCostsBasketText();
+        sakeNigiriPriceTag();
+        ebiNigiriPriceTag();
+        umamiNigiriPriceTag();
+        inariPriceTag();
+        maguroNigiriPriceTag();
+        tamagoNigiriPriceTag();
+        largeSetPriceTag();
+        smallSetPriceTag();
+        nigiriMakiSetPriceTag();
+        vegiSetPriceTag();
+    }
+
 
 
     /**
@@ -566,32 +557,6 @@ public class ControllerSushiOrdering {
     public void switchToCheckout1(ActionEvent event) throws IOException {
         showFxml("Packaging-and-Addon-Window.fxml");
     }
-
-    public void switchToCustom(ActionEvent event) throws IOException {
-        showFxml("Custom-window.fxml");
-    }
-
-    public void switchToMenus(ActionEvent event) throws IOException {
-        showFxml("Menu-window.fxml");
-    }
-
-
-    public void switchToCheckout2(ActionEvent event) throws IOException {
-        showFxml("Deliverymethod-window.fxml");
-    }
-
-    public void switchToCheckout3(ActionEvent event) throws IOException {
-        showFxml("Personal-info-shipping-window.fxml");
-    }
-
-    public void switchToCheckout4(ActionEvent event) throws IOException {
-        showFxml("Personal-info-pickup-window.fxml");
-    }
-
-    public void switchToOrderCofirmation(ActionEvent event) throws IOException {
-        showFxml("Order-confirmation-window.fxml");
-    }
-
     private void showFxml(String fxmlFileName) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlFileName));
         root = fxmlLoader.load();
@@ -600,8 +565,7 @@ public class ControllerSushiOrdering {
         stage.setScene(scene);
         stage.show();
     }
-
-
+    
     @FXML
     private void proceedToOrder(ActionEvent event) throws IOException {
         if (HelloApplication.orders.get(0).getItems().isEmpty()) {

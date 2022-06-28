@@ -257,16 +257,158 @@ public class HelloController {
         totalCostsBasketText.setText("CHF " + decimalPrice);
     }
 
+    private void wasabiPriceTag() {
+        if (wasabiPrice == null) {
+            return;
+        }
+        double price = new Wasabi(1).getPrice();
+        wasabiPrice.setText(price + " CHF");
+    }
 
-    private void gingerText() {
+    private void gingerPriceTag() {
         if (gingerPrice == null) {
             return;
         }
-        int quantity = parseIntOrZero(addGingerQ);
-        double decimalPrice = Math.round(Sushi.getPrice() * quantity * 100.0) / 100.0;
-        gingerPrice.setText(decimalPrice + " CHF");
+        double price = new Ginger(1).getPrice();
+        gingerPrice.setText(price + " CHF");
     }
 
+    private void chopStickPriceTag() {
+        if (chostickPrice == null) {
+            return;
+        }
+        double price = new Chopstick(1).getPrice();
+        chostickPrice.setText(price + " CHF");
+    }
+
+    private void soySaucePriceTag() {
+        if (soySaucePrice == null) {
+            return;
+        }
+        double price = new SoySauce(1).getPrice();
+        soySaucePrice.setText(price + " CHF");
+    }
+
+    @FXML
+    private Label sakeNigiriPrice;
+
+    private void sakeNigiriPriceTag() {
+        if (sakeNigiriPrice == null) {
+            return;
+        }
+        double price = new SakeNigiri(1).getPrice();
+        sakeNigiriPrice.setText(price + " CHF");
+    }
+
+    @FXML
+    private Label ebiNigiriPrice;
+
+    private void ebiNigiriPriceTag() {
+        if (ebiNigiriPrice == null) {
+            return;
+        }
+        double price = new EbiNigiri(1).getPrice();
+        ebiNigiriPrice.setText(price + " CHF");
+    }
+
+    @FXML
+    private Label umamiNigiriPrice;
+
+    private void umamiNigiriPriceTag() {
+        if (umamiNigiriPrice == null) {
+            return;
+        }
+        double price = new UmamiNigiri(1).getPrice();
+        umamiNigiriPrice.setText(price + " CHF");
+    }
+
+    @FXML
+    private Label inariNigiriPrice;
+
+    private void inariPriceTag() {
+        if (inariNigiriPrice == null) {
+            return;
+        }
+        double price = new InariNigri(1).getPrice();
+        inariNigiriPrice.setText(price + " CHF");
+    }
+
+    @FXML
+    private Label tamagoNigiriPrice;
+
+    private void tamagoNigiriPriceTag() {
+        if (tamagoNigiriPrice == null) {
+            return;
+        }
+        double price = new TamagoNigiri(1).getPrice();
+        tamagoNigiriPrice.setText(price + " CHF");
+    }
+
+    @FXML
+    private Label maguroNigiriPrice;
+
+    private void maguroNigiriPriceTag() {
+        if (maguroNigiriPrice == null) {
+            return;
+        }
+        double price = new MaguroNigri(1).getPrice();
+        maguroNigiriPrice.setText(price + " CHF");
+    }
+
+    @FXML
+    private Label largeSetPrice;
+
+    private void largeSetPriceTag() {
+        if (largeSetPrice == null) {
+            return;
+        }
+        double price = new LargeSet(1).getPrice();
+        largeSetPrice.setText(price + " CHF");
+    }
+
+    @FXML
+    private Label smallSetPrice;
+
+    private void smallSetPriceTag() {
+        if (smallSetPrice == null) {
+            return;
+        }
+        double price = new SmallSet(1).getPrice();
+        smallSetPrice.setText(price + " CHF");
+    }
+
+    @FXML
+    private Label nigiriSetPrice;
+
+    private void nigiriSetPriceTag() {
+        if (nigiriSetPrice == null) {
+            return;
+        }
+        double price = new NigiriSet(1).getPrice();
+        nigiriSetPrice.setText(price + " CHF");
+    }
+
+    @FXML
+    private Label vegiSetPrice;
+
+    private void vegiSetPriceTag() {
+        if (vegiSetPrice == null) {
+            return;
+        }
+        double price = new VegiSet(1).getPrice();
+        vegiSetPrice.setText(price + " CHF");
+    }
+
+    @FXML
+    private Label nigiriMakiSetPrice;
+
+    private void nigiriMakiSetPriceTag() {
+        if (nigiriMakiSetPrice == null) {
+            return;
+        }
+        double price = new NigriMakiSet(1).getPrice();
+        nigiriMakiSetPrice.setText(price + " CHF");
+    }
 
 
 
@@ -477,7 +619,20 @@ public class HelloController {
         totalTimeExpress();
         totalTimeShipping();
         updateTotalCostsBasketText();
-        gingerText();
+        gingerPriceTag();
+        wasabiPriceTag();
+        soySaucePriceTag();
+        chopStickPriceTag();
+        sakeNigiriPriceTag();
+        ebiNigiriPriceTag();
+        umamiNigiriPriceTag();
+        inariPriceTag();
+        maguroNigiriPriceTag();
+        tamagoNigiriPriceTag();
+        largeSetPriceTag();
+        smallSetPriceTag();
+        nigiriMakiSetPriceTag();
+        vegiSetPriceTag();
     }
 
     @FXML
@@ -704,8 +859,6 @@ public class HelloController {
 
     }
 
-
-
     /**
      * Calculates time needed to prepare sushi and updates text for sushi pickup accordingly
      */
@@ -758,7 +911,7 @@ public class HelloController {
         //converts all Sushis in list to String
         for (Sushi sushi : sushisInOrder) {
             double decimalPrice = Math.round(sushi.getPrice()* sushi.getQuantity()*100.0)/100.0;
-            ordersAsString.add(sushi.getName() + " " + sushi.getQuantity() + " pieces for CHF " + decimalPrice);
+            ordersAsString.add(sushi.getName() + " " + sushi.getQuantity() + " pieces");
         }
         aktelleBestellungListView.getItems().clear();
         aktelleBestellungListView.getItems().addAll(ordersAsString);

@@ -134,6 +134,12 @@
                </Button>
                <TextField fx:id="removeMaguroNigiriQ" alignment="CENTER_RIGHT" layoutX="358.0" layoutY="611.0" prefHeight="26.0" prefWidth="33.0" text="1" />
                <TextField fx:id="addMaguroNigiriQ" alignment="CENTER_RIGHT" layoutX="358.0" layoutY="576.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <Label fx:id="ebiNigiriPrice" layoutX="206.0" layoutY="168.0" prefHeight="17.0" prefWidth="66.0" textFill="WHITE" />
+               <Label fx:id="umamiNigiriPrice" layoutX="204.0" layoutY="276.0" prefHeight="17.0" prefWidth="66.0" textFill="WHITE" />
+               <Label fx:id="inariNigiriPrice" layoutX="206.0" layoutY="384.0" prefHeight="17.0" prefWidth="66.0" textFill="WHITE" />
+               <Label fx:id="sakeNigiriPrice" layoutX="206.0" layoutY="59.0" prefHeight="17.0" prefWidth="66.0" textFill="WHITE" />
+               <Label fx:id="tamagoNigiriPrice" layoutX="204.0" layoutY="491.0" prefHeight="17.0" prefWidth="66.0" textFill="WHITE" />
+               <Label fx:id="maguroNigiriPrice" layoutX="208.0" layoutY="598.0" prefHeight="17.0" prefWidth="66.0" textFill="WHITE" />
             </children>
          </AnchorPane>
      </content>

@@ -84,6 +84,10 @@
                </Button>
                <TextField fx:id="removeNigriMakiSetQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="476.0" prefHeight="26.0" prefWidth="33.0" text="1" />
                <TextField fx:id="addNigriMakiSetQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="441.0" prefHeight="26.0" prefWidth="33.0" text="1" />
+               <Label fx:id="smallSetPrice" layoutX="205.0" layoutY="201.0" prefHeight="17.0" prefWidth="66.0" textFill="WHITE" />
+               <Label fx:id="vegiSetPrice" layoutX="203.0" layoutY="349.0" prefHeight="17.0" prefWidth="66.0" textFill="WHITE" />
+               <Label fx:id="nigiriMakiSetPrice" layoutX="205.0" layoutY="463.0" prefHeight="17.0" prefWidth="66.0" textFill="WHITE" />
+               <Label fx:id="largeSetPrice" layoutX="205.0" layoutY="57.0" prefHeight="17.0" prefWidth="66.0" textFill="WHITE" />
             </children>
          </AnchorPane>
       </content>

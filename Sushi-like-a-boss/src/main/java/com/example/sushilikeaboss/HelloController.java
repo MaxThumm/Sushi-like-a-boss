@@ -944,6 +944,7 @@ public class HelloController {
 
     public void switchToOrderCofirmation(ActionEvent event) throws IOException {
         showFxml("Order-confirmation.fxml");
+        loadOrderTable();
     }
 
     private void showFxml(String fxmlFileName) throws IOException {
@@ -1051,11 +1052,17 @@ public class HelloController {
         quantityCol.setCellValueFactory(
                 new PropertyValueFactory<>("quantity"));
 
+        itemCol.setCellValueFactory(
+                new PropertyValueFactory<>("name"));
 
+        priceCol.setCellValueFactory(
+                new PropertyValueFactory<>("price"));
 
+        /*
         Order currentOrder = HelloApplication.orders.get(0);
         ArrayList<Sushi> sushisInOrder = currentOrder.getItems();
         ArrayList<String> ordersAsString = new ArrayList<>();
+        */
     }
 
     @FXML

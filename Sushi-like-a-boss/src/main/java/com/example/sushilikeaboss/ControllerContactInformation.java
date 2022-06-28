@@ -198,7 +198,7 @@ public class ControllerContactInformation {
 
     @FXML
     private void toCheckout(ActionEvent event) throws IOException {
-        if (HelloApplication.orders.get(0).getDeliveryType() == DeliveryType.PICKUP) {
+        if (HelloApplication.orders.get(0).getDeliveryType().equals(DeliveryType.PICKUP)) {
             switchToCheckout4(event);
         }
         else {

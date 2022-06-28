@@ -70,9 +70,9 @@
                <RadioButton id="creditCardRButton" layoutX="65.0" layoutY="492.0" mnemonicParsing="false" onAction="#setCreditCardPayment" text="Credit Card" textFill="#dcedc7" toggleGroup="$paymentGroup" />
                <TableView id="orderTableView" layoutX="618.0" layoutY="67.0" prefHeight="200.0" prefWidth="233.0">
                  <columns>
-                   <TableColumn id="quantityCol" prefWidth="75.0" text="Qty." />
-                   <TableColumn id="itemCol" prefWidth="75.0" text="Item" />
-                     <TableColumn id="priceCol" prefWidth="75.0" text="Price" />
+                   <TableColumn id="quantityCol" editable="false" prefWidth="75.0" sortable="false" text="Qty." />
+                   <TableColumn id="itemCol" editable="false" prefWidth="75.0" sortable="false" text="Item" />
+                     <TableColumn id="priceCol" editable="false" prefWidth="75.0" sortable="false" text="Price" />
                  </columns>
                </TableView>
             </children>

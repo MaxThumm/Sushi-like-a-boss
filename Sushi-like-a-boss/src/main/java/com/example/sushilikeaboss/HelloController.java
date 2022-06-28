@@ -1,5 +1,7 @@
 package com.example.sushilikeaboss;
 
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -8,9 +10,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.TableColumn.CellDataFeatures;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import javax.security.auth.callback.Callback;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -1042,6 +1047,12 @@ public class HelloController {
     private void loadOrderTable() {
         ObservableList<Sushi> orderList = FXCollections.observableArrayList(HelloApplication.orders.get(0).getItems());
         orderTableView.setItems(orderList);
+
+        quantityCol.setCellValueFactory(
+                new PropertyValueFactory<>("quantity"));
+
+
+
         Order currentOrder = HelloApplication.orders.get(0);
         ArrayList<Sushi> sushisInOrder = currentOrder.getItems();
         ArrayList<String> ordersAsString = new ArrayList<>();

@@ -25,24 +25,14 @@ public class ControllerShippingMethod {
 
     @FXML
     private Label welcomeText;
-
     @FXML
     private Label totalCostsBasketText;
-
-    //Input field for quantity of Sake Nigiri to be removed from order
-
     @FXML
     private ListView<String> aktelleBestellungListView;
-
-    @FXML
-    public Button shippingButton;
-
     @FXML
     private Text timeText;
-
     @FXML
     private Text timeTextExpress;
-
     @FXML
     private Text timeTextShipping;
 
@@ -52,16 +42,6 @@ public class ControllerShippingMethod {
     }
 
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Wohoo it works :) Welcome to our Sushi Store!");
-
-    }
-
-    @FXML
-    private void goToCustomPage(ActionEvent event){
-
-    }
 
     private void updateTotalCostsBasketText() {
         // saves the price in decimal values in order to avoid long numbers after comma
@@ -69,7 +49,8 @@ public class ControllerShippingMethod {
         //Changes the text to the new price in decimal
         totalCostsBasketText.setText("CHF " + decimalPrice);
     }
-        @FXML
+
+    @FXML
     public void initialize() {
         reloadOrders();
         totalTimePickup();
@@ -136,26 +117,10 @@ public class ControllerShippingMethod {
         aktelleBestellungListView.getItems().addAll(ordersAsString);
     }
 
-    public void switchtoScene1FromCustom(ActionEvent event) throws IOException {
-        showFxml("Choose-menu-custom.window.fxml");
-    }
-
     public void switchToCheckout1(ActionEvent event) throws IOException {
         showFxml("Packaging-and-Addon-Window.fxml");
     }
 
-    public void switchToCustom(ActionEvent event) throws IOException {
-        showFxml("Custom-window.fxml");
-    }
-
-    public void switchToMenus(ActionEvent event) throws IOException {
-        showFxml("Menu-window.fxml");
-    }
-
-
-    public void switchToCheckout2(ActionEvent event) throws IOException {
-        showFxml("Deliverymethod-window.fxml");
-    }
 
     public void switchToCheckout3(ActionEvent event) throws IOException {
         showFxml("Personal-info-shipping-window.fxml");
@@ -165,9 +130,6 @@ public class ControllerShippingMethod {
         showFxml("Personal-info-pickup-window.fxml");
     }
 
-    public void switchToOrderCofirmation(ActionEvent event) throws IOException {
-        showFxml("Order-confirmation-window.fxml");
-    }
 
     private void showFxml(String fxmlFileName) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlFileName));
@@ -205,33 +167,6 @@ public class ControllerShippingMethod {
         currentOrder.setDeliveryType(DeliveryType.PICKUP);
     }
 
-
-    /**
-     * Method hands over PaymentMethod "CASH" to instance of order when cash payment Radio Button is selected.
-     */
-    @FXML
-    private void setCashPayment() {
-        HelloApplication.orders.get(0).setPaymentMethod(PaymentMethod.CASH);
-    }
-
-    /**
-     * Method hands over PaymentMethod "TWINT" to instance of order when twint payment Radio Button is selected.
-     */
-    @FXML
-    private void setTwintPayment() {
-        HelloApplication.orders.get(0).setPaymentMethod(PaymentMethod.TWINT);
-    }
-
-    /**
-     * Method hands over PaymentMethod "CREDITCARD" to instance of order when credit card payment Radio Button is selected.
-     */
-    @FXML
-    private void setCreditCardPayment() {
-        HelloApplication.orders.get(0).setPaymentMethod(PaymentMethod.CREDITCARD);
-    }
-
-
-
     @FXML
     private void toCheckout(ActionEvent event) throws IOException {
         if (HelloApplication.orders.get(0).getDeliveryType() == DeliveryType.PICKUP) {
@@ -241,49 +176,4 @@ public class ControllerShippingMethod {
             switchToCheckout3(event);
         }
     }
-
-    @FXML
-    private TableView orderTableView;
-
-    @FXML
-    private TableColumn<Sushi, Integer> quantityCol;
-
-    @FXML
-    private TableColumn<Sushi, Integer> itemCol;
-
-    @FXML
-    private TableColumn<Sushi, Integer> priceCol;
-
-
-    private void loadOrderTable() {
-        ObservableList<Sushi> orderList = FXCollections.observableArrayList(HelloApplication.orders.get(0).getItems());
-        orderTableView.setItems(orderList);
-        Order currentOrder = HelloApplication.orders.get(0);
-        ArrayList<Sushi> sushisInOrder = currentOrder.getItems();
-        ArrayList<String> ordersAsString = new ArrayList<>();
-    }
-
-    @FXML
-    private void proceedToOrder(ActionEvent event) throws IOException {
-        if (HelloApplication.orders.get(0).getItems().isEmpty()) {
-            welcomeText.setText("Shopping cart empty. Please add items to place an order.");
-        }
-        else {
-            switchToCheckout1(event);
-        }
-    }
-
-    @FXML
-    private ToggleGroup packagingGroup;
-
-    @FXML
-    private void toCheckout2(ActionEvent event) throws IOException {
-        if (packagingGroup.getSelectedToggle() == null) {
-            welcomeText.setText("No packaging selected. Please select a packaging to proceed!");
-        }
-        else {
-            switchToCheckout2(event);
-        }
-    }
-
 }

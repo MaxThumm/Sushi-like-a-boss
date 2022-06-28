@@ -38,7 +38,6 @@ public class ControllerWelcomeScreen1 {
      * @param event evokes the method and thereby change of scene
      * @throws IOException
      */
-
     public void switchtoScene1(ActionEvent event) throws IOException {
         showFxml("Choose-menu-custom.window.fxml");
     }

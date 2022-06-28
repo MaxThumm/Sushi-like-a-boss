@@ -8,7 +8,6 @@ public class Order {
     private double total;
 
     private int totalTime;
-    private boolean isOrdered;
     private String firstName;
     private String name;
     private int zipCode;
@@ -28,7 +27,6 @@ public class Order {
         this.zipCode = -1;
         this.city = "";
 
-        this.isOrdered = false;
         this.paymentMethod = PaymentMethod.CASH;
         this.deliveryType = DeliveryType.PICKUP;
     }
@@ -126,17 +124,6 @@ public class Order {
         totalTime = newTime;
     }
 
-    /**
-    @return String containing all items in the items list. Can be used for order confirmation or status bar.
-     */
-    public String outputContent() {
-        String output = items.get(0).getQuantity() + " " + items.get(0).getName();
-        for (int i = 1; i < items.size(); i++) {
-            output = output + ", " + items.get(i).getQuantity() + " " + items.get(i).getName();
-        }
-        return output;
-    }
-
     public int getId() {
         return id;
     }
@@ -219,13 +206,6 @@ public class Order {
         this.email = email;
     }
 
-    public boolean isOrdered() {
-        return isOrdered;
-    }
-
-    public void setOrdered(boolean ordered) {
-        isOrdered = ordered;
-    }
 
     public int getQuantityOfSushi(Class<? extends Sushi> clazz) {
         for (Sushi item : getItems()) {

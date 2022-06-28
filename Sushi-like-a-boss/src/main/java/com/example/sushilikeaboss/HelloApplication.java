@@ -20,16 +20,6 @@ public class HelloApplication extends Application {
         orders.add(0, newOrder);
     }
 
-    /*
-    Finish and place order.
-    @return Order confirmation is returned as String.
-     */
-    public static String placeOrder() {
-        orders.get(0).setOrdered(true);
-        String confirmation = "Order placed. Your order ID is " + orders.get(0).getId() + ". It consists of " + orders.get(0).outputContent() + ". The total is " + orders.get(0).getTotal() + ".";
-        return confirmation;
-    }
-
     /**
      * Method adds Sushis to the Order
      * @param sushi is sushi subclass that should be added

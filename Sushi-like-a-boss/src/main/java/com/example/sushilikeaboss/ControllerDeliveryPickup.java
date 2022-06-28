@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
+/** NOT USED!!!
  * Controller for Personal-info-pickup-window.fxml
  */
 

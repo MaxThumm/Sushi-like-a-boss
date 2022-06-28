@@ -101,7 +101,6 @@ public class ControllerSushiOrdering {
     @FXML
     private Label largeSetPrice;
     @FXML
-
     private Label maguroNigiriPrice;
 
     @FXML

@@ -14,66 +14,50 @@ public class SceneController {
     private Scene scene;
     private Parent root;
 
-    public void switchtoScene1(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+
+    /**
+     * Method sets up new FXML that should be shown
+     * @param fxmlFileName FMXL file to be executed
+     * @throws IOException exception handling code so normal flow of program can be maintained
+     */
+    private void showFxml(String fxmlFileName) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlFileName));
         root = fxmlLoader.load();
         scene = new Scene(root);
         stage = HelloApplication.getPrimaryStage();
         stage.setScene(scene);
         stage.show();
     }
+
+    /**
+     *Method changes scene to hello-view FXML
+     * @param event evokes the method and thereby change of scene
+     * @throws IOException
+     */
+
+    public void switchtoScene1(ActionEvent event) throws IOException {
+        showFxml("hello-view.fxml");
+    }
+
+    /**
+     * Method changes scene to custom-window FXML
+     * @param event evokes the method and thereby change of scene
+     * @throws IOException
+     */
 
     public void switchtoScene2(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("custom-window.fxml"));
-        root = fxmlLoader.load();
-        scene = new Scene(root);
-        stage = HelloApplication.getPrimaryStage();
-        stage.setScene(scene);
-        stage.show();
+        showFxml("custom-window.fxml");
     }
+
+    /**
+     * Method changes scene to ordering-window FXML
+     * @param event evokes the method and thereby change of scene
+     * @throws IOException
+     */
 
     public void switchtoScene3(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ordering-window.fxml"));
-        root = fxmlLoader.load();
-        scene = new Scene(root);
-        stage = HelloApplication.getPrimaryStage();
-        stage.setScene(scene);
-        stage.show();
+        showFxml("ordering-window.fxml");
     }
 
-    public void switchtoScene4(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("checkout-1.fxml"));
-        root = fxmlLoader.load();
-        scene = new Scene(root);
-        stage = HelloApplication.getPrimaryStage();
-        stage.setScene(scene);
-        stage.show();
-    }
 
-    public void switchtoScene5(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("checkout-2.fxml"));
-        root = fxmlLoader.load();
-        scene = new Scene(root);
-        stage = HelloApplication.getPrimaryStage();
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void switchtoScene6(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("checkout-3.fxml"));
-        root = fxmlLoader.load();
-        scene = new Scene(root);
-        stage = HelloApplication.getPrimaryStage();
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void switchtoScene7(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("checkout-4.fxml"));
-        root = fxmlLoader.load();
-        scene = new Scene(root);
-        stage = HelloApplication.getPrimaryStage();
-        stage.setScene(scene);
-        stage.show();
-    }
 }

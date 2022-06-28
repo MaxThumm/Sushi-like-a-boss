@@ -162,6 +162,11 @@ public class ControllerContactInformation {
         showFxml("hello-view.fxml");
     }
 
+    @FXML
+    public void switchtoStartWindow(ActionEvent event) throws IOException {
+        showFxml("start-window.fxml");
+    }
+
     public void switchToCheckout1(ActionEvent event) throws IOException {
         showFxml("Checkout-1.fxml");
     }

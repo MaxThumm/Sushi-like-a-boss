@@ -1,6 +1,7 @@
 package com.example.sushilikeaboss;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -42,6 +43,11 @@ public class ControllerWelcomeScreen1 {
         showFxml("hello-view.fxml");
     }
 
+    @FXML
+    private void newOrder(ActionEvent event) throws IOException {
+        HelloApplication.newOrder();
+        switchtoScene1(event);
+    }
 
 
 

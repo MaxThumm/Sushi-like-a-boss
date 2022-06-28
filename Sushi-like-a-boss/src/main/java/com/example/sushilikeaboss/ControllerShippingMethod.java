@@ -105,7 +105,7 @@ public class ControllerShippingMethod {
         }
         Order currentOrder = HelloApplication.orders.get(0);
         // 5 minutes added to the order time for express deliery
-        int timeCurrentOrder = currentOrder.getTotalTime()/60 + 5;
+        int timeCurrentOrder = currentOrder.getTotalTime()/60;
         timeTextExpress.setText("Your sushi delivered to you in " + timeCurrentOrder + " minutes");
     }
 
@@ -118,7 +118,7 @@ public class ControllerShippingMethod {
         }
         Order currentOrder = HelloApplication.orders.get(0);
         // 20 minutes added to the order time for delivery
-        int timeCurrentOrder = currentOrder.getTotalTime()/60 + 15;
+        int timeCurrentOrder = currentOrder.getTotalTime()/60;
         timeTextShipping.setText("Your sushi delivered to you in " + timeCurrentOrder + " minutes");
     }
 

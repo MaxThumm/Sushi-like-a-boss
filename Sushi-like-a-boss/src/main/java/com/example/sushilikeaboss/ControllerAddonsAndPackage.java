@@ -14,10 +14,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Controller for checkout-1.fxml (Addons like soy sauce, wasabi etc. and packaging)
- */
-
 public class ControllerAddonsAndPackage {
     private Stage stage;
     private Scene scene;
@@ -58,10 +54,6 @@ public class ControllerAddonsAndPackage {
 
     public ControllerAddonsAndPackage() {
     }
-    @FXML
-    private void goToCustomPage(ActionEvent event){
-
-    }
 
     /**
      * parses amount of ordered sushi
@@ -82,6 +74,9 @@ public class ControllerAddonsAndPackage {
         totalCostsBasketText.setText("CHF " + decimalPrice);
     }
 
+    /**
+     * Method gets the price of one wasabi and sets it to the corresponding price tag
+     */
     private void wasabiPriceTag() {
         if (wasabiPrice == null) {
             return;
@@ -90,6 +85,9 @@ public class ControllerAddonsAndPackage {
         wasabiPrice.setText(price + " CHF");
     }
 
+    /**
+     * Method gets the price of one ginger and sets it to the corresponding price tag
+     */
     private void gingerPriceTag() {
         if (gingerPrice == null) {
             return;
@@ -97,6 +95,10 @@ public class ControllerAddonsAndPackage {
         double price = new Ginger(1).getPrice();
         gingerPrice.setText(price + " CHF");
     }
+
+    /**
+     * Method gets the price of one set of chopsticks and sets it to the corresponding price tag
+     */
 
     private void chopStickPriceTag() {
         if (chostickPrice == null) {
@@ -106,6 +108,9 @@ public class ControllerAddonsAndPackage {
         chostickPrice.setText(price + " CHF");
     }
 
+    /**
+     * Method gets the price of one soy sauce and sets it to the corresponding price tag
+     */
     private void soySaucePriceTag() {
         if (soySaucePrice == null) {
             return;
@@ -115,6 +120,9 @@ public class ControllerAddonsAndPackage {
     }
 
 
+    /**
+     * Adding number of chopsticks from input field to order
+     */
     @FXML
     private void addChopsticks() {
         int quantity = parseIntOrZero(addChopsticksQ);
@@ -128,6 +136,9 @@ public class ControllerAddonsAndPackage {
         updateTotalCostsBasketText();
     }
 
+    /**
+     * Adding number of soy sauces from input field to order
+     */
     @FXML
     private void addSoySauce() {
         int quantity = parseIntOrZero(addSoySauceQ);
@@ -141,6 +152,9 @@ public class ControllerAddonsAndPackage {
         updateTotalCostsBasketText();
     }
 
+    /**
+     * Adding number of ginger from input field to order
+     */
     @FXML
     private void addGinger() {
         int quantity = parseIntOrZero(addGingerQ);
@@ -154,6 +168,9 @@ public class ControllerAddonsAndPackage {
         updateTotalCostsBasketText();
     }
 
+    /**
+     * Adding number of wasabi from input field to order
+     */
     @FXML
     private void addWasabi() {
         int quantity = parseIntOrZero(addWasabiQ);
@@ -165,94 +182,6 @@ public class ControllerAddonsAndPackage {
         welcomeText.setText(text);
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
-    }
-    @FXML
-    private Button addARecircleBox;
-
-    /**
-     * Adds a recircle box to the order if there is no box in the order. Then changes the text in the button to "remove"
-     * and when klicked box is removed from the order.
-     */
-    @FXML
-    private void addRecircleBox() {
-        int quantity;
-        //könnte ich noch anpassen auf die Menge die benötigt wird
-        quantity = 1;
-        //gets the current order and saves it as new variable
-        Order currentOrder = HelloApplication.orders.get(0);
-        //gets the quantitiy of recircle boxes in the current order and saves it as new variable
-        int quantityInOrder = currentOrder.getQuantityOfSushi(Recircle.class);
-        if (quantityInOrder <= 0) {
-            HelloApplication.addSushi(new Recircle(quantity));
-            //Ads the newly ordered amount to the shopping cart list
-            reloadOrders();
-            //Changes the text to the new amount
-            String text = quantity + " Recircle Box added to your shopping cart";
-            welcomeText.setText(text);
-            // saves the price in decimal values in order to avoid long numbers after comma
-            updateTotalCostsBasketText();
-
-        }
-        else{
-            HelloApplication.removeItem(new Recircle (quantity));
-            reloadOrders();
-            String text = quantity + " Recircle Box removed from your shopping cart";
-            welcomeText.setText(text);
-            // saves the price in decimal values in order to avoid long numbers after comma
-            updateTotalCostsBasketText();
-
-        }
-    }
-
-    @FXML
-    public void initialize() {
-        reloadOrders();
-        updateTotalCostsBasketText();
-        gingerPriceTag();
-        wasabiPriceTag();
-        soySaucePriceTag();
-        chopStickPriceTag();
-        if (HelloApplication.orders.get(0).getQuantityOfSushi(OneWayBox.class) == 0){
-            addRecircleBox();
-        }
-    }
-
-    @FXML
-    private Button oneWayBox;
-
-    /**
-     * Adds a recircle box to the order if there is no box in the order. Then changes the text in the button to "remove"
-     * and when klicked box is removed from the order.
-     */
-    @FXML
-    private void addOneWayBox() {
-        int quantity;
-        //könnte ich noch anpassen auf die Menge die benötigt wird
-        quantity = 1;
-        //gets the current order and saves it as new variable
-        Order currentOrder = HelloApplication.orders.get(0);
-        //gets the quantitiy of recircle boxes in the current order and saves it as new variable
-        int quantityInOrder = currentOrder.getQuantityOfSushi(OneWayBox.class);
-        if (quantityInOrder <= 0) {
-            HelloApplication.addSushi(new OneWayBox(quantity));
-            //Ads the newly ordered amount to the shopping cart list
-            reloadOrders();
-            //Changes the text to the new amount
-            String text = quantity + " Oneway Box added to your shopping cart";
-            welcomeText.setText(text);
-            // saves the price in decimal values in order to avoid long numbers after comma
-            updateTotalCostsBasketText();
-
-        }
-        else{
-            HelloApplication.removeItem(new OneWayBox (quantity));
-            reloadOrders();
-            String text = quantity + " Oneway Box removed from your shopping cart";
-            welcomeText.setText(text);
-            // saves the price in decimal values in order to avoid long numbers after comma
-            updateTotalCostsBasketText();
-
-        }
     }
 
     @FXML
@@ -298,6 +227,90 @@ public class ControllerAddonsAndPackage {
         updateTotalCostsBasketText();
     }
 
+
+    /**
+     * Adds a recircle box to the order if there is no box in the order.
+     */
+    @FXML
+    private void addRecircleBox() {
+        int quantity;
+        //könnte ich noch anpassen auf die Menge die benötigt wird
+        quantity = 1;
+        //gets the current order and saves it as new variable
+        Order currentOrder = HelloApplication.orders.get(0);
+        //gets the quantitiy of recircle boxes in the current order and saves it as new variable
+        int quantityInOrder = currentOrder.getQuantityOfSushi(Recircle.class);
+        if (quantityInOrder <= 0) {
+            HelloApplication.addSushi(new Recircle(quantity));
+            //Ads the newly ordered amount to the shopping cart list
+            reloadOrders();
+            //Changes the text to the new amount
+            String text = quantity + " Recircle Box added to your shopping cart";
+            welcomeText.setText(text);
+            // saves the price in decimal values in order to avoid long numbers after comma
+            updateTotalCostsBasketText();
+
+        }
+        else{
+            HelloApplication.removeItem(new Recircle (quantity));
+            reloadOrders();
+            String text = quantity + " Recircle Box removed from your shopping cart";
+            welcomeText.setText(text);
+            // saves the price in decimal values in order to avoid long numbers after comma
+            updateTotalCostsBasketText();
+
+        }
+    }
+
+    /**
+     * Adds a oneway box to the order if there is no box in the order.
+     */
+    @FXML
+    private void addOneWayBox() {
+        int quantity;
+        //könnte ich noch anpassen auf die Menge die benötigt wird
+        quantity = 1;
+        //gets the current order and saves it as new variable
+        Order currentOrder = HelloApplication.orders.get(0);
+        //gets the quantitiy of recircle boxes in the current order and saves it as new variable
+        int quantityInOrder = currentOrder.getQuantityOfSushi(OneWayBox.class);
+        if (quantityInOrder <= 0) {
+            HelloApplication.addSushi(new OneWayBox(quantity));
+            //Ads the newly ordered amount to the shopping cart list
+            reloadOrders();
+            //Changes the text to the new amount
+            String text = quantity + " Oneway Box added to your shopping cart";
+            welcomeText.setText(text);
+            // saves the price in decimal values in order to avoid long numbers after comma
+            updateTotalCostsBasketText();
+
+        }
+        else{
+            HelloApplication.removeItem(new OneWayBox (quantity));
+            reloadOrders();
+            String text = quantity + " Oneway Box removed from your shopping cart";
+            welcomeText.setText(text);
+            // saves the price in decimal values in order to avoid long numbers after comma
+            updateTotalCostsBasketText();
+
+        }
+    }
+
+    /**
+     * initialize method is evoked after change of window and does setup by evoking necessary methods
+     */
+    @FXML
+    public void initialize() {
+        reloadOrders();
+        updateTotalCostsBasketText();
+        gingerPriceTag();
+        wasabiPriceTag();
+        soySaucePriceTag();
+        chopStickPriceTag();
+        if (HelloApplication.orders.get(0).getQuantityOfSushi(OneWayBox.class) == 0){
+            addRecircleBox();
+        }
+    }
 
     /**
      * Method contains current shopping basket

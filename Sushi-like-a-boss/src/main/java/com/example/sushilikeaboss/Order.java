@@ -9,7 +9,6 @@ public class Order {
 
     private int totalTime;
     private boolean isOrdered;
-    private String shippingMethod;
     private String firstName;
     private String name;
     private int zipCode;
@@ -118,6 +117,12 @@ public class Order {
         for (Sushi s : items){
             newTime = newTime + (s.getTime() * s.getQuantity());
         }
+        if (deliveryType == DeliveryType.EXPRESS) {
+            newTime = newTime + 600;
+        }
+        else if (deliveryType == DeliveryType.NORMAL) {
+            newTime = newTime + 1200;
+        }
         totalTime = newTime;
     }
 
@@ -154,14 +159,6 @@ public class Order {
 
     public void setTotalTime(int totalTime) {
         this.totalTime = totalTime;
-    }
-
-    public String getShippingMethod() {
-        return shippingMethod;
-    }
-
-    public void setShippingMethod(String shippingMethod) {
-        this.shippingMethod = shippingMethod;
     }
 
     public String getFirstName() {

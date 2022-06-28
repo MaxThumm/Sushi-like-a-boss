@@ -48,7 +48,7 @@
                      <Font name="Raleway SemiBold" size="13.0" />
                   </font>
                </Text>
-               <TextField  fx:id="nameTextField" layoutX="351.0" layoutY="67.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter surname" />
+               <TextField fx:id="nameTextField" layoutX="351.0" layoutY="67.0" prefHeight="26.0" prefWidth="180.0" promptText="Enter surname" />
                <Text fill="#dcedc7" layoutX="14.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Email" wrappingWidth="65.00000000000011">
                   <font>
                      <Font name="Raleway SemiBold" size="13.0" />
@@ -60,13 +60,13 @@
                      <Font name="Raleway SemiBold" size="24.0" />
                   </font>
                </Text>
-               <RadioButton id="cashRButton" layoutX="64.0" layoutY="412.0" mnemonicParsing="false" onAction="#setCashPayment" selected="true" text="Cash" textFill="#dcedc7">
+               <RadioButton fx:id="cashRButton" layoutX="64.0" layoutY="412.0" mnemonicParsing="false" onAction="#setCashPayment" selected="true" text="Cash" textFill="#dcedc7">
                   <toggleGroup>
                      <ToggleGroup fx:id="paymentGroup" />
                   </toggleGroup>
                </RadioButton>
-               <RadioButton id="twintRButton" layoutX="64.0" layoutY="452.0" mnemonicParsing="false" onAction="#setTwintPayment" text="Twint" textFill="#dcedc7" toggleGroup="$paymentGroup" />
-               <RadioButton id="creditCardRButton" layoutX="65.0" layoutY="492.0" mnemonicParsing="false" onAction="#setCreditCardPayment" text="Credit Card" textFill="#dcedc7" toggleGroup="$paymentGroup" />
+               <RadioButton fx:id="twintRButton" layoutX="64.0" layoutY="452.0" mnemonicParsing="false" onAction="#setTwintPayment" text="Twint" textFill="#dcedc7" toggleGroup="$paymentGroup" />
+               <RadioButton fx:id="creditCardRButton" layoutX="65.0" layoutY="492.0" mnemonicParsing="false" onAction="#setCreditCardPayment" text="Credit Card" textFill="#dcedc7" toggleGroup="$paymentGroup" />
             </children>
          </AnchorPane>
      </content>
@@ -88,7 +88,7 @@
       </font>
    </Text>
    <AnchorPane layoutX="-4.0" layoutY="738.0" prefHeight="67.0" prefWidth="1051.0" style="-fx-background-color: #dcedc7;" />
-   <Button id="shippingButton" layoutX="634.0" layoutY="424.0" onAction="#placeOrder" prefHeight="47.0" prefWidth="233.0" style="-fx-background-color: #fffffb;" text="Place order">
+   <Button fx:id="shippingButton" layoutX="634.0" layoutY="424.0" onAction="#placeOrder" prefHeight="47.0" prefWidth="233.0" style="-fx-background-color: #fffffb;" text="Place order">
       <font>
          <Font name="Raleway Regular" size="12.0" />
       </font>

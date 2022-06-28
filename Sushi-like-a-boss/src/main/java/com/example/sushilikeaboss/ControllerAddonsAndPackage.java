@@ -184,6 +184,9 @@ public class ControllerAddonsAndPackage {
         updateTotalCostsBasketText();
     }
 
+    /**
+     * Remove number of chopsticks from input field to order
+     */
     @FXML
     private void removeChopsticks() {
         int quantityRemove = parseIntOrZero(removeChopsticksQ);
@@ -195,6 +198,9 @@ public class ControllerAddonsAndPackage {
         updateTotalCostsBasketText();
     }
 
+    /**
+     * Adding number of soy sauce from input field to order
+     */
     @FXML
     private void removeSoySauce() {
         int quantityRemove = parseIntOrZero(removeSoySauceQ);
@@ -205,6 +211,10 @@ public class ControllerAddonsAndPackage {
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
+
+    /**
+     * Adding number of ginger from input field to order
+     */
     @FXML
     private void removeGinger() {
         int quantityRemove = parseIntOrZero(removeGingerQ);
@@ -215,6 +225,10 @@ public class ControllerAddonsAndPackage {
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
+
+    /**
+     * Adding number of wasabi from input field to order
+     */
 
     @FXML
     private void removeWasabi() {

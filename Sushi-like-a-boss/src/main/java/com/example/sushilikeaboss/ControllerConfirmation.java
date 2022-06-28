@@ -61,6 +61,10 @@ public class ControllerConfirmation {
     }
 
 
+    /**
+     * initialize method is evoked after change of window and does setup by evoking necessary methods
+     */
+
     @FXML
     public void initialize() {
         loadOrderConfirmation();

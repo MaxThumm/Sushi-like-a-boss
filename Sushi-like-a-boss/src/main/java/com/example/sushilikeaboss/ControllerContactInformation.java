@@ -78,6 +78,10 @@ public class ControllerContactInformation {
         }
     }
 
+    /**
+     * initialize method is evoked after change of window and does setup by evoking necessary methods
+     */
+
     @FXML
     public void initialize() {
         reloadOrders();

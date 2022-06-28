@@ -196,7 +196,6 @@ public class ControllerContactInformation {
     @FXML
     public void switchToOrderCofirmation(ActionEvent event) throws IOException {
         showFxml("Order-confirmation.fxml");
-        loadOrderConfirmation();
     }
 
     private void showFxml(String fxmlFileName) throws IOException {

@@ -10,7 +10,7 @@ public class Order {
     private int totalTime;
     private boolean isOrdered;
     private String shippingMethod;
-    private String fistName;
+    private String firstName;
     private String name;
     private int zipCode;
     private String city;
@@ -24,9 +24,14 @@ public class Order {
         this.id = id;
         this.items = new ArrayList<>();
         this.total = 0;
-        isOrdered = false;
-        paymentMethod = PaymentMethod.CASH;
-        deliveryType = DeliveryType.PICKUP;
+        this.firstName = "";
+        this.name = "";
+        this.zipCode = -1;
+        this.city = "";
+
+        this.isOrdered = false;
+        this.paymentMethod = PaymentMethod.CASH;
+        this.deliveryType = DeliveryType.PICKUP;
     }
 
     /*
@@ -159,12 +164,12 @@ public class Order {
         this.shippingMethod = shippingMethod;
     }
 
-    public String getFistName() {
-        return fistName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFistName(String fistName) {
-        this.fistName = fistName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getName() {

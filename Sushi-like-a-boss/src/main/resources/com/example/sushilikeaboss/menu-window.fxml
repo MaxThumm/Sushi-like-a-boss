@@ -72,7 +72,7 @@
                </Button>
                <TextField fx:id="removeVegiSetQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="359.0" prefHeight="26.0" prefWidth="33.0" text="1" />
                <TextField fx:id="addVegiSetQ" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="324.0" prefHeight="26.0" prefWidth="33.0" text="1" />
-               <Button layoutX="282.0" layoutY="477.0" onAction="#removeNigriMakiSet" style="-fx-background-color: #fffffb;" text="Remove">
+               <Button layoutX="282.0" layoutY="477.0" onAction="#removeNigiriMakiSet" style="-fx-background-color: #fffffb;" text="Remove">
                   <font>
                      <Font name="Raleway Regular" size="12.0" />
                   </font>

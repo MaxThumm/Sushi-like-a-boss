@@ -11,9 +11,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Controller for Menu-window.fxml
- */
 
 public class ControllerSushiOrdering {
     private Stage stage;
@@ -259,6 +256,9 @@ public class ControllerSushiOrdering {
         updateTotalCostsBasketText();
     }
 
+    /**
+     * Adding number of nigiri maki sets from input field to order
+     */
     @FXML
     private void addNigiriMakiSet() {
         int quantity = parseIntOrZero(addNigriMakiSetQ);
@@ -272,6 +272,9 @@ public class ControllerSushiOrdering {
         updateTotalCostsBasketText();
     }
 
+    /**
+     * Adding number of vegi sets from input field to order
+     */
     @FXML
     private void addVegiSetSet() {
         int quantity = parseIntOrZero(addVegiSetQ);
@@ -299,6 +302,10 @@ public class ControllerSushiOrdering {
         updateTotalCostsBasketText();
     }
 
+    /**
+     Removing number of Ebi Nigiri from input field from order
+     */
+
     @FXML
     private void removeEbiNigiri() {
         int quantityRemove = parseIntOrZero(removeEbiNigiriQ);
@@ -309,6 +316,10 @@ public class ControllerSushiOrdering {
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
+
+    /**
+     Removing number of Umami Nigiri from input field from order
+     */
 
     @FXML
     private void removeUmamiNigiri() {
@@ -321,6 +332,10 @@ public class ControllerSushiOrdering {
         updateTotalCostsBasketText();
     }
 
+    /**
+     Removing number of Inari Nigiri from input field from order
+     */
+
     @FXML
     private void removeInariNigiri() {
         int quantityRemove = parseIntOrZero(removeInariNigiriQ);
@@ -331,6 +346,10 @@ public class ControllerSushiOrdering {
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
+
+    /**
+     Removing number of Tamago Nigiri from input field from order
+     */
 
     @FXML
     private void removeTamagoNigiri() {
@@ -343,6 +362,10 @@ public class ControllerSushiOrdering {
         updateTotalCostsBasketText();
     }
 
+    /**
+     Removing number of Maguro Nigiri from input field from order
+     */
+
     @FXML
     private void removeMaguroNigiri() {
         int quantityRemove = parseIntOrZero(removeMaguroNigiriQ);
@@ -353,6 +376,10 @@ public class ControllerSushiOrdering {
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
+
+    /**
+     Removing number of small sets from input field from order
+     */
 
     @FXML
     private void removeSmallSet() {
@@ -365,6 +392,10 @@ public class ControllerSushiOrdering {
         updateTotalCostsBasketText();
     }
 
+    /**
+     Removing number of large sets from input field from order
+     */
+
     @FXML
     private void removeLargeSet() {
         int quantityRemove = parseIntOrZero(removeLargeSetQ);
@@ -375,6 +406,10 @@ public class ControllerSushiOrdering {
         // saves the price in decimal values in order to avoid long numbers after comma
         updateTotalCostsBasketText();
     }
+
+    /**
+     Removing number of vegi sets from input field from order
+     */
 
     @FXML
     private void removeVegiSet() {
@@ -387,8 +422,12 @@ public class ControllerSushiOrdering {
         updateTotalCostsBasketText();
     }
 
+    /**
+     Removing number of Nigiri Maki Set from input field from order
+     */
+
     @FXML
-    private void removeNigriMakiSet() {
+    private void removeNigiriMakiSet() {
         int quantityRemove = parseIntOrZero(removeNigriMakiSetQ);
         HelloApplication.removeItem(new NigriMakiSet (quantityRemove));
         reloadOrders();
@@ -401,6 +440,7 @@ public class ControllerSushiOrdering {
     /**
      * Method gets the price of one Sake Nigiri and sets it to the corresponding price tag
      */
+
     private void sakeNigiriPriceTag() {
         // exception handling because method is evoked in both menu and custom window
         if (sakeNigiriPrice == null) {
@@ -565,7 +605,7 @@ public class ControllerSushiOrdering {
         stage.setScene(scene);
         stage.show();
     }
-    
+
     @FXML
     private void proceedToOrder(ActionEvent event) throws IOException {
         if (HelloApplication.orders.get(0).getItems().isEmpty()) {

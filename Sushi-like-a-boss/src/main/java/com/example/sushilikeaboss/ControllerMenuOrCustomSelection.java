@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * Controller for custom-window.fxml
+ * Controller for Custom-window.fxml
  */
 
 public class ControllerMenuOrCustomSelection {
@@ -40,7 +40,7 @@ public class ControllerMenuOrCustomSelection {
      */
 
     public void switchtoScene2(ActionEvent event) throws IOException {
-        showFxml("custom-window.fxml");
+        showFxml("Custom-window.fxml");
     }
 
     /**
@@ -50,7 +50,7 @@ public class ControllerMenuOrCustomSelection {
      */
 
     public void switchtoScene3(ActionEvent event) throws IOException {
-        showFxml("ordering-window.fxml");
+        showFxml("Menu-window.fxml");
     }
 
 

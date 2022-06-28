@@ -319,16 +319,16 @@ public class ControllerAddonsAndPackage {
 
 
     public void switchToCustom(ActionEvent event) throws IOException {
-        showFxml("custom-window.fxml");
+        showFxml("Custom-window.fxml");
     }
 
     public void switchToMenus(ActionEvent event) throws IOException {
-        showFxml("ordering-window.fxml");
+        showFxml("Menu-window.fxml");
     }
 
 
     public void switchToCheckout2(ActionEvent event) throws IOException {
-        showFxml("Checkout-2.fxml");
+        showFxml("Deliverymethod-window.fxml");
     }
 
 

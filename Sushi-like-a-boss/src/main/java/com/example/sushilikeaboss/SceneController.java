@@ -36,7 +36,7 @@ public class SceneController {
      */
 
     public void switchtoScene1(ActionEvent event) throws IOException {
-        showFxml("hello-view.fxml");
+        showFxml("Choose-menu-custom.window.fxml");
     }
 
     /**
@@ -46,7 +46,7 @@ public class SceneController {
      */
 
     public void switchtoScene2(ActionEvent event) throws IOException {
-        showFxml("custom-window.fxml");
+        showFxml("Custom-window.fxml");
     }
 
     /**
@@ -56,7 +56,7 @@ public class SceneController {
      */
 
     public void switchtoScene3(ActionEvent event) throws IOException {
-        showFxml("ordering-window.fxml");
+        showFxml("Menu-window.fxml");
     }
 
 

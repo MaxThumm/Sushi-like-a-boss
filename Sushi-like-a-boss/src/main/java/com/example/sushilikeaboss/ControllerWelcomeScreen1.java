@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * Controller for start-window.fxml
+ * Controller for Start-window.fxml
  */
 
 public class ControllerWelcomeScreen1 {
@@ -40,7 +40,7 @@ public class ControllerWelcomeScreen1 {
      */
 
     public void switchtoScene1(ActionEvent event) throws IOException {
-        showFxml("hello-view.fxml");
+        showFxml("Choose-menu-custom.window.fxml");
     }
 
     @FXML

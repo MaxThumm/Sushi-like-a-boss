@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Controller for Checkout-4.fxml
+ * Controller for Personal-info-pickup-window.fxml
  */
 
 public class ControllerDeliveryPickup {
@@ -132,19 +132,19 @@ public class ControllerDeliveryPickup {
 
 
     public void switchToCheckout1(ActionEvent event) throws IOException {
-        showFxml("Checkout-1.fxml");
+        showFxml("Packaging-and-Addon-Window.fxml");
     }
 
     public void switchToCheckout2(ActionEvent event) throws IOException {
-        showFxml("Checkout-2.fxml");
+        showFxml("Deliverymethod-window.fxml");
     }
 
     public void switchToCheckout3(ActionEvent event) throws IOException {
-        showFxml("Checkout-3.fxml");
+        showFxml("Personal-info-shipping-window.fxml");
     }
 
     public void switchToCheckout4(ActionEvent event) throws IOException {
-        showFxml("Checkout-4.fxml");
+        showFxml("Personal-info-pickup-window.fxml");
     }
 
 

@@ -348,13 +348,13 @@ public class ControllerConfirmation {
         }
 
         if (currentOrder.getDeliveryType().equals(DeliveryType.NORMAL)) {
-            deliveryMethodText.setText("Standard delivery - Your order will arrive in " + currentOrder.getTotalTime());
+            deliveryMethodText.setText("Standard delivery - Your order will arrive in " + currentOrder.getTotalTime()/60 + " minutes");
         }
         else if (currentOrder.getDeliveryType().equals(DeliveryType.EXPRESS)) {
-            deliveryMethodText.setText("Express delivery - Your order will arrive in " + currentOrder.getTotalTime());
+            deliveryMethodText.setText("Express delivery - Your order will arrive in " + currentOrder.getTotalTime()/60 + " minutes");
         }
         else {
-            deliveryMethodText.setText("Pickup - Your order is ready to pickup in " + + currentOrder.getTotalTime());
+            deliveryMethodText.setText("Pickup - Your order is ready to pickup in " + + currentOrder.getTotalTime()/60 + " minutes");
         }
 
         if (currentOrder.getPaymentMethod().equals(PaymentMethod.CREDITCARD)) {

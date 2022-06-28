@@ -63,11 +63,6 @@ public class ControllerShippingMethod {
 
     }
 
-
-
-
-
-
     private void updateTotalCostsBasketText() {
         // saves the price in decimal values in order to avoid long numbers after comma
         double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal() * 100.0) / 100.0;
@@ -105,7 +100,7 @@ public class ControllerShippingMethod {
         }
         Order currentOrder = HelloApplication.orders.get(0);
         // 5 minutes added to the order time for express deliery
-        int timeCurrentOrder = currentOrder.getTotalTime()/60;
+        int timeCurrentOrder = currentOrder.getTotalTime()/60 + 10;
         timeTextExpress.setText("Your sushi delivered to you in " + timeCurrentOrder + " minutes");
     }
 
@@ -118,7 +113,7 @@ public class ControllerShippingMethod {
         }
         Order currentOrder = HelloApplication.orders.get(0);
         // 20 minutes added to the order time for delivery
-        int timeCurrentOrder = currentOrder.getTotalTime()/60;
+        int timeCurrentOrder = currentOrder.getTotalTime()/60 + 20;
         timeTextShipping.setText("Your sushi delivered to you in " + timeCurrentOrder + " minutes");
     }
 
@@ -246,9 +241,6 @@ public class ControllerShippingMethod {
             switchToCheckout3(event);
         }
     }
-
-
-
 
     @FXML
     private TableView orderTableView;

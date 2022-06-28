@@ -1,3 +1,4 @@
+
 package com.example.sushilikeaboss;
 
 import javafx.collections.FXCollections;
@@ -8,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -15,10 +17,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Controller for ordering-window.fxml
+ * Controller for oder-confirmation.fxml
  */
 
-public class ControllerSushiOrdering {
+public class ControllerConfirmation {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -67,6 +69,17 @@ public class ControllerSushiOrdering {
     @FXML
     private TextField removeMaguroNigiriQ;
 
+    @FXML
+    private TextField removeChopsticksQ;
+
+    @FXML
+    private TextField removeGingerQ;
+
+    @FXML
+    private TextField removeSoySauceQ;
+
+    @FXML
+    private TextField removeWasabiSauceQ;
 
 
 
@@ -111,15 +124,67 @@ public class ControllerSushiOrdering {
     private TextField addNigriMakiSetQ;
 
     @FXML
+    private TextField addChopsticksQ;
+
+    @FXML
+    private TextField addSoySauceQ;
+
+    @FXML
+    private TextField addGingerQ;
+
+    @FXML
+    private TextField addWasabiQ;
+
+    @FXML
     private ListView<String> aktelleBestellungListView;
 
     @FXML
     public Button shippingButton;
 
+    @FXML
+    private TextField firstNameTextField;
+
+    @FXML
+    private TextField nameTextField;
+
+    @FXML
+    private TextField zipTextField;
+
+    @FXML
+    private TextField cityTextField;
+
+    @FXML
+    private TextField streetTextField;
+
+    @FXML
+    private TextField numberTextField;
+
+    @FXML
+    private TextField emailTextField;
+
+    @FXML
+    private Text timeText;
+
+    @FXML
+    private Text timeTextExpress;
+
+    @FXML
+    private Text timeTextShipping;
+
+    @FXML
+    private Label soySaucePrice;
+
+    @FXML
+    private Label chostickPrice;
+
+    @FXML
+    private Label wasabiPrice;
+
+    @FXML
+    private Label gingerPrice;
 
 
-
-    public ControllerSushiOrdering() {
+    public ControllerConfirmation() {
     }
 
 
@@ -198,7 +263,37 @@ public class ControllerSushiOrdering {
         totalCostsBasketText.setText("CHF " + decimalPrice);
     }
 
+    private void wasabiPriceTag() {
+        if (wasabiPrice == null) {
+            return;
+        }
+        double price = new Wasabi(1).getPrice();
+        wasabiPrice.setText(price + " CHF");
+    }
 
+    private void gingerPriceTag() {
+        if (gingerPrice == null) {
+            return;
+        }
+        double price = new Ginger(1).getPrice();
+        gingerPrice.setText(price + " CHF");
+    }
+
+    private void chopStickPriceTag() {
+        if (chostickPrice == null) {
+            return;
+        }
+        double price = new Chopstick(1).getPrice();
+        chostickPrice.setText(price + " CHF");
+    }
+
+    private void soySaucePriceTag() {
+        if (soySaucePrice == null) {
+            return;
+        }
+        double price = new SoySauce(1).getPrice();
+        soySaucePrice.setText(price + " CHF");
+    }
 
     @FXML
     private Label sakeNigiriPrice;
@@ -420,12 +515,111 @@ public class ControllerSushiOrdering {
         updateTotalCostsBasketText();
     }
 
+    @FXML
+    private void addChopsticks() {
+        int quantity = parseIntOrZero(addChopsticksQ);
+        HelloApplication.addSushi(new Chopstick(quantity));
+        //Ads the newly ordered amount to the shopping cart list
+        reloadOrders();
+        //Changes the text to the new amount
+        String text = quantity + " chopstick added to your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        updateTotalCostsBasketText();
+    }
 
+    @FXML
+    private void addSoySauce() {
+        int quantity = parseIntOrZero(addSoySauceQ);
+        HelloApplication.addSushi(new SoySauce(quantity));
+        //Ads the newly ordered amount to the shopping cart list
+        reloadOrders();
+        //Changes the text to the new amount
+        String text = quantity + " soy sauce added to your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        updateTotalCostsBasketText();
+    }
+
+    @FXML
+    private void addGinger() {
+        int quantity = parseIntOrZero(addGingerQ);
+        HelloApplication.addSushi(new Ginger(quantity));
+        //Ads the newly ordered amount to the shopping cart list
+        reloadOrders();
+        //Changes the text to the new amount
+        String text = quantity + " ginger added to your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        updateTotalCostsBasketText();
+    }
+
+    @FXML
+    private void addWasabi() {
+        int quantity = parseIntOrZero(addWasabiQ);
+        HelloApplication.addSushi(new Wasabi (quantity));
+        //Ads the newly ordered amount to the shopping cart list
+        reloadOrders();
+        //Changes the text to the new amount
+        String text = quantity + " wasabi added to your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        updateTotalCostsBasketText();
+    }
+
+
+    @FXML
+    private Button addARecircleBox;
+
+    /**
+     * Adds a recircle box to the order if there is no box in the order. Then changes the text in the button to "remove"
+     * and when klicked box is removed from the order.
+     */
+    @FXML
+    private void addRecircleBox() {
+        int quantity;
+        //könnte ich noch anpassen auf die Menge die benötigt wird
+        quantity = 1;
+        //gets the current order and saves it as new variable
+        Order currentOrder = HelloApplication.orders.get(0);
+        //gets the quantitiy of recircle boxes in the current order and saves it as new variable
+        int quantityInOrder = currentOrder.getQuantityOfSushi(Recircle.class);
+        if (quantityInOrder <= 0) {
+            HelloApplication.addSushi(new Recircle(quantity));
+            //Ads the newly ordered amount to the shopping cart list
+            reloadOrders();
+            //Changes the text to the new amount
+            String text = quantity + " Recircle Box added to your shopping cart";
+            welcomeText.setText(text);
+            // saves the price in decimal values in order to avoid long numbers after comma
+            updateTotalCostsBasketText();
+            //If Box has been put into shopping cart the text is changed to remove
+            addARecircleBox.setText("Remove");
+
+        }
+        else{
+            HelloApplication.removeItem(new Recircle (quantity));
+            reloadOrders();
+            String text = quantity + " Recircle Box removed from your shopping cart";
+            welcomeText.setText(text);
+            // saves the price in decimal values in order to avoid long numbers after comma
+            updateTotalCostsBasketText();
+            addARecircleBox.setText("Select");
+
+        }
+    }
 
     @FXML
     public void initialize() {
         reloadOrders();
+        totalTimePickup();
+        totalTimeExpress();
+        totalTimeShipping();
         updateTotalCostsBasketText();
+        gingerPriceTag();
+        wasabiPriceTag();
+        soySaucePriceTag();
+        chopStickPriceTag();
         sakeNigiriPriceTag();
         ebiNigiriPriceTag();
         umamiNigiriPriceTag();
@@ -436,6 +630,47 @@ public class ControllerSushiOrdering {
         smallSetPriceTag();
         nigiriMakiSetPriceTag();
         vegiSetPriceTag();
+    }
+
+    @FXML
+    private Button oneWayBox;
+
+    /**
+     * Adds a recircle box to the order if there is no box in the order. Then changes the text in the button to "remove"
+     * and when klicked box is removed from the order.
+     */
+    @FXML
+    private void addOneWayBox() {
+        int quantity;
+        //könnte ich noch anpassen auf die Menge die benötigt wird
+        quantity = 1;
+        //gets the current order and saves it as new variable
+        Order currentOrder = HelloApplication.orders.get(0);
+        //gets the quantitiy of recircle boxes in the current order and saves it as new variable
+        int quantityInOrder = currentOrder.getQuantityOfSushi(OneWayBox.class);
+        if (quantityInOrder <= 0) {
+            HelloApplication.addSushi(new OneWayBox(quantity));
+            //Ads the newly ordered amount to the shopping cart list
+            reloadOrders();
+            //Changes the text to the new amount
+            String text = quantity + " Oneway Box added to your shopping cart";
+            welcomeText.setText(text);
+            // saves the price in decimal values in order to avoid long numbers after comma
+            updateTotalCostsBasketText();
+            //If Box has been put into shopping cart the text is changed to remove
+            oneWayBox.setText("Remove");
+
+        }
+        else{
+            HelloApplication.removeItem(new OneWayBox (quantity));
+            reloadOrders();
+            String text = quantity + " Oneway Box removed from your shopping cart";
+            welcomeText.setText(text);
+            // saves the price in decimal values in order to avoid long numbers after comma
+            updateTotalCostsBasketText();
+            oneWayBox.setText("Select");
+
+        }
     }
 
 
@@ -553,6 +788,127 @@ public class ControllerSushiOrdering {
         updateTotalCostsBasketText();
     }
 
+    @FXML
+    private void removeChopsticks() {
+        int quantityRemove = parseIntOrZero(removeChopsticksQ);
+        HelloApplication.removeItem(new Chopstick (quantityRemove));
+        reloadOrders();
+        String text = quantityRemove + " chopstick set removed from your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        updateTotalCostsBasketText();
+    }
+
+    @FXML
+    private void removeSoySauce() {
+        int quantityRemove = parseIntOrZero(removeSoySauceQ);
+        HelloApplication.removeItem(new SoySauce (quantityRemove));
+        reloadOrders();
+        String text = quantityRemove + " soy sauce set removed from your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        updateTotalCostsBasketText();
+    }
+    @FXML
+    private void removeGinger() {
+        int quantityRemove = parseIntOrZero(removeGingerQ);
+        HelloApplication.removeItem(new Ginger (quantityRemove));
+        reloadOrders();
+        String text = quantityRemove + " ginger set removed from your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        updateTotalCostsBasketText();
+    }
+
+    @FXML
+    private void removeWasabi() {
+        int quantityRemove = parseIntOrZero(removeWasabiSauceQ);
+        HelloApplication.removeItem(new Wasabi (quantityRemove));
+        reloadOrders();
+        String text = quantityRemove + " wasabi removed from your shopping cart";
+        welcomeText.setText(text);
+        // saves the price in decimal values in order to avoid long numbers after comma
+        updateTotalCostsBasketText();
+    }
+
+    private void saveShippingInformation1() {
+        String firstName = firstNameTextField.getText();
+        String name = nameTextField.getText();
+        int zipCode = parseIntOrZero(zipTextField);
+        String city = cityTextField.getText();
+        String street = streetTextField.getText();
+        String houseNo = numberTextField.getText();
+        String email = emailTextField.getText();
+
+        HelloApplication.addShippingInformation(firstName, name, zipCode, city, street, houseNo, email);
+
+        String text = "Shipping information saved!";
+        welcomeText.setText(text);
+
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    private void saveShippingInformation2() {
+        String firstName = firstNameTextField.getText();
+        String name = nameTextField.getText();
+        String email = emailTextField.getText();
+
+        HelloApplication.addShippingInformation(firstName, name, -1, "", "", "", email);
+
+        String text = "Shipping information saved!";
+        welcomeText.setText(text);
+
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    /**
+     * Calculates time needed to prepare sushi and updates text for sushi pickup accordingly
+     */
+    private void totalTimePickup(){
+        // because the method is evoked whenever a scene is initialized, null case implemented
+        if (timeText == null) {
+            return;
+        }
+        Order currentOrder = HelloApplication.orders.get(0);
+        int timeCurrentOrder = currentOrder.getTotalTime()/60;
+        timeText.setText("Your sushi is ready for pickup in " + timeCurrentOrder + " minutes");
+    }
+
+    /**
+     * Calculates time needed to prepare sushi and updates text for express delivery accordingly
+     */
+    private void totalTimeExpress(){
+        if (timeTextExpress == null) {
+            return;
+        }
+        Order currentOrder = HelloApplication.orders.get(0);
+        // 5 minutes added to the order time for express deliery
+        int timeCurrentOrder = currentOrder.getTotalTime()/60 + 5;
+        timeTextExpress.setText("Your sushi delivered to you in " + timeCurrentOrder + " minutes");
+    }
+
+    /**
+     * Calculates time needed to prepare sushi and updates text for normal delivery accordingly
+     */
+    private void totalTimeShipping(){
+        if (timeTextShipping == null) {
+            return;
+        }
+        Order currentOrder = HelloApplication.orders.get(0);
+        // 20 minutes added to the order time for delivery
+        int timeCurrentOrder = currentOrder.getTotalTime()/60 + 15;
+        timeTextShipping.setText("Your sushi delivered to you in " + timeCurrentOrder + " minutes");
+    }
 
 
     /**
@@ -575,6 +931,10 @@ public class ControllerSushiOrdering {
 
     public void switchtoScene1FromCustom(ActionEvent event) throws IOException {
         showFxml("hello-view.fxml");
+    }
+
+    public void switchtoStartWindow(ActionEvent event) throws IOException {
+        showFxml("start-window.fxml");
     }
 
     public void switchToCheckout1(ActionEvent event) throws IOException {
@@ -604,6 +964,7 @@ public class ControllerSushiOrdering {
 
     public void switchToOrderCofirmation(ActionEvent event) throws IOException {
         showFxml("Order-confirmation.fxml");
+        loadOrderConfirmation();
     }
 
     private void showFxml(String fxmlFileName) throws IOException {
@@ -615,6 +976,126 @@ public class ControllerSushiOrdering {
         stage.show();
     }
 
+    /**
+     * Method hands over DeliveryType "Express" to instance of order when express button is klicked.
+     */
+    @FXML
+    protected void expressShippingButtonKlick() {
+        Order currentOrder = HelloApplication.orders.get(0);
+        currentOrder.setDeliveryType(DeliveryType.EXPRESS);
+    }
+
+    /**
+     * Method hands over DeliveryType "Normal" to instance of order when normal button is klicked.
+     */
+    @FXML
+    protected void normalShippingButtonKlick() {
+        Order currentOrder = HelloApplication.orders.get(0);
+        currentOrder.setDeliveryType(DeliveryType.NORMAL);
+    }
+
+    /**
+     * Method hands over DeliveryType "Pickup" to instance of order when pickup button is klicked.
+     */
+    @FXML
+    protected void pickUpShippingButtonKlick() {
+        Order currentOrder = HelloApplication.orders.get(0);
+        currentOrder.setDeliveryType(DeliveryType.PICKUP);
+    }
+
+
+    /**
+     * Method hands over PaymentMethod "CASH" to instance of order when cash payment Radio Button is selected.
+     */
+    @FXML
+    private void setCashPayment() {
+        HelloApplication.orders.get(0).setPaymentMethod(PaymentMethod.CASH);
+    }
+
+    /**
+     * Method hands over PaymentMethod "TWINT" to instance of order when twint payment Radio Button is selected.
+     */
+    @FXML
+    private void setTwintPayment() {
+        HelloApplication.orders.get(0).setPaymentMethod(PaymentMethod.TWINT);
+    }
+
+    /**
+     * Method hands over PaymentMethod "CREDITCARD" to instance of order when credit card payment Radio Button is selected.
+     */
+    @FXML
+    private void setCreditCardPayment() {
+        HelloApplication.orders.get(0).setPaymentMethod(PaymentMethod.CREDITCARD);
+    }
+
+
+    @FXML
+    private void placeOrder1(ActionEvent event) throws IOException {
+        if (!firstNameTextField.getText().trim().equals("") && !nameTextField.getText().trim().equals("") && !zipTextField.getText().trim().equals("") && !cityTextField.getText().trim().equals("") && !streetTextField.getText().trim().equals("") && !numberTextField.getText().trim().equals("") && !emailTextField.getText().trim().equals("")) {
+            welcomeText.setText("Please fill out all text boxes to continue!");
+        }
+        else {
+            saveShippingInformation1();
+            switchToOrderCofirmation(event);
+        }
+    }
+
+    @FXML
+    private void placeOrder2(ActionEvent event) throws IOException {
+        if (!firstNameTextField.getText().trim().equals("") && !nameTextField.getText().trim().equals("") && !zipTextField.getText().trim().equals("") && !cityTextField.getText().trim().equals("") && !streetTextField.getText().trim().equals("") && !numberTextField.getText().trim().equals("") && !emailTextField.getText().trim().equals("")) {
+            welcomeText.setText("Please fill out all text boxes to continue!");
+        }
+        else {
+            saveShippingInformation2();
+            switchToOrderCofirmation(event);
+        }
+    }
+
+    @FXML
+    private void toCheckout(ActionEvent event) throws IOException {
+        if (HelloApplication.orders.get(0).getDeliveryType() == DeliveryType.PICKUP) {
+            switchToCheckout4(event);
+        }
+        else {
+            switchToCheckout3(event);
+        }
+    }
+
+
+
+
+    @FXML
+    private TableView orderTableView;
+
+    @FXML
+    private TableColumn<Sushi, Integer> quantityCol;
+
+    @FXML
+    private TableColumn<Sushi, Integer> itemCol;
+
+    @FXML
+    private TableColumn<Sushi, Integer> priceCol;
+
+
+    private void loadOrderTable() {
+        ObservableList<Sushi> orderList = FXCollections.observableArrayList(HelloApplication.orders.get(0).getItems());
+        orderTableView.setItems(orderList);
+
+        quantityCol.setCellValueFactory(
+                new PropertyValueFactory<>("quantity"));
+
+        itemCol.setCellValueFactory(
+                new PropertyValueFactory<>("name"));
+
+        priceCol.setCellValueFactory(
+                new PropertyValueFactory<>("price"));
+
+        /*
+        Order currentOrder = HelloApplication.orders.get(0);
+        ArrayList<Sushi> sushisInOrder = currentOrder.getItems();
+        ArrayList<String> ordersAsString = new ArrayList<>();
+        */
+    }
 
     @FXML
     private void proceedToOrder(ActionEvent event) throws IOException {
@@ -626,6 +1107,67 @@ public class ControllerSushiOrdering {
         }
     }
 
+    @FXML
+    private ToggleGroup packagingGroup;
 
+    @FXML
+    private void toCheckout2(ActionEvent event) throws IOException {
+        if (packagingGroup.getSelectedToggle() == null) {
+            welcomeText.setText("No packaging selected. Please select a packaging to proceed!");
+        }
+        else {
+            switchToCheckout2(event);
+        }
+    }
+
+
+    @FXML
+    private Label nameText;
+
+    @FXML
+    private Label emailText;
+
+    @FXML
+    private Label adressText;
+
+    @FXML
+    private Label deliveryMethodText;
+
+    @FXML
+    private Label paymentMethodText;
+
+    private void loadOrderConfirmation() {
+        Order currentOrder = HelloApplication.orders.get(0);
+        nameText.setText(currentOrder.getFirstName() + " " + currentOrder.getName());
+        emailText.setText(currentOrder.getEmail());
+        if (currentOrder.getZipCode() == -1 && currentOrder.getCity().equals("") && currentOrder.getStreet().equals("") && currentOrder.getHouseNo().equals("")) {
+            adressText.setText("");
+        }
+        else {
+            adressText.setText(currentOrder.getStreet() + " " + currentOrder.getHouseNo() + ", " + currentOrder.getZipCode() + ", " + currentOrder.getCity());
+        }
+
+        if (currentOrder.getDeliveryType().equals(DeliveryType.NORMAL)) {
+            deliveryMethodText.setText("Standard delivery - Your order will arrive in approx. 30 min.");
+        }
+        else if (currentOrder.getDeliveryType().equals(DeliveryType.EXPRESS)) {
+            deliveryMethodText.setText("Express delivery - Your order will arrive in approx. 20 min.");
+        }
+        else {
+            deliveryMethodText.setText("Pickup - Your order is ready to pickup in approx. 30 min.");
+        }
+
+        if (currentOrder.getPaymentMethod().equals(PaymentMethod.CREDITCARD)) {
+            paymentMethodText.setText("Credit card");
+        }
+        else if (currentOrder.getPaymentMethod().equals(PaymentMethod.TWINT)) {
+            paymentMethodText.setText("Twint");
+        }
+        else {
+            paymentMethodText.setText("Cash");
+        }
+        updateTotalCostsBasketText();
+        loadOrderTable();
+    }
 
 }

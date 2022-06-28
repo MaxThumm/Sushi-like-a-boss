@@ -14,6 +14,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Controller for checkout-1.fxml (Addons like soy sauce, wasabi etc. and packaging)
+ */
+
 public class ControllerAddonsAndPackage {
     private Stage stage;
     private Scene scene;

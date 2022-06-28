@@ -14,6 +14,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ *  Controller for checkout-2.fxml and hello-view.fxml
+ */
+
 public class ControllerShippingMethod {
     private Stage stage;
     private Scene scene;

@@ -14,6 +14,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Controller for Checkout-3.FXML
+ */
+
 public class ControllerContactInformation {
     private Stage stage;
     private Scene scene;

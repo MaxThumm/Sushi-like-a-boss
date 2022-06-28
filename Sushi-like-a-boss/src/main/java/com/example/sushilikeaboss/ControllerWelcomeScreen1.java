@@ -8,6 +8,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Controller for start-window.fxml
+ */
+
 public class ControllerWelcomeScreen1 {
     private Stage stage;
     private Scene scene;

@@ -238,6 +238,9 @@ public class ControllerAddonsAndPackage {
         wasabiPriceTag();
         soySaucePriceTag();
         chopStickPriceTag();
+        if (HelloApplication.orders.get(0).getQuantityOfSushi(OneWayBox.class) == 0){
+            addRecircleBox();
+        }
     }
 
     @FXML

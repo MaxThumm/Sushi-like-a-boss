@@ -162,6 +162,7 @@ public class Order {
 
     public void setShippingMethod(String shippingMethod) {
         this.shippingMethod = shippingMethod;
+
     }
 
     public String getFirstName() {

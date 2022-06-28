@@ -24,7 +24,7 @@
    </AnchorPane>
 
     <Label fx:id="welcomeText" />
-   <Button layoutX="229.0" layoutY="389.0" mnemonicParsing="false" onAction="#switchtoScene1" prefHeight="52.0" prefWidth="248.0" style="-fx-background-color: #fffffb;" text="Place order" textFill="#6d6d6d">
+   <Button layoutX="229.0" layoutY="389.0" mnemonicParsing="false" onAction="#newOrder" prefHeight="52.0" prefWidth="248.0" style="-fx-background-color: #fffffb;" text="Place order" textFill="#6d6d6d">
       <font>
          <Font name="Raleway Bold" size="28.0" />
       </font>

@@ -30,42 +30,17 @@ public class ControllerConfirmation {
     @FXML
     private Label totalCostsBasketText;
 
-    @FXML
-    private ListView<String> aktelleBestellungListView;
 
     @FXML
     public Button shippingButton;
-
-    @FXML
-    private TextField firstNameTextField;
-
-    @FXML
-    private TextField nameTextField;
-
-    @FXML
-    private TextField zipTextField;
-
-    @FXML
-    private TextField cityTextField;
-
-    @FXML
-    private TextField streetTextField;
-
-    @FXML
-    private TextField numberTextField;
-
-    @FXML
-    private TextField emailTextField;
 
 
     public ControllerConfirmation() {
     }
 
-
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Wohoo it works :) Welcome to our Sushi Store!");
-
     }
 
     @FXML
@@ -86,11 +61,6 @@ public class ControllerConfirmation {
     }
 
 
-
-
-
-
-
     @FXML
     public void initialize() {
         loadOrderConfirmation();
@@ -99,65 +69,8 @@ public class ControllerConfirmation {
 
 
 
-    private void saveShippingInformation1() {
-        String firstName = firstNameTextField.getText();
-        String name = nameTextField.getText();
-        int zipCode = parseIntOrZero(zipTextField);
-        String city = cityTextField.getText();
-        String street = streetTextField.getText();
-        String houseNo = numberTextField.getText();
-        String email = emailTextField.getText();
-
-        HelloApplication.addShippingInformation(firstName, name, zipCode, city, street, houseNo, email);
-
-        String text = "Shipping information saved!";
-        welcomeText.setText(text);
-
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
-
-    private void saveShippingInformation2() {
-        String firstName = firstNameTextField.getText();
-        String name = nameTextField.getText();
-        String email = emailTextField.getText();
-
-        HelloApplication.addShippingInformation(firstName, name, -1, "", "", "", email);
-
-        String text = "Shipping information saved!";
-        welcomeText.setText(text);
-
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
 
 
-
-    /**
-     * Method contains current shopping basket
-     */
-    private void reloadOrders() {
-        //gets the current order and saves it as new variable
-        Order currentOrder = HelloApplication.orders.get(0);
-        //Gets items from the current order and saves them into arraylist
-        ArrayList<Sushi> sushisInOrder = currentOrder.getItems();
-        ArrayList<String> ordersAsString = new ArrayList<>();
-        //converts all Sushis in list to String
-        for (Sushi sushi : sushisInOrder) {
-            double decimalPrice = Math.round(sushi.getPrice()* sushi.getQuantity()*100.0)/100.0;
-            ordersAsString.add(sushi.getName() + " " + sushi.getQuantity() + " pieces");
-        }
-        aktelleBestellungListView.getItems().clear();
-        aktelleBestellungListView.getItems().addAll(ordersAsString);
-    }
 
     public void switchtoScene1FromCustom(ActionEvent event) throws IOException {
         showFxml("hello-view.fxml");
@@ -208,27 +121,6 @@ public class ControllerConfirmation {
         stage.show();
     }
 
-    @FXML
-    private void placeOrder1(ActionEvent event) throws IOException {
-        if (!firstNameTextField.getText().trim().equals("") && !nameTextField.getText().trim().equals("") && !zipTextField.getText().trim().equals("") && !cityTextField.getText().trim().equals("") && !streetTextField.getText().trim().equals("") && !numberTextField.getText().trim().equals("") && !emailTextField.getText().trim().equals("")) {
-            saveShippingInformation1();
-            switchToOrderCofirmation(event);
-        }
-        else {
-            welcomeText.setText("Please fill out all text boxes to continue!");
-        }
-    }
-
-    @FXML
-    private void placeOrder2(ActionEvent event) throws IOException {
-        if (!firstNameTextField.getText().trim().equals("") && !nameTextField.getText().trim().equals("") && !emailTextField.getText().trim().equals("")) {
-            saveShippingInformation2();
-            switchToOrderCofirmation(event);
-        }
-        else {
-            welcomeText.setText("Please fill out all text boxes to continue!");
-        }
-    }
 
     @FXML
     private void toCheckout(ActionEvent event) throws IOException {
@@ -239,9 +131,6 @@ public class ControllerConfirmation {
             switchToCheckout3(event);
         }
     }
-
-
-
 
     @FXML
     private TableView orderTableView;
@@ -318,8 +207,6 @@ public class ControllerConfirmation {
         HelloApplication.orders.get(0).setPaymentMethod(PaymentMethod.CREDITCARD);
     }
 
-
-
     @FXML
     private Label nameText;
 
@@ -377,7 +264,5 @@ public class ControllerConfirmation {
         //Changes the text to the new price in decimal
         totalCostsBasketText.setText("CHF " + decimalPrice);
     }
-
-
 
 }

@@ -61,13 +61,6 @@ public class ControllerContactInformation {
     public ControllerContactInformation() {
     }
 
-
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Wohoo it works :) Welcome to our Sushi Store!");
-
-    }
-
     @FXML
     private void goToCustomPage(ActionEvent event){
 
@@ -84,12 +77,6 @@ public class ControllerContactInformation {
             return 0;
         }
     }
-
-
-
-
-
-
 
     @FXML
     public void initialize() {

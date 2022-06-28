@@ -830,8 +830,7 @@ public class HelloController {
         updateTotalCostsBasketText();
     }
 
-    @FXML
-    private void onShippingButtonClick() {
+    private void saveShippingInformation1() {
         String firstName = firstNameTextField.getText();
         String name = nameTextField.getText();
         int zipCode = parseIntOrZero(zipTextField);
@@ -842,16 +841,32 @@ public class HelloController {
 
         HelloApplication.addShippingInformation(firstName, name, zipCode, city, street, houseNo, email);
 
-        //Changes the text to the new amount
         String text = "Shipping information saved!";
         welcomeText.setText(text);
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
 
+    }
+
+    private void saveShippingInformation2() {
+        String firstName = firstNameTextField.getText();
+        String name = nameTextField.getText();
+        String email = emailTextField.getText();
+
+        HelloApplication.addShippingInformation(firstName, name, -1, "", "", "", email);
+
+        String text = "Shipping information saved!";
+        welcomeText.setText(text);
+
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
@@ -917,6 +932,10 @@ public class HelloController {
         showFxml("hello-view.fxml");
     }
 
+    public void switchtoStartWindow(ActionEvent event) throws IOException {
+        showFxml("start-window.fxml");
+    }
+
     public void switchToCheckout1(ActionEvent event) throws IOException {
         showFxml("Checkout-1.fxml");
     }
@@ -944,7 +963,7 @@ public class HelloController {
 
     public void switchToOrderCofirmation(ActionEvent event) throws IOException {
         showFxml("Order-confirmation.fxml");
-        loadOrderTable();
+        loadOrderConfirmation();
     }
 
     private void showFxml(String fxmlFileName) throws IOException {
@@ -1010,11 +1029,23 @@ public class HelloController {
 
 
     @FXML
-    private void placeOrder(ActionEvent event) throws IOException {
+    private void placeOrder1(ActionEvent event) throws IOException {
         if (!firstNameTextField.getText().trim().equals("") && !nameTextField.getText().trim().equals("") && !zipTextField.getText().trim().equals("") && !cityTextField.getText().trim().equals("") && !streetTextField.getText().trim().equals("") && !numberTextField.getText().trim().equals("") && !emailTextField.getText().trim().equals("")) {
             welcomeText.setText("Please fill out all text boxes to continue!");
         }
         else {
+            saveShippingInformation1();
+            switchToOrderCofirmation(event);
+        }
+    }
+
+    @FXML
+    private void placeOrder2(ActionEvent event) throws IOException {
+        if (!firstNameTextField.getText().trim().equals("") && !nameTextField.getText().trim().equals("") && !zipTextField.getText().trim().equals("") && !cityTextField.getText().trim().equals("") && !streetTextField.getText().trim().equals("") && !numberTextField.getText().trim().equals("") && !emailTextField.getText().trim().equals("")) {
+            welcomeText.setText("Please fill out all text boxes to continue!");
+        }
+        else {
+            saveShippingInformation2();
             switchToOrderCofirmation(event);
         }
     }
@@ -1086,6 +1117,56 @@ public class HelloController {
         else {
             switchToCheckout2(event);
         }
+    }
+
+
+    @FXML
+    private Label nameText;
+
+    @FXML
+    private Label emailText;
+
+    @FXML
+    private Label adressText;
+
+    @FXML
+    private Label deliveryMethodText;
+
+    @FXML
+    private Label paymentMethodText;
+
+    private void loadOrderConfirmation() {
+        Order currentOrder = HelloApplication.orders.get(0);
+        nameText.setText(currentOrder.getFirstName() + " " + currentOrder.getName());
+        emailText.setText(currentOrder.getEmail());
+        if (currentOrder.getZipCode() == -1 && currentOrder.getCity().equals("") && currentOrder.getStreet().equals("") && currentOrder.getHouseNo().equals("")) {
+            adressText.setText("");
+        }
+        else {
+            adressText.setText(currentOrder.getStreet() + " " + currentOrder.getHouseNo() + ", " + currentOrder.getZipCode() + ", " + currentOrder.getCity());
+        }
+
+        if (currentOrder.getDeliveryType().equals(DeliveryType.NORMAL)) {
+            deliveryMethodText.setText("Standard delivery - Your order will arrive in approx. 30 min.");
+        }
+        else if (currentOrder.getDeliveryType().equals(DeliveryType.EXPRESS)) {
+            deliveryMethodText.setText("Express delivery - Your order will arrive in approx. 20 min.");
+        }
+        else {
+            deliveryMethodText.setText("Pickup - Your order is ready to pickup in approx. 30 min.");
+        }
+
+        if (currentOrder.getPaymentMethod().equals(PaymentMethod.CREDITCARD)) {
+            paymentMethodText.setText("Credit card");
+        }
+        else if (currentOrder.getPaymentMethod().equals(PaymentMethod.TWINT)) {
+            paymentMethodText.setText("Twint");
+        }
+        else {
+            paymentMethodText.setText("Cash");
+        }
+        updateTotalCostsBasketText();
+        loadOrderTable();
     }
 
 }

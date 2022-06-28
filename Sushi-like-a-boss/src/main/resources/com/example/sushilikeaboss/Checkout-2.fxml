@@ -79,7 +79,7 @@
       </font>
    </Text>
    <AnchorPane layoutX="-4.0" layoutY="738.0" prefHeight="67.0" prefWidth="1051.0" style="-fx-background-color: #dcedc7;" />
-   <Button layoutX="634.0" layoutY="424.0" onAction="#toCheckout" prefHeight="47.0" prefWidth="233.0" style="-fx-background-color: #fffffb;" text="Next step">
+   <Button layoutX="634.0" layoutY="424.0" onAction="#switchToCheckout4" prefHeight="47.0" prefWidth="233.0" style="-fx-background-color: #fffffb;" text="Next step">
       <font>
          <Font name="Raleway Regular" size="12.0" />
       </font>

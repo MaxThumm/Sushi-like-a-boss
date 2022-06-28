@@ -257,4 +257,31 @@ public class ControllerContactInformation {
         }
     }
 
+    /**
+     * Method hands over PaymentMethod "CASH" to instance of order when cash payment Radio Button is selected.
+     */
+    @FXML
+    private void setCashPayment() {
+        HelloApplication.orders.get(0).setPaymentMethod(PaymentMethod.CASH);
+    }
+
+    /**
+     * Method hands over PaymentMethod "TWINT" to instance of order when twint payment Radio Button is selected.
+     */
+    @FXML
+    private void setTwintPayment() {
+        HelloApplication.orders.get(0).setPaymentMethod(PaymentMethod.TWINT);
+    }
+
+    /**
+     * Method hands over PaymentMethod "CREDITCARD" to instance of order when credit card payment Radio Button is selected.
+     */
+    @FXML
+    private void setCreditCardPayment() {
+        HelloApplication.orders.get(0).setPaymentMethod(PaymentMethod.CREDITCARD);
+    }
+
+
+
+
 }

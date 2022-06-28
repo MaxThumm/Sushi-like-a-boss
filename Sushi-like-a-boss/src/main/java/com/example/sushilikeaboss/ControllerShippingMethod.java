@@ -59,17 +59,7 @@ public class ControllerShippingMethod {
 
     }
 
-    /**
-     * parses amount of ordered sushi
-     */
-    private int parseIntOrZero(TextField addEbiNigiriQ) {
-        try {
-            return Integer.parseInt(addEbiNigiriQ.getText());
-        }
-        catch (NumberFormatException e) {
-            return 0;
-        }
-    }
+
 
 
 

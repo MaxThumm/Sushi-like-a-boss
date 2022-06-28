@@ -187,6 +187,7 @@ public class ControllerContactInformation {
         showFxml("Checkout-4.fxml");
     }
 
+    @FXML
     public void switchToOrderCofirmation(ActionEvent event) throws IOException {
         showFxml("Order-confirmation.fxml");
         loadOrderConfirmation();
@@ -321,6 +322,7 @@ public class ControllerContactInformation {
     @FXML
     private Label paymentMethodText;
 
+    @FXML
     private void loadOrderConfirmation() {
         Order currentOrder = HelloApplication.orders.get(0);
         nameText.setText(currentOrder.getFirstName() + " " + currentOrder.getName());
@@ -355,6 +357,7 @@ public class ControllerContactInformation {
         loadOrderTable();
     }
 
+    @FXML
     private void updateTotalCostsBasketText() {
         // saves the price in decimal values in order to avoid long numbers after comma
         double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;

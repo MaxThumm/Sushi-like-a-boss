@@ -4,6 +4,11 @@ import java.util.List;
 
 public class VegiSet extends SushiSet{
 
+    /**
+     * Setup of vegi set including price, time and name
+     * @param quantity amount of vegi sets as parameter
+     */
+
         protected VegiSet(int quantity) {
             //defining name and price of set
             super("Vegi Set", quantity, 33.9, 160);

@@ -377,16 +377,7 @@ public class HelloController {
         smallSetPrice.setText(price + " CHF");
     }
 
-    @FXML
-    private Label nigiriSetPrice;
 
-    private void nigiriSetPriceTag() {
-        if (nigiriSetPrice == null) {
-            return;
-        }
-        double price = new NigiriSet(1).getPrice();
-        nigiriSetPrice.setText(price + " CHF");
-    }
 
     @FXML
     private Label vegiSetPrice;

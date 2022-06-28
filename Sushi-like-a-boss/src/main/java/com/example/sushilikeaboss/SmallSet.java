@@ -3,6 +3,11 @@ package com.example.sushilikeaboss;
 import java.util.List;
 
 public class SmallSet extends SushiSet {
+
+    /**
+     * Setup of small set including price, time and name
+     * @param quantity amount of small sets as parameter
+     */
     protected SmallSet(int quantity) {
         //defining name and price of set
         super("Small Set", quantity,18.5, 110);

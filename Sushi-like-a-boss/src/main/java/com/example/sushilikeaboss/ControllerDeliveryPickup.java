@@ -34,14 +34,10 @@ public class ControllerDeliveryPickup {
 
     @FXML
     public Button shippingButton;
-
-
     @FXML
     private Text timeText;
-
     @FXML
     private Text timeTextExpress;
-
     @FXML
     private Text timeTextShipping;
 
@@ -135,9 +131,6 @@ public class ControllerDeliveryPickup {
         showFxml("Packaging-and-Addon-Window.fxml");
     }
 
-    public void switchToCheckout2(ActionEvent event) throws IOException {
-        showFxml("Deliverymethod-window.fxml");
-    }
 
     public void switchToCheckout3(ActionEvent event) throws IOException {
         showFxml("Personal-info-shipping-window.fxml");

@@ -43,8 +43,8 @@ public class ControllerWelcomeScreen1 {
     }
 
     /**
-     * @Maximilian
-     * @param event
+     * Method opens new order and switches to scene "Choose-menu-custom.window.fxml" by evoking switchtoScene1()
+     * @param event action event triggering scene switch
      * @throws IOException
      */
     @FXML

@@ -373,7 +373,7 @@ public class ControllerAddonsAndPackage {
     }
 
     /**
-     * @Maximilian
+     * @maximilan: braucht es die if else noch wenn wir einen default haben?
      * @param event
      * @throws IOException
      */

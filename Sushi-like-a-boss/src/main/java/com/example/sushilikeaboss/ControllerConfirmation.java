@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Controller for Checkout-3.FXML
+ * Controller for Order-confirmation-window.FXML
  */
 
 public class ControllerConfirmation {

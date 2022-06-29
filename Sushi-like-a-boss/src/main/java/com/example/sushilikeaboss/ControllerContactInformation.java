@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Controller for Checkout-3.FXML
+ * Controller for Personal-info-pickup-window.FXML and Personal-info-shipping-window-FXML
  */
 
 public class ControllerContactInformation {

@@ -8,8 +8,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**NOT USED!!!
- * Controller for Custom-window.fxml
+/**
+ * Controller for choose-menu-custom-window.fxml
  */
 
 public class ControllerMenuOrCustomSelection {

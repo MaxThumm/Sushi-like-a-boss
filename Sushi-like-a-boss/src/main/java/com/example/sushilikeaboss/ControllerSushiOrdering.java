@@ -11,7 +11,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
+/**
+ * Controller for menu-window.FXML and custom-window.FXML
+ */
 public class ControllerSushiOrdering {
     private Stage stage;
     private Scene scene;
@@ -589,21 +591,11 @@ public class ControllerSushiOrdering {
         aktelleBestellungListView.getItems().addAll(ordersAsString);
     }
 
-    public void switchtoScene1FromCustom(ActionEvent event) throws IOException {
-        showFxml("Choose-menu-custom.window.fxml");
-    }
-
-    public void switchToCheckout1(ActionEvent event) throws IOException {
-        showFxml("Packaging-and-Addon-Window.fxml");
-    }
-    private void showFxml(String fxmlFileName) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlFileName));
-        root = fxmlLoader.load();
-        scene = new Scene(root);
-        stage = HelloApplication.getPrimaryStage();
-        stage.setScene(scene);
-        stage.show();
-    }
+    /**
+     * Evokes switchToCheckout1 method which opens Packaging-and-Addon-Window.fxml if there is an item in the shoopping cart. If there is no item an error message is displayed
+     * @param event action event triggering scene switch
+     * @throws IOException
+     */
 
     @FXML
     private void proceedToOrder(ActionEvent event) throws IOException {
@@ -615,6 +607,38 @@ public class ControllerSushiOrdering {
         }
     }
 
+
+    /**
+     *Switches to scene "Choose-menu-custom.window.fxml"
+     * @param event Action event triggering scene switch
+     * @throws IOException
+     */
+    public void switchtoScene1FromCustom(ActionEvent event) throws IOException {
+        showFxml("Choose-menu-custom.window.fxml");
+    }
+
+    /**
+     *Switches to scene "Packaging-and-Addon-Window.fxml
+     * @param event Action event triggering scene switch
+     * @throws IOException
+     */
+    public void switchToCheckout1(ActionEvent event) throws IOException {
+        showFxml("Packaging-and-Addon-Window.fxml");
+    }
+
+    /**
+     * Loads and shows new scene
+     * @param fxmlFileName FXML file name of new scene
+     * @throws IOException
+     */
+    private void showFxml(String fxmlFileName) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlFileName));
+        root = fxmlLoader.load();
+        scene = new Scene(root);
+        stage = HelloApplication.getPrimaryStage();
+        stage.setScene(scene);
+        stage.show();
+    }
 
 
 }

@@ -14,6 +14,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Controller for Packaging-and-Addon-window.FXML
+ */
 public class ControllerAddonsAndPackage {
     private Stage stage;
     private Scene scene;

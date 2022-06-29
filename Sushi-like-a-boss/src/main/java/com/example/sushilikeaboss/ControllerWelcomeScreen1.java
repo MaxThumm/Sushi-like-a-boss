@@ -42,6 +42,11 @@ public class ControllerWelcomeScreen1 {
         showFxml("Choose-menu-custom.window.fxml");
     }
 
+    /**
+     * @Maximilian
+     * @param event
+     * @throws IOException
+     */
     @FXML
     private void newOrder(ActionEvent event) throws IOException {
         HelloApplication.newOrder();

@@ -114,9 +114,9 @@ public class ControllerSushiOrdering {
     /**
      * parses amount of ordered sushi
      */
-    private int parseIntOrZero(TextField addEbiNigiriQ) {
+    private int parseIntOrZero(TextField textField) {
         try {
-            return Integer.parseInt(addEbiNigiriQ.getText());
+            return Integer.parseInt(textField.getText());
         }
         catch (NumberFormatException e) {
             return 0;

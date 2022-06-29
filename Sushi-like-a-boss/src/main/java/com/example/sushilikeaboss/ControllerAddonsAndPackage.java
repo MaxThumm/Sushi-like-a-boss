@@ -63,11 +63,11 @@ public class ControllerAddonsAndPackage {
     }
 
     /**
-     * parses amount of ordered sushi
+     * parses amount of ordered add ons
      */
-    private int parseIntOrZero(TextField addEbiNigiriQ) {
+    private int parseIntOrZero(TextField textField) {
         try {
-            return Integer.parseInt(addEbiNigiriQ.getText());
+            return Integer.parseInt(textField.getText());
         }
         catch (NumberFormatException e) {
             return 0;

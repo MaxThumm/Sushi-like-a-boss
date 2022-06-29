@@ -2,6 +2,9 @@ package com.example.sushilikeaboss;
 
 import java.util.ArrayList;
 
+/**
+ * @Maximilian kannst du unten noch die getter und setter ergänzen für die Felder aus dem Deliver information Feld
+ */
 public class Order {
     private int id;
     private ArrayList<Sushi> items;
@@ -18,6 +21,10 @@ public class Order {
     private DeliveryType deliveryType;
     private PaymentMethod paymentMethod;
 
+    /**
+     * Setup of an order
+     * @param id unique order id handed over as a parameter
+     */
     public Order(int id) {
         this.id = id;
         this.items = new ArrayList<>();
@@ -31,13 +38,18 @@ public class Order {
         this.deliveryType = DeliveryType.PICKUP;
     }
 
-    /*
+    /**
     Getter for item list of order
     @return Item list of the order
      */
     public ArrayList<Sushi> getItems() {
         return items;
     }
+
+    /**
+     * Method ads item to the order and updates total amount in order
+     * @param item sushi that should be added to order
+     */
 
     public void addItem(Sushi item) {
         boolean isInItems = false;
@@ -73,7 +85,6 @@ public class Order {
 
     /**
      * Removes sushi items from order
-     *
      * @param item is sushi that should be removed
      */
     public void removeItem(Sushi item) {

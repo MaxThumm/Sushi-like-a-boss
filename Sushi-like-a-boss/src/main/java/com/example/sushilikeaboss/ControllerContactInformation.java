@@ -63,11 +63,11 @@ public class ControllerContactInformation {
 
 
     /**
-     * parses amount of ordered sushi
+     * parses amount of what? @maximilian (hier nicht sushi)
      */
-    private int parseIntOrZero(TextField addEbiNigiriQ) {
+    private int parseIntOrZero(TextField textField) {
         try {
-            return Integer.parseInt(addEbiNigiriQ.getText());
+            return Integer.parseInt(textField.getText());
         }
         catch (NumberFormatException e) {
             return 0;
@@ -132,7 +132,6 @@ public class ControllerContactInformation {
     }
 
 
-
     /**
      * Method contains current shopping basket
      */
@@ -151,10 +150,20 @@ public class ControllerContactInformation {
         aktelleBestellungListView.getItems().addAll(ordersAsString);
     }
 
+    /**
+     * @Maximilian
+     * @param event
+     * @throws IOException
+     */
     public void switchToCheckout2(ActionEvent event) throws IOException {
         showFxml("Deliverymethod-window.fxml");
     }
 
+    /**
+     * @Maximilian
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void switchToOrderCofirmation(ActionEvent event) throws IOException {
         showFxml("Order-confirmation-window.fxml");

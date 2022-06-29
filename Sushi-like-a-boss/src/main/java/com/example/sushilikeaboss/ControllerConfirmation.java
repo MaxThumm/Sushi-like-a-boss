@@ -55,17 +55,6 @@ public class ControllerConfirmation {
     public ControllerConfirmation() {
     }
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Wohoo it works :) Welcome to our Sushi Store!");
-    }
-
-    @FXML
-    private void goToCustomPage(ActionEvent event){
-
-    }
-
-
 
     /**
      * initialize method is evoked after change of window and does setup by evoking necessary methods
@@ -119,7 +108,7 @@ public class ControllerConfirmation {
     }
 
     /**
-     * Loads all information displayed in order confirmation scene
+     * Loads all information displayed in order-confirmation scene
      */
     @FXML
     private void loadOrderConfirmation() {

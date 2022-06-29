@@ -52,6 +52,10 @@ public class ControllerAddonsAndPackage {
     @FXML
     private Label gingerPrice;
 
+    @FXML
+    private ToggleGroup packagingGroup;
+
+
     public ControllerAddonsAndPackage() {
     }
 
@@ -67,6 +71,10 @@ public class ControllerAddonsAndPackage {
         }
     }
 
+
+    /**
+     * Method gets the current price of shopping basket, saves it as decimal value and updates the totalCostsBasketText
+     */
     private void updateTotalCostsBasketText() {
         // saves the price in decimal values in order to avoid long numbers after comma
         double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
@@ -248,7 +256,6 @@ public class ControllerAddonsAndPackage {
     @FXML
     private void addRecircleBox() {
         int quantity;
-        //könnte ich noch anpassen auf die Menge die benötigt wird
         quantity = 1;
         //gets the current order and saves it as new variable
         Order currentOrder = HelloApplication.orders.get(0);
@@ -282,7 +289,6 @@ public class ControllerAddonsAndPackage {
     @FXML
     private void addOneWayBox() {
         int quantity;
-        //könnte ich noch anpassen auf die Menge die benötigt wird
         quantity = 1;
         //gets the current order and saves it as new variable
         Order currentOrder = HelloApplication.orders.get(0);
@@ -345,31 +351,29 @@ public class ControllerAddonsAndPackage {
     }
 
 
+    /**
+     * Switches to scene "Custom-window.fxml"
+     * @param event Action event triggering scene switch
+     * @throws IOException
+     */
     public void switchToCustom(ActionEvent event) throws IOException {
         showFxml("Custom-window.fxml");
     }
 
+    /**
+     * Switches to scene "Menu-window.fxml"
+     * @param event Action event triggering scene switch
+     * @throws IOException
+     */
     public void switchToMenus(ActionEvent event) throws IOException {
         showFxml("Menu-window.fxml");
     }
 
-
-    public void switchToCheckout2(ActionEvent event) throws IOException {
-        showFxml("Deliverymethod-window.fxml");
-    }
-
-
-    private void showFxml(String fxmlFileName) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlFileName));
-        root = fxmlLoader.load();
-        scene = new Scene(root);
-        stage = HelloApplication.getPrimaryStage();
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    private ToggleGroup packagingGroup;
+    /**
+     * @Maximilian
+     * @param event
+     * @throws IOException
+     */
 
     @FXML
     private void toCheckout2(ActionEvent event) throws IOException {
@@ -380,5 +384,32 @@ public class ControllerAddonsAndPackage {
             switchToCheckout2(event);
         }
     }
+
+    /**
+     * Switches to scene "Deliverymethod-window.fxml"
+     * @param event Action event triggering scene switch
+     * @throws IOException
+     */
+    public void switchToCheckout2(ActionEvent event) throws IOException {
+        showFxml("Deliverymethod-window.fxml");
+    }
+
+
+    /**
+     * Loads and shows new scene
+     * @param fxmlFileName FXML file name of new scene
+     * @throws IOException
+     */
+    private void showFxml(String fxmlFileName) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlFileName));
+        root = fxmlLoader.load();
+        scene = new Scene(root);
+        stage = HelloApplication.getPrimaryStage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
+
 
 }

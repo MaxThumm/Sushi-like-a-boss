@@ -46,11 +46,9 @@ public class ControllerDeliveryPickup {
     }
 
 
-    @FXML
-    private void goToCustomPage(ActionEvent event){
-
-    }
-
+    /**
+     * Method gets the current price of shopping basket, saves it as decimal value and updates the totalCostsBasketText
+     */
     private void updateTotalCostsBasketText() {
         // saves the price in decimal values in order to avoid long numbers after comma
         double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal()*100.0)/100.0;
@@ -128,21 +126,40 @@ public class ControllerDeliveryPickup {
         aktelleBestellungListView.getItems().addAll(ordersAsString);
     }
 
+    /**
+     * @Maximilian
+     * @param event
+     * @throws IOException
+     */
 
-
-    public void switchToCheckout1(ActionEvent event) throws IOException {
-        showFxml("Packaging-and-Addon-Window.fxml");
+    @FXML
+    private void toCheckout(ActionEvent event) throws IOException {
+        if (HelloApplication.orders.get(0).getDeliveryType() == DeliveryType.PICKUP) {
+            switchToCheckout4(event);
+        }
+        else {
+            switchToCheckout3(event);
+        }
     }
 
 
+    /**
+     * Switches to scene "Personal-info-shipping-window.fxml"
+     * @param event Action event triggering scene switch
+     * @throws IOException
+     */
     public void switchToCheckout3(ActionEvent event) throws IOException {
         showFxml("Personal-info-shipping-window.fxml");
     }
 
+    /**
+     * Switches to scene "Personal-info-pickup-window"
+     * @param event Action event triggering scene switch
+     * @throws IOException
+     */
     public void switchToCheckout4(ActionEvent event) throws IOException {
         showFxml("Personal-info-pickup-window.fxml");
     }
-
 
     private void showFxml(String fxmlFileName) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlFileName));
@@ -178,16 +195,6 @@ public class ControllerDeliveryPickup {
     protected void pickUpShippingButtonKlick() {
         Order currentOrder = HelloApplication.orders.get(0);
         currentOrder.setDeliveryType(DeliveryType.PICKUP);
-    }
-
-    @FXML
-    private void toCheckout(ActionEvent event) throws IOException {
-        if (HelloApplication.orders.get(0).getDeliveryType() == DeliveryType.PICKUP) {
-            switchToCheckout4(event);
-        }
-        else {
-            switchToCheckout3(event);
-        }
     }
 
 }

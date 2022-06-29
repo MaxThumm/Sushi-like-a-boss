@@ -84,8 +84,9 @@ public class ControllerContactInformation {
 
     }
 
-
-
+    /**
+     * @Maximilian
+     */
     private void saveShippingInformation1() {
         String firstName = firstNameTextField.getText();
         String name = nameTextField.getText();
@@ -107,6 +108,10 @@ public class ControllerContactInformation {
         }
 
     }
+
+    /**
+     * @Maximilian
+     */
 
     private void saveShippingInformation2() {
         String firstName = firstNameTextField.getText();
@@ -146,20 +151,6 @@ public class ControllerContactInformation {
         aktelleBestellungListView.getItems().addAll(ordersAsString);
     }
 
-
-    public void switchToCheckout1(ActionEvent event) throws IOException {
-        showFxml("Packaging-and-Addon-Window.fxml");
-    }
-
-    public void switchToCustom(ActionEvent event) throws IOException {
-        showFxml("Custom-window.fxml");
-    }
-
-    public void switchToMenus(ActionEvent event) throws IOException {
-        showFxml("Menu-window.fxml");
-    }
-
-
     public void switchToCheckout2(ActionEvent event) throws IOException {
         showFxml("Deliverymethod-window.fxml");
     }
@@ -169,6 +160,10 @@ public class ControllerContactInformation {
         showFxml("Order-confirmation-window.fxml");
     }
 
+
+    /**
+     * @Maximilian
+     */
     private void showFxml(String fxmlFileName) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlFileName));
         root = fxmlLoader.load();
@@ -178,6 +173,10 @@ public class ControllerContactInformation {
         stage.show();
     }
 
+
+    /**
+     * @Maximilian
+     */
     @FXML
     private void placeOrder1(ActionEvent event) throws IOException {
         if (!firstNameTextField.getText().trim().equals("") && !nameTextField.getText().trim().equals("") && !zipTextField.getText().trim().equals("") && !cityTextField.getText().trim().equals("") && !streetTextField.getText().trim().equals("") && !numberTextField.getText().trim().equals("") && !emailTextField.getText().trim().equals("")) {
@@ -189,6 +188,10 @@ public class ControllerContactInformation {
         }
     }
 
+
+    /**
+     * @Maximilian
+     */
     @FXML
     private void placeOrder2(ActionEvent event) throws IOException {
         if (!firstNameTextField.getText().trim().equals("") && !nameTextField.getText().trim().equals("") && !emailTextField.getText().trim().equals("")) {
@@ -225,7 +228,9 @@ public class ControllerContactInformation {
         HelloApplication.orders.get(0).setPaymentMethod(PaymentMethod.CREDITCARD);
     }
 
-
+    /**
+     * @Maximilian
+     */
     @FXML
     private void updateTotalCostsBasketText() {
         // saves the price in decimal values in order to avoid long numbers after comma

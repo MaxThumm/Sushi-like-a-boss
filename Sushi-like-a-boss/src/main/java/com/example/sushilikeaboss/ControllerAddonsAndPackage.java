@@ -264,27 +264,40 @@ public class ControllerAddonsAndPackage {
         Order currentOrder = HelloApplication.orders.get(0);
         //gets the quantitiy of recircle boxes in the current order and saves it as new variable
         int quantityInOrder = currentOrder.getQuantityOfSushi(Recircle.class);
+        int quantityOneWayInOrder = currentOrder.getQuantityOfSushi(OneWayBox.class);
         if (quantityInOrder <= 0) {
             HelloApplication.addSushi(new Recircle(quantity));
             //Ads the newly ordered amount to the shopping cart list
             reloadOrders();
-            //Changes the text to the new amount
-            String text = quantity + " Recircle Box added to your shopping cart";
-            welcomeText.setText(text);
             // saves the price in decimal values in order to avoid long numbers after comma
             updateTotalCostsBasketText();
+            addARecircleBox.setText("Remove");
+            if (quantityOneWayInOrder >= 1){
+                HelloApplication.removeItem(new OneWayBox (quantity));
+                reloadOrders();
+                // saves the price in decimal values in order to avoid long numbers after comma
+                updateTotalCostsBasketText();
+                oneWayBox.setText("Select");
+            }
 
         }
         else{
             HelloApplication.removeItem(new Recircle (quantity));
             reloadOrders();
-            String text = quantity + " Recircle Box removed from your shopping cart";
-            welcomeText.setText(text);
             // saves the price in decimal values in order to avoid long numbers after comma
             updateTotalCostsBasketText();
+            addARecircleBox.setText("Select");
+            HelloApplication.addSushi(new OneWayBox(quantity));
+            //Ads the newly ordered amount to the shopping cart list
+            reloadOrders();
+            //If Box has been put into shopping cart the text is changed to remove
+            oneWayBox.setText("Remove");
 
         }
     }
+
+    @FXML
+    Button addARecircleBox;
 
     /**
      * Adds a oneway box to the order if there is no box in the order.
@@ -297,27 +310,40 @@ public class ControllerAddonsAndPackage {
         Order currentOrder = HelloApplication.orders.get(0);
         //gets the quantitiy of recircle boxes in the current order and saves it as new variable
         int quantityInOrder = currentOrder.getQuantityOfSushi(OneWayBox.class);
+        int quantityRecircleInOrder = currentOrder.getQuantityOfSushi(Recircle.class);
         if (quantityInOrder <= 0) {
             HelloApplication.addSushi(new OneWayBox(quantity));
             //Ads the newly ordered amount to the shopping cart list
             reloadOrders();
-            //Changes the text to the new amount
-            String text = quantity + " Oneway Box added to your shopping cart";
-            welcomeText.setText(text);
             // saves the price in decimal values in order to avoid long numbers after comma
             updateTotalCostsBasketText();
-
+            //If Box has been put into shopping cart the text is changed to remove
+            oneWayBox.setText("Remove");
+            if (quantityRecircleInOrder >= 1) {
+                HelloApplication.removeItem(new Recircle (quantity));
+                reloadOrders();
+                // saves the price in decimal values in order to avoid long numbers after comma
+                updateTotalCostsBasketText();
+                addARecircleBox.setText("Select");
+            }
         }
         else{
             HelloApplication.removeItem(new OneWayBox (quantity));
             reloadOrders();
-            String text = quantity + " Oneway Box removed from your shopping cart";
-            welcomeText.setText(text);
             // saves the price in decimal values in order to avoid long numbers after comma
             updateTotalCostsBasketText();
+            //If Box has been put into shopping cart the text is changed to remove
+            oneWayBox.setText("Select");
+            HelloApplication.addSushi(new Recircle(quantity));
+            addARecircleBox.setText("Remove");
+            //Ads the newly ordered amount to the shopping cart list
+            reloadOrders();
 
         }
     }
+
+    @FXML
+    Button oneWayBox;
 
     /**
      * initialize method is evoked after change of window and does setup by evoking necessary methods
@@ -330,9 +356,7 @@ public class ControllerAddonsAndPackage {
         wasabiPriceTag();
         soySaucePriceTag();
         chopStickPriceTag();
-        if (HelloApplication.orders.get(0).getQuantityOfSushi(OneWayBox.class) == 0){
-            addRecircleBox();
-        }
+        addRecircleBox();
     }
 
     /**
@@ -372,21 +396,7 @@ public class ControllerAddonsAndPackage {
         showFxml("Menu-window.fxml");
     }
 
-    /**
-     * @maximilan: braucht es die if else noch wenn wir einen default haben?
-     * @param event
-     * @throws IOException
-     */
 
-    @FXML
-    private void toCheckout2(ActionEvent event) throws IOException {
-        if (packagingGroup.getSelectedToggle() == null) {
-            welcomeText.setText("No packaging selected. Please select a packaging to proceed!");
-        }
-        else {
-            switchToCheckout2(event);
-        }
-    }
 
     /**
      * Switches to scene "Deliverymethod-window.fxml"

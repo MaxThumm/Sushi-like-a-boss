@@ -42,16 +42,6 @@ public class ControllerShippingMethod {
     }
 
 
-    /**
-     * Method gets the current price of shopping basket, saves it as decimal value and updates the totalCostsBasketText
-     */
-    private void updateTotalCostsBasketText() {
-        // saves the price in decimal values in order to avoid long numbers after comma
-        double decimalPrice = Math.round(HelloApplication.orders.get(0).getTotal() * 100.0) / 100.0;
-        //Changes the text to the new price in decimal
-        totalCostsBasketText.setText("CHF " + decimalPrice);
-    }
-
 
     /**
      * initialize method is evoked after change of window and does setup by evoking necessary methods
@@ -62,7 +52,6 @@ public class ControllerShippingMethod {
         totalTimePickup();
         totalTimeExpress();
         totalTimeShipping();
-        updateTotalCostsBasketText();
     }
 
     /**

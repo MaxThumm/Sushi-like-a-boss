@@ -63,7 +63,9 @@ public class ControllerContactInformation {
 
 
     /**
-     * parses amount of what? @maximilian (hier nicht sushi)
+     * Parses Integer from the TextField, which is handed over
+     * @param textField TextField to parse Integer from.
+     * @return trys to return of parsed Integer. If not possible "0" is returned.
      */
     private int parseIntOrZero(TextField textField) {
         try {
@@ -85,7 +87,8 @@ public class ControllerContactInformation {
     }
 
     /**
-     * @Maximilian
+     * Saves shipping information (name, adress, email).
+     * Used for checkout with delivery (standard or express), when the adress needs to be submitted.
      */
     private void saveShippingInformation1() {
         String firstName = firstNameTextField.getText();
@@ -110,7 +113,8 @@ public class ControllerContactInformation {
     }
 
     /**
-     * @Maximilian
+     * Saves shipping information (name & email).
+     * Used for checkout without delivery (pickup), when NO adress needs to be submitted.
      */
 
     private void saveShippingInformation2() {
@@ -151,8 +155,8 @@ public class ControllerContactInformation {
     }
 
     /**
-     * @Maximilian
-     * @param event
+     * Switches to delivery method scene when triggered by event
+     * @param event triggering the method
      * @throws IOException
      */
     public void switchToCheckout2(ActionEvent event) throws IOException {
@@ -160,8 +164,8 @@ public class ControllerContactInformation {
     }
 
     /**
-     * @Maximilian
-     * @param event
+     * Switches to order confirmation scene when triggered by event
+     * @param event triggering the method
      * @throws IOException
      */
     @FXML
@@ -171,7 +175,8 @@ public class ControllerContactInformation {
 
 
     /**
-     * @Maximilian
+     * Loads and shows a chosen scene.
+     * @param fxmlFileName name of the fxml File which should be loaded and shown.
      */
     private void showFxml(String fxmlFileName) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlFileName));
@@ -184,7 +189,9 @@ public class ControllerContactInformation {
 
 
     /**
-     * @Maximilian
+     * Saves all necessary shipping information for an order with delivery (standard or express) within the order and switches to the order confirmation, if all text fields are filled. Otherwise, an error message is shown.
+     * @param event Event triggering the method
+     * @throws IOException
      */
     @FXML
     private void placeOrder1(ActionEvent event) throws IOException {
@@ -199,7 +206,9 @@ public class ControllerContactInformation {
 
 
     /**
-     * @Maximilian
+     * Saves all necessary shipping information for an order without delivery (pickup) within the order and switches to the order confirmation, if all text fields are filled. Otherwise, an error message is shown.
+     * @param event Event triggering the method
+     * @throws IOException
      */
     @FXML
     private void placeOrder2(ActionEvent event) throws IOException {
@@ -238,7 +247,7 @@ public class ControllerContactInformation {
     }
 
     /**
-     * @Maximilian
+     * Updates the text output showing the total price of the items within the shopping cart.
      */
     @FXML
     private void updateTotalCostsBasketText() {

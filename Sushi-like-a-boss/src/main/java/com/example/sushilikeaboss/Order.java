@@ -2,10 +2,8 @@ package com.example.sushilikeaboss;
 
 import java.util.ArrayList;
 
-/**
- * @Maximilian kannst du unten noch die getter und setter ergänzen für die Felder aus dem Deliver information Feld
- */
 public class Order {
+    //useful for later implementation. Restorant or customer could for example find specific orders by id
     private int id;
     private ArrayList<Sushi> items;
     private double total;
@@ -135,87 +133,163 @@ public class Order {
         totalTime = newTime;
     }
 
+    /**
+     * Returns ID of the order.
+     * @return Order ID is returned.
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Sets ID of the order.
+     * @param id New int value of the ID.
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+
+    /**
+     * Returns total price of all products in the items list.
+     * @return Integer of total price of the order.
+     */
     public double getTotal() {
         return total;
     }
 
+    /**
+     * Sets total prive of all products in the items list.
+     * @param total New total price of the order.
+     */
     public void setTotal(double total) {
         this.total = total;
     }
 
+    /**
+     * Updates total time necessary to prepare the order and returns it.
+     * @return Total preparation time of the order.
+     */
     public int getTotalTime() {
         updateTime();
         return totalTime;
     }
 
+    /**
+     * Sets total time necessary to prepare the order
+     * @param totalTime New total time
+     */
     public void setTotalTime(int totalTime) {
         this.totalTime = totalTime;
     }
 
-
+    /**
+     * Returns first name of the customer who placed the order
+     * @return First Name saved in the order
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Sets first name of the customer who placed the order
+     * @param firstName First name of customer
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * Returns last name of the customer who placed the order
+     * @return Last Name saved in the order
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Sets last name of the customer who placed the order
+     * @param name Last name of customer
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Returns zip code of the customer who placed the order
+     * @return Zip code saved in the order
+     */
     public int getZipCode() {
         return zipCode;
     }
 
+    /**
+     * Sets zip code of the customer who placed the order
+     * @param zipCode Zip code of customer
+     */
     public void setZipCode(int zipCode) {
         this.zipCode = zipCode;
     }
 
+    /**
+     * Returns city of the customer who placed the order
+     * @return City saved in the order
+     */
     public String getCity() {
         return city;
     }
 
+    /**
+     * Sets city of the customer who placed the order
+     * @param city City of customer
+     */
     public void setCity(String city) {
         this.city = city;
     }
 
+    /**
+     * Returns street of the customer who placed the order
+     * @return Street saved in the order
+     */
     public String getStreet() {
         return street;
     }
 
+    /**
+     * Sets street of the customer who placed the order
+     * @param street Street of customer
+     */
     public void setStreet(String street) {
         this.street = street;
     }
 
+    /**
+     * Returns house or apartment number of the customer who placed the order
+     * @return House number saved in the order
+     */
     public String getHouseNo() {
         return houseNo;
     }
 
+    /**
+     * Sets house or apartment number of the customer who placed the order
+     * @param houseNo Street of customer
+     */
     public void setHouseNo(String houseNo) {
         this.houseNo = houseNo;
     }
 
+    /**
+     * Returns email address of the customer who placed the order
+     * @return Email address saved in the order
+     */
     public String getEmail() {
         return email;
     }
 
     /**
-     * 
-     * @param email
+     * Sets email adress of the customer who placed the order
+     * @param email Email address of customer
      */
     public void setEmail(String email) {
         this.email = email;

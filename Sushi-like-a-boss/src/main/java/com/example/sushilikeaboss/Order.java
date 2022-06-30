@@ -213,11 +213,19 @@ public class Order {
         return email;
     }
 
+    /**
+     * 
+     * @param email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
-
+    /**
+     * Returns quantity of a product within the shopping cart (list items)
+     * @param clazz class of the product (sushi) you want to get the quantity of
+     * @return if the desired product is found in items, its quantity is returned, otherwise "0" is returned
+     */
     public int getQuantityOfSushi(Class<? extends Sushi> clazz) {
         for (Sushi item : getItems()) {
             if (clazz == item.getClass()) {
@@ -227,10 +235,18 @@ public class Order {
         return 0;
     }
 
+    /**
+     * Returns selected payment method of the order
+     * @return payment method
+     */
     public PaymentMethod getPaymentMethod() {
         return paymentMethod;
     }
 
+    /**
+     * Sets desired payment method of the order
+     * @param paymentMethod desired payment method
+     */
     public void setPaymentMethod(PaymentMethod paymentMethod) {
         this.paymentMethod = paymentMethod;
     }
